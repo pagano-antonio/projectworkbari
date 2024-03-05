@@ -1,5 +1,11 @@
 package com.dao;
 
-public interface CanditateRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import com.model.Candidate;
+
+@Repository
+public interface CanditateRepository extends JpaRepository<Candidate, Integer> {
 
 }
