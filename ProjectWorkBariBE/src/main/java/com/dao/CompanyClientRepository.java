@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.model.CompanyClient;
 
 @Repository
-public interface CompanyClientRepository extends JpaRepository<CompanyClient, Integer> {
+public interface CompanyClientRepository extends JpaRepository<CompanyClient , Integer> {
 
 }
