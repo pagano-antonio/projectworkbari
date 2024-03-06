@@ -1,6 +1,7 @@
 package com.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,17 +30,22 @@ public class WorkExperienceRest {
     }
 	
 	@PostMapping
-	public String post (@RequestBody WorkExperience s) {
-	    System.out.println(s.toString());
-	    workExperienceRep.save(s);
+	public String post (@RequestBody WorkExperience w) {
+	    System.out.println(w.toString());
+	    workExperienceRep.save(w);
 	    return "success";
 	}
 	
 	@PutMapping
-    public String put (@RequestBody WorkExperience s) {
-		workExperienceRep.save(s);
-        System.out.println(s.toString() + "uploaded");
+    public String put (@RequestBody WorkExperience w) {
+		workExperienceRep.save(w);
+        System.out.println(w.toString() + "uploaded");
         return "success";
    } 
+	 @DeleteMapping ("{id}")
+	   public String elimina (@RequestBody WorkExperience w) {
+	    workExperienceRep.delete(w);
+	       return w + "deleted";
+	   }
 
 }
