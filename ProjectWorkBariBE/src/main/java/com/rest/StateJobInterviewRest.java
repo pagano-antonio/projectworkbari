@@ -23,8 +23,8 @@ public class StateJobInterviewRest {
     private StateJobInterviewRepository stateJobInterviewRep;
 	
 	
-	@GetMapping("findById/{id}")
-    public StateJobInterview findById(@PathVariable ("id") int id) {
+	@GetMapping("findById/{idStateJobInterview}")
+    public StateJobInterview findById(@PathVariable ("idStateJobInterview") int id) {
 
 		StateJobInterview resStateJobInterview = stateJobInterviewRep.findById(id).get();
         return resStateJobInterview;
@@ -44,7 +44,7 @@ public class StateJobInterviewRest {
         return "success";
    } 
 
-	@DeleteMapping ("{id}")
+	@DeleteMapping ("{idStateJobInterview}")
 	   public String delete (@RequestBody StateJobInterview s) {
 		stateJobInterviewRep.delete(s);
 	    return s + "deleted";

@@ -22,8 +22,8 @@ public class WorkExperienceRest {
     private WorkExperienceRepository workExperienceRep;
 	
 
-	@GetMapping("findById/{id}")
-    public WorkExperience findById(@PathVariable ("id") int id) {
+	@GetMapping("findById/{idWorkExperience}")
+    public WorkExperience findById(@PathVariable ("idWorkExperience") int id) {
 
 		WorkExperience resWorkExperience = workExperienceRep.findById(id).get();
         return resWorkExperience;
@@ -42,7 +42,7 @@ public class WorkExperienceRest {
         System.out.println(w.toString() + "uploaded");
         return "success";
    } 
-	 @DeleteMapping ("{id}")
+	 @DeleteMapping ("{idWorkExperience}")
 	   public String elimina (@RequestBody WorkExperience w) {
 	    workExperienceRep.delete(w);
 	       return w + "deleted";

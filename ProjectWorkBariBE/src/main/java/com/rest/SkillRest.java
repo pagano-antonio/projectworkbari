@@ -22,8 +22,8 @@ public class SkillRest {
     private SkillRepository skillRep;
 	
 
-	@GetMapping("findById/{id}")
-    public Skill findById(@PathVariable ("id") int id) {
+	@GetMapping("findById/{idSkill}")
+    public Skill findById(@PathVariable ("idSkill") int id) {
 
     Skill resSkill = skillRep.findById(id).get();
     return resSkill;
@@ -43,7 +43,7 @@ public class SkillRest {
        return "success";
    } 
 
-	@DeleteMapping ("{id}")
+	@DeleteMapping ("{idSkill}")
 	   public String delete (@RequestBody Skill s) {
 	    skillRep.delete(s);
 	       return s + "deleted";
