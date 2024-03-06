@@ -11,6 +11,5 @@ import com.dao.EducationRepository;
 @RequestMapping("Education")
 public class EducationRest {
 
-	@Autowired
-    private EducationRepository educationRep; 
+	
 }
