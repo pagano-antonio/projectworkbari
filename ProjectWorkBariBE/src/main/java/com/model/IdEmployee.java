@@ -21,7 +21,7 @@ public class IdEmployee implements Serializable {
 	@Id
 	private int id;
 
-	@Column(name = "id_employee")
+	@Column(name = "idEmployee")
 	private int idEmployee;
 
 	private String password;
