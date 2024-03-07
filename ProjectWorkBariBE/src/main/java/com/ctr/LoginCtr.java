@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.dao.IdEmployeeRepository;
+import com.dao.LoginRepository;
 
 @Controller
 @RequestMapping("/IdEmployeeCtr")
-public class IdEmployeeCtr {
+public class LoginCtr {
 
 	 @Autowired
-	 private IdEmployeeRepository idEmployeeRep; 
+	 private LoginRepository idEmployeeRep; 
 }

@@ -10,40 +10,40 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dao.IdEmployeeRepository;
-import com.model.IdEmployee;
+import com.dao.LoginRepository;
+import com.model.Login;
 
 @RestController
-@RequestMapping("IdEmployee")
-public class IdEmployeeRest {
+@RequestMapping("Login")
+public class LoginRest {
 	
 	@Autowired
-    private IdEmployeeRepository idEmployeeRep; 
+    private LoginRepository idEmployeeRep; 
 	
 	@GetMapping("findById/{idEmployee}")
-    public IdEmployee findById(@PathVariable ("idEmployee") int id) {
-		IdEmployee resIdEmployee = idEmployeeRep.findById(id).get();
-		return resIdEmployee;
+    public Login findById(@PathVariable ("idEmployee") int id) {
+		Login resLogin = idEmployeeRep.findById(id).get();
+		return resLogin;
     }
 	
 	@PostMapping
-	public String post (@RequestBody IdEmployee i) {
-	    System.out.println(i.toString());
-	    idEmployeeRep.save(i);
+	public String post (@RequestBody Login l) {
+	    System.out.println(l.toString());
+	    idEmployeeRep.save(l);
 	    return "success";
 	}
 	
 	@PutMapping
-    public String put (@RequestBody IdEmployee i) {
-		idEmployeeRep.save(i);
-		System.out.println(i.toString() + "uploaded");
+    public String put (@RequestBody Login l) {
+		idEmployeeRep.save(l);
+		System.out.println(l.toString() + "uploaded");
        return "success";
    } 
 
 	@DeleteMapping ("{idEmployee}")
-	public String delete (@RequestBody IdEmployee i) {
-		idEmployeeRep.delete(i);
-	    return i + "deleted";
+	public String delete (@RequestBody Login l) {
+		idEmployeeRep.delete(l);
+	    return l + "deleted";
 	   }
 
 }
