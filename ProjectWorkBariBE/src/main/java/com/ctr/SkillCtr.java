@@ -27,15 +27,13 @@ public class SkillCtr {
 //-----------------------------------------------------------
 	@GetMapping("/preAddSkill")
 	public String preAdd(Model model) {
-		return "";
-       // return "addSkill";
+	    return "addSkill";
 	
 }
 	@PostMapping("/addSkill")
 	public String add(Skill s) {
 		skillRep.save(s);
-		return "";
-		//return "addSkillSuccess";
+	    return "success";
 
 	}
 //-----------------------------------------------------------

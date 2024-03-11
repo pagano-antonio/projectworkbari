@@ -32,7 +32,7 @@ public class StateJobInterviewCtr {
 	@PostMapping("/addStateJobInterview")
 	public String add(StateJobInterview s) {
 		stateJobInterviewRep.save(s);
-		return "";
+		return "success";
 
 	}
 //-------------------------------------------------------------
