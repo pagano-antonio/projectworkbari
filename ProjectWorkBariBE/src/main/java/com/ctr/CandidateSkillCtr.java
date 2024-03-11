@@ -13,7 +13,7 @@ import com.dao.CandidateSkillRepository;
 import com.model.CandidateSkill;
 
 @Controller
-@RequestMapping("/CandidateSkillCtr")
+@RequestMapping("CandidateSkillCtr")
 public class CandidateSkillCtr {
 	@Autowired
 	private CandidateSkillRepository candidateSkillRep;

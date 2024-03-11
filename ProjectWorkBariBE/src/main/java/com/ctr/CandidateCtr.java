@@ -26,7 +26,7 @@ public class CandidateCtr {
 	
 	@GetMapping("/preAddCandidate")
 	public String preAdd() {
-		return"";//creare una jsp di preaggiunta
+		return"addCandidate";//creare una jsp di preaggiunta
 	}
 	
 	@PostMapping("/addCandidate")
@@ -34,7 +34,7 @@ public class CandidateCtr {
 		
 		candidateRep.save(candidate);
 		
-		return"";//creare una jsp di aggiunta candidate
+		return"success";//creare una jsp di aggiunta candidate
 	}
 	
 	@GetMapping("/prefindByIdCandidate")
