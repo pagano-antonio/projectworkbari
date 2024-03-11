@@ -30,7 +30,7 @@ public class CandidateRest {
 	@PostMapping
 	public String post(@RequestBody Candidate c) {
 
-		System.out.println(c.toString());
+		System.out.println(c.toString() + "added");
 		candidateRep.save(c);
 		return "success";
 	}
@@ -47,6 +47,7 @@ public class CandidateRest {
 	public String delete(@RequestBody Candidate c) {
 
 		candidateRep.delete(c);
+		System.out.println(c.toString() + "deleted");
 		return c + "deleted";
 	}
 

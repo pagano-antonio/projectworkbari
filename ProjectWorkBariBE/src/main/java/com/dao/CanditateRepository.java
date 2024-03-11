@@ -18,6 +18,4 @@ public interface CanditateRepository extends JpaRepository<Candidate, Integer> {
 	List<Candidate> findByEducations_EducationDegreeType_IdEducationDegreeType(Integer idEducationType);
 	List<Candidate> findByJobInterviews_StateJobInterview_Title(String description);//da chiedere se title o description
 	List<Candidate> findByJobInterviews_Outcome(Integer outcome);//proposta stipendiale per quel lavoro(?)
-//lunedi da fare il collegamento impossibile che non sa neanche Antonio(quello per anni d'esperienza e skill
-//in una determinata compagnia)(?)
 }
