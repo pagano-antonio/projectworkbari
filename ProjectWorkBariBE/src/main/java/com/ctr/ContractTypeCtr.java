@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.ContractTypeRepository;
-import com.model.CompanyClient;
 import com.model.ContractType;
 @Controller
 @RequestMapping("/ContractTypeCtr")
