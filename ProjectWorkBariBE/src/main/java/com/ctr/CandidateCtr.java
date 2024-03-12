@@ -1,6 +1,9 @@
 package com.ctr;
 
+<<<<<<< HEAD
 import java.math.BigInteger;
+=======
+>>>>>>> eff871306ec694f245d0a96d72c70116c866c54b
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +47,7 @@ public class CandidateCtr {
 	
 	@GetMapping("/prefindByIdCandidate")
 	public String prefindById() {
-		return"";//creare una jsp di ricerca per idCandidate
+		return"findByIdCandidate";//creare una jsp di ricerca per idCandidate
 	}
 	
 	@GetMapping("/findByIdCandidate")
@@ -54,7 +57,7 @@ public class CandidateCtr {
 		candidate=candidateRep.findById(idCandidate).get();
 		model.addAttribute("Candidate", candidate);
 		
-		return "";//creare e collegare una jsp di successo ricerca
+		return "resCandidate";//creare e collegare una jsp di successo ricerca
 	}
 	
 // --------------------------------------------------------------------------------------- UPDATE
@@ -76,6 +79,7 @@ public class CandidateCtr {
 		return "";//creare e collegare una jsp di successo elimina
 	}
 	
+<<<<<<< HEAD
 // --------------------------------------------------------------------------------------- FIND BY PHONE
 	
 	@GetMapping("/prefindByPhone")
@@ -91,4 +95,34 @@ public class CandidateCtr {
 		
 		return "resCandidate";
 	}
+=======
+	@GetMapping("/prefindBySurname")
+	public String prefindBySurname() {
+		return"findBySurname";//creare e collegare jsp di ricerca per surname
+	}
+	
+	@PostMapping("/findBySurname")
+	public String findBySurname(Model model, String surname) {
+		
+		List<Candidate> listSurname=(List<Candidate>)candidateRep.findBySurname(surname);
+		model.addAttribute("surnameFound", listSurname);
+		
+		return"resCandidate";//creare e collegare jsp
+	}
+	
+	@GetMapping("/prefindByCity")
+	public String prefindByCity() {
+		return"findByCity";//creare e collegare jsp di ricerca per city
+	}
+	
+	@PostMapping("/findByCity")
+	public String findByCity(Model model, String city) {
+		
+		List<Candidate> listCities=(List<Candidate>)candidateRep.findByCity(city);
+		model.addAttribute("citiesFound", listCities);
+		
+		return"resCandidate";//creare e collegare jsp
+	}
+
+>>>>>>> eff871306ec694f245d0a96d72c70116c866c54b
 }
