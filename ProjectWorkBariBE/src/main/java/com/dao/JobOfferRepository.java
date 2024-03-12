@@ -16,6 +16,5 @@ public interface JobOfferRepository extends JpaRepository<JobOffer, Integer> {
 	List<JobOffer> findByCompanyClient_idCompanyClient(Integer idCompanyClient);
 	List<JobOffer> findByMinRalAfterAndMaxRalBefore(Integer minRal, Integer maxRal);
 	List<JobOffer> findByContractType_idContractType(Integer idContractType);
-	List<JobOffer> findByJobOfferSkills_Skill_Description(String description);//chiedere se description o title
-
+	List<JobOffer> findByJobOfferSkills_Skill_Title(String title);
 }

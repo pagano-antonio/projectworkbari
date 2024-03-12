@@ -98,4 +98,19 @@ public class JobOfferCtr {
 		
 	    return "resJobOffer";
 	}
+//-------------------------------------------------------------------------------
+	@GetMapping("/prefindByJobOfferSkills_Skill_Title")
+	public String prefindByJobOfferSkills_Skill_Title () {
+		return "findByJobOfferSkills_Skill_Title";
+	}
+
+	@GetMapping("/findByJobOfferSkills_Skill_Title")
+	public String findByJobOfferSkills_Skill_Title(Model model,String title) {
+
+		ArrayList<JobOffer> titleList = (ArrayList<JobOffer>) jobOfferRep.findByJobOfferSkills_Skill_Title(title);
+		model.addAttribute("titleList", titleList);
+		
+		
+	    return "resJobOffer";
+	}
 }
