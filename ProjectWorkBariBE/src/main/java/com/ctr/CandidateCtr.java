@@ -40,7 +40,7 @@ public class CandidateCtr {
 	
 	@GetMapping("/prefindByIdCandidate")
 	public String prefindById() {
-		return"";//creare una jsp di ricerca per idCandidate
+		return"findById";//creare una jsp di ricerca per idCandidate
 	}
 	
 	@GetMapping("/findByIdCandidate")
@@ -50,7 +50,7 @@ public class CandidateCtr {
 		candidate=candidateRep.findById(idCandidate).get();
 		model.addAttribute("Candidate", candidate);
 		
-		return "";//creare e collegare una jsp di successo ricerca
+		return "resCandidate";//creare e collegare una jsp di successo ricerca
 	}
 	
 	@PostMapping("/putCandidate")
