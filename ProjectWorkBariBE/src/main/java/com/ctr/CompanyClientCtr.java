@@ -50,7 +50,7 @@ public class CompanyClientCtr {
 	 
 	 @GetMapping("/prefindByIdCompanyClient")
 		public String prefindById() {
-			return" ";//creare una jsp di ricerca per id 
+			return"findByIdCompanyClient ";//creare una jsp di ricerca per id 
 		}
 		
 		@GetMapping("/findByIdCompanyClient")
@@ -60,7 +60,7 @@ public class CompanyClientCtr {
 			c=companyClientRep.findById(idCompanyClient).get();
 			model.addAttribute("CompanyClient", c);
 			
-			return "";//creare e collegare una jsp di successo ricerca
+			return "success";//creare e collegare una jsp di successo ricerca
 		}
 		
 		

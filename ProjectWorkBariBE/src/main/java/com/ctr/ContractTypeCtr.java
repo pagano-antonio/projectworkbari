@@ -48,7 +48,7 @@ public class ContractTypeCtr {
 	 
 	 @GetMapping("/prefindByIdContractType")
 		public String prefindById() {
-			return" ";//creare una jsp di ricerca per id 
+			return"findByIdContractType";//creare una jsp di ricerca per id 
 		}
 		
 		@GetMapping("/findByIdContractType")
@@ -58,7 +58,7 @@ public class ContractTypeCtr {
 			c=contractTypeRep.findById(idContractType).get();
 			model.addAttribute("ContractType", c);
 			
-			return "";//creare e collegare una jsp di successo ricerca
+			return "success";//creare e collegare una jsp di successo ricerca
 		}
 		
 		

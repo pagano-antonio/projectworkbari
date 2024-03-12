@@ -29,7 +29,7 @@ public class EducationCtr {
 	 @GetMapping("/preAddEducation")
 	    public String preAdd (Model model) {
 
-	        return "";//aggiungi jsp
+	        return "addEducation";//aggiungi jsp
 
 	    }
 
@@ -39,7 +39,7 @@ public class EducationCtr {
 
 	        educationRep.save(e);
 
-	          return "";//aggiungi jsp
+	          return "success";//aggiungi jsp
 
 	    }
 	 
@@ -50,7 +50,7 @@ public class EducationCtr {
 	 
 	 @GetMapping("/prefindByIdEducation")
 		public String prefindById() {
-			return" ";//creare una jsp di ricerca per id 
+			return"findByIdEducation ";//creare una jsp di ricerca per id 
 		}
 		
 		@GetMapping("/findByIdEducation")
@@ -60,7 +60,7 @@ public class EducationCtr {
 			e=educationRep.findById(idEducation).get();
 			model.addAttribute("Education", e);
 			
-			return "";//creare e collegare una jsp di successo ricerca
+			return "success";//creare e collegare una jsp di successo ricerca
 		}
 		
 		
