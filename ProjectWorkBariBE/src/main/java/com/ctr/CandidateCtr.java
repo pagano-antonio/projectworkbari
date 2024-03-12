@@ -102,8 +102,8 @@ public class CandidateCtr {
 	@PostMapping("/findBySurname")
 	public String findBySurname(Model model, String surname) {
 		
-		List<Candidate> listSurname=(List<Candidate>)candidateRep.findBySurname(surname);
-		model.addAttribute("surnameFound", listSurname);
+		List<Candidate> surnameList=(List<Candidate>)candidateRep.findBySurname(surname);
+		model.addAttribute("surnameFound", surnameList);
 		
 		return"resCandidate";
 	}
@@ -118,8 +118,8 @@ public class CandidateCtr {
 	@PostMapping("/findByCity")
 	public String findByCity(Model model, String city) {
 		
-		List<Candidate> listCities=(List<Candidate>)candidateRep.findByCity(city);
-		model.addAttribute("citiesFound", listCities);
+		List<Candidate> citiesList=(List<Candidate>)candidateRep.findByCity(city);
+		model.addAttribute("citiesFound", citiesList);
 		
 		return"resCandidate";
 	}
