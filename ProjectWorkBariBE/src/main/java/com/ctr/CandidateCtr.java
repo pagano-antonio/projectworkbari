@@ -92,6 +92,8 @@ public class CandidateCtr {
 		return "resCandidate";
 	}
 	
+// --------------------------------------------------------------------------------------- FIND BY SURNAME
+	
 	@GetMapping("/prefindBySurname")
 	public String prefindBySurname() {
 		return"findBySurname";//creare e collegare jsp di ricerca per surname
@@ -105,6 +107,8 @@ public class CandidateCtr {
 		
 		return"resCandidate";//creare e collegare jsp
 	}
+	
+// ---------------------------------------------------------------------------------------- FIND BY CITY
 	
 	@GetMapping("/prefindByCity")
 	public String prefindByCity() {
