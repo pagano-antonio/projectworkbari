@@ -25,7 +25,7 @@ public class CandidateSkillCtr {
 	
 	@GetMapping("preAddCandidateSkill")
 	public String preAdd() {
-		return"";//creare una jsp di preaggiunta
+		return"addCandidateSkill";//creare una jsp di preaggiunta
 	}
 	
 	@PostMapping("/addCandidateSkill")
@@ -33,7 +33,7 @@ public class CandidateSkillCtr {
 		
 		candidateSkillRep.save(candidateSkill);
 		
-		return"";//creare e collegare una jsp di aggiunta candidateSkill
+		return"success";//creare e collegare una jsp di aggiunta candidateSkill
 	}
 	
 	@GetMapping("/prefindByIdCandidateSkill")

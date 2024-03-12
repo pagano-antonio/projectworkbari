@@ -30,7 +30,7 @@ public class JobOfferCtr {
 	@GetMapping("/preAddJobOffer")
 	public String preAdd(Model model) {
 
-		return ""; // aggiungi jsp
+		return "addJobOffer"; // aggiungi jsp
 
 	}
 
@@ -39,7 +39,7 @@ public class JobOfferCtr {
 
 		jobOfferRep.save(j);
 
-		return ""; // aggiungi jsp
+		return "success"; // aggiungi jsp
 	}
 
 //------------------------------------------------------------------------------------

@@ -24,7 +24,7 @@ public class CandidateCommercialDataCtr {
 	
 	@GetMapping("/preAddCandidateCommercialData")
 	public String preAdd() {
-		return"";//creare e collegare una jsp di preaggiunta
+		return"addCandidateCommercialData";//creare e collegare una jsp di preaggiunta
 	}
 	
 	@PostMapping("/addCandidateCommercialData")
@@ -32,7 +32,7 @@ public class CandidateCommercialDataCtr {
 		
 		candidateCommercialDataRep.save(candidateCommercialData);
 		
-		return"";//creare e collegare jsp di aggiunta candidateCommercialData
+		return"success";//creare e collegare jsp di aggiunta candidateCommercialData
 	}
 	
 	@GetMapping("/preFindByIdCandidateCommercialData")

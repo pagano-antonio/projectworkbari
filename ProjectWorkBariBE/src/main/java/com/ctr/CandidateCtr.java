@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.dao.CanditateRepository;
 import com.model.Candidate;
 
-import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("CandidateCtr")

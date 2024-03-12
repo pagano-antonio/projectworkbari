@@ -27,7 +27,7 @@ public class EmployeeTypeCtr {
 		
 		@GetMapping("/preAddEmployeeType")
 		public String preAdd() {
-			return"";//creare una jsp di preaggiunta
+			return"addEmployeeType";//creare una jsp di preaggiunta
 		}
 		
 		@PostMapping("/addEmployeeType")
@@ -35,7 +35,7 @@ public class EmployeeTypeCtr {
 			
 			employeeTypeRep.save(employeeType);
 			
-			return"";//creare una jsp di aggiunta 
+			return"success";//creare una jsp di aggiunta 
 		}
 		
 //------------------------------------------------------------------------------------------- FIND

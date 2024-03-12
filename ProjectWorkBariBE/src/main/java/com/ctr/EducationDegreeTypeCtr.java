@@ -27,7 +27,7 @@ public class EducationDegreeTypeCtr {
 		
 		@GetMapping("/preAddEducationDegreeType")
 		public String preAdd() {
-			return"";//creare una jsp di preaggiunta
+			return"addEducationDegreeType";//creare una jsp di preaggiunta
 		}
 		
 		@PostMapping("/addEducationDegreeType")
@@ -35,7 +35,7 @@ public class EducationDegreeTypeCtr {
 			
 			educationDegreeTypeRep.save(educationDegreeType);
 			
-			return"";//creare una jsp di aggiunta 
+			return"success";//creare una jsp di aggiunta 
 		}
 		
 //------------------------------------------------------------------------------------------- FIND

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import com.dao.EducationRepository;
-import com.model.ContractType;
 import com.model.Education;
 
 @Controller

@@ -27,13 +27,13 @@ public class WorkExperienceCtr {
 	
 	@GetMapping("/preAddWorkExperience")
 	public String preAdd(Model model) {
-        return "";
+        return "addWorkExperience";
 	
 }
 	@PostMapping("/addWorkExperience")
 	public String add(WorkExperience w) {
 		workExperienceRep.save(w);
-		return "";
+		return "success";
 
 	}
 //--------------------------------------------------------
