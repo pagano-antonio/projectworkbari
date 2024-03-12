@@ -1,5 +1,8 @@
 package com.ctr;
 
+import java.math.BigInteger;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import com.dao.CanditateRepository;
 import com.model.Candidate;
 
@@ -23,6 +25,8 @@ public class CandidateCtr {
 		return"homePage";
 	}
 	
+// --------------------------------------------------------------------------------------- ADD
+	
 	@GetMapping("/preAddCandidate")
 	public String preAdd() {
 		return"addCandidate";//creare una jsp di preaggiunta
@@ -35,6 +39,8 @@ public class CandidateCtr {
 		
 		return"success";//creare una jsp di aggiunta candidate
 	}
+
+// --------------------------------------------------------------------------------------- FIND by ID
 	
 	@GetMapping("/prefindByIdCandidate")
 	public String prefindById() {
@@ -51,6 +57,8 @@ public class CandidateCtr {
 		return "";//creare e collegare una jsp di successo ricerca
 	}
 	
+// --------------------------------------------------------------------------------------- UPDATE
+	
 	@PostMapping("/putCandidate")
 	public String put(Candidate candidate, Model model) {
 		
@@ -59,6 +67,7 @@ public class CandidateCtr {
 		return "";//creare e collegare una jsp di successo aggiorna
 	}
 	
+// --------------------------------------------------------------------------------------- DELETE
 	@GetMapping("/deleteCandidate")
 	public String delete(Integer idCandidate, Model model) {
 		
@@ -66,5 +75,20 @@ public class CandidateCtr {
 		
 		return "";//creare e collegare una jsp di successo elimina
 	}
-
+	
+// --------------------------------------------------------------------------------------- FIND BY PHONE
+	
+	@GetMapping("/prefindByPhone")
+	public String prefindByPhone() {
+		return"findByPhone";//creare una jsp di ricerca per idCandidate
+	}
+	
+	@GetMapping("/findByPhone")
+	public String findByPhone(Model model, BigInteger phone) {
+		
+		List <Candidate> phoneList = (List <Candidate>) candidateRep.findByPhone(phone);
+		model.addAttribute("Candidate", phoneList);
+		
+		return "resCandidate";
+	}
 }
