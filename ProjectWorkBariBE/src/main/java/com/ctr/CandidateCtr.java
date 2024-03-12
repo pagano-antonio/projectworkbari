@@ -80,7 +80,7 @@ public class CandidateCtr {
 	
 	@GetMapping("/prefindByPhone")
 	public String prefindByPhone() {
-		return"findByPhone";//creare una jsp di ricerca per idCandidate
+		return"findByPhone";
 	}
 	
 	@GetMapping("/findByPhone")
@@ -92,9 +92,11 @@ public class CandidateCtr {
 		return "resCandidate";
 	}
 	
+// --------------------------------------------------------------------------------------- FIND BY SURNAME	
+	
 	@GetMapping("/prefindBySurname")
 	public String prefindBySurname() {
-		return"findBySurname";//creare e collegare jsp di ricerca per surname
+		return"findBySurname";
 	}
 	
 	@PostMapping("/findBySurname")
@@ -103,12 +105,14 @@ public class CandidateCtr {
 		List<Candidate> listSurname=(List<Candidate>)candidateRep.findBySurname(surname);
 		model.addAttribute("surnameFound", listSurname);
 		
-		return"resCandidate";//creare e collegare jsp
+		return"resCandidate";
 	}
+	
+// --------------------------------------------------------------------------------------- FIND BY CITY
 	
 	@GetMapping("/prefindByCity")
 	public String prefindByCity() {
-		return"findByCity";//creare e collegare jsp di ricerca per city
+		return"findByCity";
 	}
 	
 	@PostMapping("/findByCity")
@@ -117,8 +121,38 @@ public class CandidateCtr {
 		List<Candidate> listCities=(List<Candidate>)candidateRep.findByCity(city);
 		model.addAttribute("citiesFound", listCities);
 		
-		return"resCandidate";//creare e collegare jsp
+		return"resCandidate";
 	}
 
+// --------------------------------------------------------------------------------------- FIND BY SKILL
+	
+	@GetMapping("/prefindBySkill")
+	public String prefindBySkill() {
+		return"findBySkill";
+	}
+	
+	@PostMapping("/findBySkill")
+	public String findBySkill(Model model, String title) {
+		
+		List<Candidate> skillList = (List<Candidate>) candidateRep.findByCandidateSkills_Skill_Title(title);
+		model.addAttribute("skill", skillList);
+		
+		return"resCandidate";
+	}
 
+// ----------------------------------------------------------------------------- FIND BY ID EDUCATION TYPE
+	
+	@GetMapping("/prefindByIdEducationDegreeType")
+	public String prefindByIdEducationDegreeType() {
+		return"findByIdEducationDegreeType";
+	}
+	
+	@PostMapping("/findByIdEducationDegreeType")
+	public String findByIdEducationDegreeType(Model model, Integer idEducationType) {
+		
+		List<Candidate> degreeTypeList = (List<Candidate>) candidateRep.findByEducations_EducationDegreeType_IdEducationDegreeType(idEducationType);
+		model.addAttribute("degreeType", degreeTypeList);
+		
+		return"resCandidate";
+	}
 }
