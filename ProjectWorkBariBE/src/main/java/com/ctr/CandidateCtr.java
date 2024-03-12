@@ -1,5 +1,7 @@
 package com.ctr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,6 +67,34 @@ public class CandidateCtr {
 		candidateRep.deleteById(idCandidate);
 		
 		return "";//creare e collegare una jsp di successo elimina
+	}
+	
+	@GetMapping("/prefindBySurname")
+	public String prefindBySurname() {
+		return"findBySurname";//creare e collegare jsp di ricerca per surname
+	}
+	
+	@PostMapping("/findBySurname")
+	public String findBySurname(Model model, String surname) {
+		
+		List<Candidate> listSurname=(List<Candidate>)candidateRep.findBySurname(surname);
+		model.addAttribute("surnameFound", listSurname);
+		
+		return"resCandidate";//creare e collegare jsp
+	}
+	
+	@GetMapping("/prefindByCity")
+	public String prefindByCity() {
+		return"findByCity";//creare e collegare jsp di ricerca per city
+	}
+	
+	@PostMapping("/findByCity")
+	public String findByCity(Model model, String city) {
+		
+		List<Candidate> listCities=(List<Candidate>)candidateRep.findByCity(city);
+		model.addAttribute("citiesFound", listCities);
+		
+		return"resCandidate";//creare e collegare jsp
 	}
 
 }
