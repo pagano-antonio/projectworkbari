@@ -1,5 +1,6 @@
 package com.ctr;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,8 @@ public class CandidateCtr {
 		return "homePage";
 	}
 
+// --------------------------------------------------------------------------------------- ADD
+
 	@GetMapping("/preAddCandidate")
 	public String preAdd() {
 		return "addCandidate";// creare una jsp di preaggiunta
@@ -36,6 +39,8 @@ public class CandidateCtr {
 
 		return "success";// creare una jsp di aggiunta candidate
 	}
+
+// --------------------------------------------------------------------------------------- FIND by ID
 
 	@GetMapping("/prefindByIdCandidate")
 	public String prefindById() {
@@ -52,6 +57,8 @@ public class CandidateCtr {
 		return "resCandidate";// creare e collegare una jsp di successo ricerca
 	}
 
+// --------------------------------------------------------------------------------------- UPDATE
+
 	@PostMapping("/putCandidate")
 	public String put(Candidate candidate, Model model) {
 
@@ -60,6 +67,8 @@ public class CandidateCtr {
 		return "";// creare e collegare una jsp di successo aggiorna
 	}
 
+// --------------------------------------------------------------------------------------- DELETE
+
 	@GetMapping("/deleteCandidate")
 	public String delete(Integer idCandidate, Model model) {
 
@@ -67,6 +76,24 @@ public class CandidateCtr {
 
 		return "";// creare e collegare una jsp di successo elimina
 	}
+
+// --------------------------------------------------------------------------------------- FIND BY PHONE
+
+	@GetMapping("/prefindByPhone")
+	public String prefindByPhone() {
+		return "findByPhone";// creare una jsp di ricerca per idCandidate
+	}
+
+	@GetMapping("/findByPhone")
+	public String findByPhone(Model model, BigInteger phone) {
+
+		List<Candidate> phoneList = (List<Candidate>) candidateRep.findByPhone(phone);
+		model.addAttribute("Candidate", phoneList);
+
+		return "resCandidate";
+	}
+
+// --------------------------------------------------------------------------------------- FIND BY SURNAME
 
 	@GetMapping("/prefindBySurname")
 	public String prefindBySurname() {
@@ -82,6 +109,8 @@ public class CandidateCtr {
 		return "resCandidate";// creare e collegare jsp
 	}
 
+// ---------------------------------------------------------------------------------------- FIND BY CITY
+
 	@GetMapping("/prefindByCity")
 	public String prefindByCity() {
 		return "findByCity";// creare e collegare jsp di ricerca per city
@@ -96,7 +125,7 @@ public class CandidateCtr {
 		return "resCandidate";// creare e collegare jsp
 	}
 
-	// --------------------------------------------------------------------------
+	// -------------------------------------------------------------------------
 	// FIND BY COMPANY
 
 	@GetMapping("/prefindByWorkExperiences_Company")
@@ -113,8 +142,8 @@ public class CandidateCtr {
 		return "resCandidate";// creare e collegare jsp
 	}
 
-	// --------------------------------------------------------------------------
-	// FIND BY ID STATE JOB INTERVIEW
+	// ---------------------------------------------------------------------- FIND
+	// BY ID STATE JOB INTERVIEW
 
 	@GetMapping("/prefindByJobInterviews_StateJobInterview_IdStateJobInterview")
 	public String prefindByJobInterviews_StateJobInterview_IdStateJobInterview() {
@@ -132,8 +161,8 @@ public class CandidateCtr {
 		return "resCandidate";// creare e collegare jsp
 	}
 
-	// --------------------------------------------------------------------------
-	// FIND BY OUTCOMES
+	// -------------------------------------------------------------------- FIND BY
+	// OUTCOMES
 
 	@GetMapping("/prefindByJobInterviews_Outcome")
 	public String prefindByJobInterviews_Outcome() {
