@@ -1,9 +1,6 @@
 package com.ctr;
 
-<<<<<<< HEAD
 import java.math.BigInteger;
-=======
->>>>>>> eff871306ec694f245d0a96d72c70116c866c54b
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,7 +76,6 @@ public class CandidateCtr {
 		return "";//creare e collegare una jsp di successo elimina
 	}
 	
-<<<<<<< HEAD
 // --------------------------------------------------------------------------------------- FIND BY PHONE
 	
 	@GetMapping("/prefindByPhone")
@@ -95,7 +91,7 @@ public class CandidateCtr {
 		
 		return "resCandidate";
 	}
-=======
+	
 	@GetMapping("/prefindBySurname")
 	public String prefindBySurname() {
 		return"findBySurname";//creare e collegare jsp di ricerca per surname
@@ -124,5 +120,5 @@ public class CandidateCtr {
 		return"resCandidate";//creare e collegare jsp
 	}
 
->>>>>>> eff871306ec694f245d0a96d72c70116c866c54b
+
 }
