@@ -16,6 +16,6 @@ public interface CanditateRepository extends JpaRepository<Candidate, Integer> {
 	List<Candidate> findByPhone(BigInteger phone);
 	List<Candidate> findByCandidateSkills_Skill_Description(String description);
 	List<Candidate> findByEducations_EducationDegreeType_IdEducationDegreeType(Integer idEducationType);
-	List<Candidate> findByJobInterviews_StateJobInterview_Title(String title);
+	List<Candidate> findByJobInterviews_StateJobInterview_IdStateJobInterview(Integer idStateJobInterview);
 	List<Candidate> findByJobInterviews_Outcome(Integer outcome);
 }
