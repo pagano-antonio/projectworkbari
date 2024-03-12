@@ -7,7 +7,7 @@
 <title>Add Candidate Commercial Data</title>
 </head>
 <body>
-<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/addCandidateCommercialData">
+<form method ="post" action="${pageContext.request.contextPath}/CandidateCommercialData/addCandidateCommercialData">
         <h3>Insert Candidate Commercial Data:</h3>
         <input class="dati" type="number" id="currentRal" name="currentRal" placeholder="Add current Ral"> <br>
         <input class="dati" type="number" id="monthRefund" name="monthRefund" placeholder="Add month Refund"> <br>

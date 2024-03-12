@@ -7,7 +7,7 @@
 <title>Add Candidate Skill</title>
 </head>
 <body>
-<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/addCandidateSkill">
+<form method ="post" action="${pageContext.request.contextPath}/CandidateSkill/addCandidateSkill">
         <h3>Insert Candidate Personal Skill:</h3>
         <input class="dati" type="number" id="candidate.idCandidate" name="Candidate.idCandidate" placeholder="Add idCandidate"> <br>
         <input class="dati" type="number" id="skill.idSkill" name="Skill.idSkill" placeholder="Add idSkill"> <br>
