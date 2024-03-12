@@ -46,7 +46,7 @@ public class JobOfferSkillCtr {
 
 	@GetMapping("/prefindByIdJobOfferSkill")
 	public String prefindByIdJobOfferSkill() {
-		return "";// creare una jsp di ricerca per id candidato
+		return "findByIdJobOfferSkill";// creare una jsp di ricerca per id candidato
 	}
 
 	@GetMapping("/findByIdJobOfferSkill")
