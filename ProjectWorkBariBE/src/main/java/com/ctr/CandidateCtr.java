@@ -44,7 +44,7 @@ public class CandidateCtr {
 	
 	@GetMapping("/prefindByIdCandidate")
 	public String prefindById() {
-		return"findByIdCandidate";//creare una jsp di ricerca per idCandidate
+		return"findByIdCandidate";
 	}
 	
 	@GetMapping("/findByIdCandidate")
@@ -96,7 +96,7 @@ public class CandidateCtr {
 	
 	@GetMapping("/prefindBySurname")
 	public String prefindBySurname() {
-		return"findBySurname";//creare e collegare jsp di ricerca per surname
+		return"findBySurname";
 	}
 	
 	@PostMapping("/findBySurname")
@@ -112,7 +112,7 @@ public class CandidateCtr {
 	
 	@GetMapping("/prefindByCity")
 	public String prefindByCity() {
-		return"findByCity";//creare e collegare jsp di ricerca per city
+		return"findByCity";
 	}
 	
 	@PostMapping("/findByCity")
