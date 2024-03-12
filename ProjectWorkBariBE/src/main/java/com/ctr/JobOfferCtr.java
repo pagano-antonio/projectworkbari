@@ -1,7 +1,11 @@
 package com.ctr;
 
+<<<<<<< HEAD
 import java.sql.Date;
 import java.util.List;
+=======
+import java.util.ArrayList;
+>>>>>>> 493777cd7c47431e303be480f45930eb52c25ecd
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -83,6 +87,7 @@ public class JobOfferCtr {
 		return "";// creare e collegare una jsp di successo elimina
 	}
 
+<<<<<<< HEAD
 
 
 
@@ -158,4 +163,22 @@ public String preFindByIdCompanyClient(Model model,String title) {
 
 
 
+=======
+//-------------------------------------------------------------------------------
+	@GetMapping("/prefindByMinRalAfterAndMaxRalBefore")
+	public String prefindByMinRalAfterAndMaxRalBefore() {
+		return "findByMinRalAfterAndMaxRalBefore";
+	}
+
+	@GetMapping("/findByMinRalAfterAndMaxRalBefore")
+	public String findByMinRalAfterAndMaxRalBefore(Model model, Integer minRal, Integer maxRal) {
+
+		ArrayList<JobOffer> ralList = (ArrayList<JobOffer>) jobOfferRep.findByMinRalAfterAndMaxRalBefore(minRal, maxRal);
+		model.addAttribute("ralList", ralList);
+		model.addAttribute("minRal", minRal);
+		model.addAttribute("maxRal", maxRal);
+		
+	    return "resJobOffer";
+	}
+>>>>>>> 493777cd7c47431e303be480f45930eb52c25ecd
 }

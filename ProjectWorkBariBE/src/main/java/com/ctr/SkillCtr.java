@@ -39,7 +39,7 @@ public class SkillCtr {
 //-----------------------------------------------------------
 	@GetMapping("/prefindByIdSkill")
 	public String prefindById() {
-		return"";
+		return "findByIdSkill";
 	}
 	
 	@GetMapping("/findByIdSkill")
@@ -49,7 +49,7 @@ public class SkillCtr {
 		skill =skillRep.findById(idSkill).get();
 		model.addAttribute("Skill", skill);
 		
-		return "";
+		return "success";
 	}
 	
 //--------------------------------------------------------------
