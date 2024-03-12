@@ -29,7 +29,7 @@ public class CompanyClientCtr {
 	 @GetMapping("/preAddCompanyClient")
 	    public String preAdd (Model model) {
 
-	        return "";//aggiungi jsp
+	        return "addCompanyClient";//aggiungi jsp
 
 	    }
 
@@ -39,7 +39,7 @@ public class CompanyClientCtr {
 
 	        companyClientRep.save(c);
 
-	          return "";//aggiungi jsp
+	          return "success";//aggiungi jsp
 
 	    }
 	 

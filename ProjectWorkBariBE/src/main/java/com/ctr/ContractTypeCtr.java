@@ -28,7 +28,7 @@ public class ContractTypeCtr {
 	 @GetMapping("/preAddContractType")
 	    public String preAdd (Model model) {
 
-	        return "";//aggiungi jsp
+	        return "addContractType";//aggiungi jsp
 
 	    }
 
@@ -38,7 +38,7 @@ public class ContractTypeCtr {
 
 	        contractTypeRep.save(c);
 
-	          return "";//aggiungi jsp
+	          return "success";//aggiungi jsp
 
 	    }
 	 
