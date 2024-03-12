@@ -92,11 +92,7 @@ public class CandidateCtr {
 		return "resCandidate";
 	}
 	
-<<<<<<< HEAD
 // --------------------------------------------------------------------------------------- FIND BY SURNAME	
-=======
-// --------------------------------------------------------------------------------------- FIND BY SURNAME
->>>>>>> 493777cd7c47431e303be480f45930eb52c25ecd
 	
 	@GetMapping("/prefindBySurname")
 	public String prefindBySurname() {
@@ -112,11 +108,7 @@ public class CandidateCtr {
 		return"resCandidate";
 	}
 	
-<<<<<<< HEAD
 // --------------------------------------------------------------------------------------- FIND BY CITY
-=======
-// ---------------------------------------------------------------------------------------- FIND BY CITY
->>>>>>> 493777cd7c47431e303be480f45930eb52c25ecd
 	
 	@GetMapping("/prefindByCity")
 	public String prefindByCity() {
