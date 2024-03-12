@@ -40,7 +40,7 @@ public class CandidateCtr {
 	
 	@GetMapping("/prefindByIdCandidate")
 	public String prefindById() {
-		return"findById";//creare una jsp di ricerca per idCandidate
+		return"findByIdCandidate";//creare una jsp di ricerca per idCandidate
 	}
 	
 	@GetMapping("/findByIdCandidate")
