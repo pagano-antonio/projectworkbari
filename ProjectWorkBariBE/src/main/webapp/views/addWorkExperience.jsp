@@ -9,7 +9,7 @@
 <body>
 <form method ="post" action="${pageContext.request.contextPath}/WorkExperienceCtr/addWorkExperience">
         <h3>Insert Work Experience:</h3>
-        <input class="dati" type="number" id="Candidate.idCandidate" name="Candidate.idCandidate" placeholder="Add idCandidate"> <br>
+        <input class="dati" type="number" id="candidate.idCandidate" name="candidate.idCandidate" placeholder="Add idCandidate"> <br>
         <input class="dati" type="text" id="title" name="title" placeholder="Add title"> <br>
         <input class="dati" type="text" id="description" name="description" placeholder="Add description"> <br>
         <input class="dati" type="date" id="startDate" name="startDate" placeholder="Add startDate"><br>

@@ -1,5 +1,7 @@
 package com.ctr;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.JobOfferRepository;
 import com.model.JobOffer;
+
 
 @Controller
 @RequestMapping("/JobOfferCtr")
@@ -79,4 +82,20 @@ public class JobOfferCtr {
 		return "";// creare e collegare una jsp di successo elimina
 	}
 
+//-------------------------------------------------------------------------------
+	@GetMapping("/prefindByMinRalAfterAndMaxRalBefore")
+	public String prefindByMinRalAfterAndMaxRalBefore() {
+		return "findByMinRalAfterAndMaxRalBefore";
+	}
+
+	@GetMapping("/findByMinRalAfterAndMaxRalBefore")
+	public String findByMinRalAfterAndMaxRalBefore(Model model, Integer minRal, Integer maxRal) {
+
+		ArrayList<JobOffer> ralList = (ArrayList<JobOffer>) jobOfferRep.findByMinRalAfterAndMaxRalBefore(minRal, maxRal);
+		model.addAttribute("ralList", ralList);
+		model.addAttribute("minRal", minRal);
+		model.addAttribute("maxRal", maxRal);
+		
+	    return "resJobOffer";
+	}
 }
