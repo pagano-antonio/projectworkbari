@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import com.dao.CanditateRepository;
 import com.model.Candidate;
 
@@ -156,54 +157,53 @@ public class CandidateCtr {
 		return "resCandidate";
 	}
 
-//-------------------------------------------------------------------------- FIND BY COMPANY
+// ----------------------------------------------------------------------- FIND BY COMPANY
 
 	@GetMapping("/prefindByWorkExperiences_Company")
 	public String prefindByWorkExperiences_Company() {
-		return "findByWorkExperiences_Company";// creare e collegare jsp di ricerca per company (?)
+		return "findByCompany";
 	}
 
-	@PostMapping("/findByWorkExperiences_Company")
+	@PostMapping("/findByCompany")
 	public String findByWorkExperiences_Company(Model model, String company) {
 
 		List<Candidate> listCompanies = (List<Candidate>) candidateRep.findByWorkExperiences_Company(company);
 		model.addAttribute("companiesFound", listCompanies);
 
-		return "resCandidate";// creare e collegare jsp
+		return "resCandidate";
 	}
 
-	// --------------------------------------------------------------------------
-	// FIND BY ID STATE JOB INTERVIEW
+// ---------------------------------------- FIND BY ID STATE JOB INTERVIEW
 
 	@GetMapping("/prefindByJobInterviews_StateJobInterview_IdStateJobInterview")
 	public String prefindByJobInterviews_StateJobInterview_IdStateJobInterview() {
-		return "findByJobInterviews_StateJobInterview_IdStateJobInterview";// creare e collegare jsp di ricerca per id
-																			// state job interview
+		return "findByIdStateJobInterview";
+
 	}
 
-	@PostMapping("/findByJobInterviews_StateJobInterview_IdStateJobInterview")
+	@PostMapping("/findByIdStateJobInterview")
 	public String findByJobInterviews_StateJobInterview_IdStateJobInterview(Model model, Integer idStateJobInterview) {
 
 		List<Candidate> listIdStateJobInterviews = (List<Candidate>) candidateRep
 				.findByJobInterviews_StateJobInterview_IdStateJobInterview(idStateJobInterview);
 		model.addAttribute("stateJobInterviewsFound", listIdStateJobInterviews);
 
-		return "resCandidate";// creare e collegare jsp
+		return "resCandidate";
 	}
-//-------------------------------------------------------------------------- FIND BY OUTCOMES
+// ----------------------------------------------------------------------- FIND BY OUTCOMES
 
 	@GetMapping("/prefindByJobInterviews_Outcome")
 	public String prefindByJobInterviews_Outcome() {
-		return "findByJobInterviews_Outcome";// creare e collegare jsp di ricerca per outcome
+		return "findByOutcome";
 	}
 
-	@PostMapping("/findByJobInterviews_Outcome")
+	@PostMapping("/findByOutcome")
 	public String findByJobInterviews_Outcome(Model model, Integer outcome) {
 
 		List<Candidate> listOutcomes = (List<Candidate>) candidateRep.findByJobInterviews_Outcome(outcome);
 		model.addAttribute("outcomesFound", listOutcomes);
 
-		return "resCandidate";// creare e collegare jsp
+		return "resCandidate";
 	}
 
 }
