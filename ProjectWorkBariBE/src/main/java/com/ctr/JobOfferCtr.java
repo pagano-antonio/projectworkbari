@@ -1,11 +1,11 @@
 package com.ctr;
 
-<<<<<<< HEAD
+
 import java.sql.Date;
 import java.util.List;
-=======
+
 import java.util.ArrayList;
->>>>>>> 493777cd7c47431e303be480f45930eb52c25ecd
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -87,7 +87,7 @@ public class JobOfferCtr {
 		return "";// creare e collegare una jsp di successo elimina
 	}
 
-<<<<<<< HEAD
+
 
 
 
@@ -163,7 +163,7 @@ public String preFindByIdCompanyClient(Model model,String title) {
 
 
 
-=======
+
 //-------------------------------------------------------------------------------
 	@GetMapping("/prefindByMinRalAfterAndMaxRalBefore")
 	public String prefindByMinRalAfterAndMaxRalBefore() {
@@ -180,5 +180,5 @@ public String preFindByIdCompanyClient(Model model,String title) {
 		
 	    return "resJobOffer";
 	}
->>>>>>> 493777cd7c47431e303be480f45930eb52c25ecd
+
 }
