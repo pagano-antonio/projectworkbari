@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.dao.EmployeeRepository;
 import com.model.Employee;
 
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping("/EmployeeCtr")
 public class EmployeeCtr {
@@ -21,6 +23,23 @@ public class EmployeeCtr {
 	 @GetMapping("/homePage")
 		public String homePage() {
 			return"homePage";
+		}
+	 
+//------------------------------------------------------------------------------------------- LOGIN
+	 @GetMapping("/login")
+		public String login() {
+			return"findByLogin";//creare una jsp di ricerca per id employee
+		}
+		
+	 @PostMapping("/findByLogin")
+		public String findByLogin(Model model, String username, String password, HttpSession session) {
+			
+			Employee employee = employeeRep.findByUsernameAndPassword(username, password);
+			session.setAttribute("employee", employee);
+			model.addAttribute("username", username);
+			model.addAttribute("password", password);
+			
+			return "resEmployee";
 		}
 
 //------------------------------------------------------------------------------------------- ADD 
@@ -56,13 +75,17 @@ public class EmployeeCtr {
 		}
 		
 //------------------------------------------------------------------------------------------- UPDATE
+		@GetMapping("/preUpdateEmployee")
+		public String preUpdateEmployee() {
+			return "updateEmployee";
+		}
 		
 		@PostMapping("/putEmployee")
 		public String put(Model model, Employee employee) {
 			
 			employeeRep.save(employee);
 			
-			return "";//creare e collegare una jsp di successo aggiorna
+			return "success";//creare e collegare una jsp di successo aggiorna
 		}
 		
 //-------------------------------------------------------------------------------------------- DELETE
