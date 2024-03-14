@@ -104,10 +104,15 @@ public String preFindByTitle(Model model,String title) {
 @GetMapping("/findByTitle")
  public String findByTitle(Model model,String title){
 	
-	List<JobOffer> listJobOffer= jobOfferRep.findByTitle(title);
+	List<JobOffer> listJobOffer= (List<JobOffer>)jobOfferRep.findByTitle(title);
 	
+<<<<<<< HEAD
 		
 		model.addAttribute("Title", listJobOffer);
+=======
+	    model.addAttribute("listJobOffer", listJobOffer);
+		model.addAttribute("Title", title);
+>>>>>>> b442b49d42fb2cbcf8aff28f3efd82b70c5fe553
 		
 		return "risultati";//da fare
 		
@@ -127,9 +132,9 @@ public String preFindByStartEndDate(Model model,String title) {
 @GetMapping("/findByStartEndDate")
  public String findByStartEndDate(Model model,Date startDate, Date endDate){
 	
-	List<JobOffer> listJobOffer= jobOfferRep.findByStartDateAfterAndEndDateBefore(startDate, endDate);
+	List<JobOffer> listJobOffer= (List<JobOffer>)jobOfferRep.findByStartDateAfterAndEndDateBefore(startDate, endDate);
 	
-		
+	    model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("StartDate", startDate);
 		model.addAttribute("EndDate", endDate);
 		return "risultati";//da fare
@@ -149,9 +154,9 @@ public String preFindByIdCompanyClient(Model model,String title) {
 @GetMapping("/findByIdCompanyClient")
  public String findByIdCompanyClient(Model model,Integer idCompanyClient){
 	
-	List<JobOffer> listJobOffer= jobOfferRep.findByCompanyClient_idCompanyClient(idCompanyClient);
+	List<JobOffer> listJobOffer=(List<JobOffer>)jobOfferRep.findByCompanyClient_idCompanyClient(idCompanyClient);
 	
-		
+	    model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("idCompanyClient",idCompanyClient);
 		
 		return "risultati";//da fare
