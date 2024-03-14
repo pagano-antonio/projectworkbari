@@ -106,13 +106,10 @@ public String preFindByTitle(Model model,String title) {
 	
 	List<JobOffer> listJobOffer= (List<JobOffer>)jobOfferRep.findByTitle(title);
 	
-<<<<<<< HEAD
 		
 		model.addAttribute("Title", listJobOffer);
-=======
 	    model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("Title", title);
->>>>>>> b442b49d42fb2cbcf8aff28f3efd82b70c5fe553
 		
 		return "risultati";//da fare
 		
