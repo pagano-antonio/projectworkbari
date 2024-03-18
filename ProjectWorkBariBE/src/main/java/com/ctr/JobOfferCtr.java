@@ -114,6 +114,8 @@ public String preFindByTitle(Model model,String title) {
 	
 	List<JobOffer> listJobOffer= (List<JobOffer>)jobOfferRep.findByTitle(title);
 	
+		
+		model.addAttribute("Title", listJobOffer);
 	    model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("Title", title);
 		

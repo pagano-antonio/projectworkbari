@@ -59,12 +59,20 @@ public class CandidateCtr {
 
 // --------------------------------------------------------------------------------------- UPDATE
 
+	@GetMapping("/prePutCandidate")
+	public String prePutCandidate(Integer idCandidate, Model model) {
+		Candidate candidate = candidateRep.findById(idCandidate).get();
+		model.addAttribute("Candidate", candidate);
+
+		return "putCandidate";// creare una jsp di preaggiunta
+	}
+
 	@PostMapping("/putCandidate")
 	public String put(Candidate candidate, Model model) {
 
 		candidateRep.save(candidate);
 
-		return "";// creare e collegare una jsp di successo aggiorna
+		return "success";// creare e collegare una jsp di successo aggiorna
 	}
 
 // --------------------------------------------------------------------------------------- DELETE
@@ -73,7 +81,7 @@ public class CandidateCtr {
 
 		candidateRep.deleteById(idCandidate);
 
-		return "";// creare e collegare una jsp di successo elimina
+		return "success";// creare e collegare una jsp di successo elimina
 	}
 
 // --------------------------------------------------------------------------------------- FIND BY PHONE
