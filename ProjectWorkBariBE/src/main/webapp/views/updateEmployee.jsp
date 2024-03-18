@@ -18,6 +18,7 @@
 	<form method ="post" action="${pageContext.request.contextPath}/EmployeeCtr/putEmployee">
 		
 		<input class="" readonly id="idEmployee" name="idEmployee" value="${employee.idEmployee}" placeholder="ID"> <br> 
+		<input class="" type= "hidden" id="employeeType.idEmployeeType" name="employeeType.idEmployeeType" value="${employee.employeeType.idEmployeeType}" placeholder="ID"> <br>
 		<input class="dati" type="text" id="name" name="name" value="${employee.name}" placeholder="Name"> <br>
 		<input class="dati" type="text" id="surname" name="surname" value="${employee.surname}" placeholder="Surname"> <br>  
 		<input class="dati" type="text" id="email" name="email" value="${employee.email}" placeholder="E-mail"><br>

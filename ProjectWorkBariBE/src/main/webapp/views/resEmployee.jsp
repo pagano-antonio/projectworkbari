@@ -39,7 +39,8 @@
 	<tr>
     	<th>Id Employee Type</th>
 		<th>Description</th>
-				
+	</tr>
+	<tr>			
     	<td> ${employee.employeeType.idEmployeeType} </td>
 		<td> ${employee.employeeType.description} </td>
 	</tr>
