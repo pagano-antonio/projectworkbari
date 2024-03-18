@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="com.model.Candidate" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.model.JobOffer" %>
     
 <!DOCTYPE html>
 <html>
@@ -12,55 +14,37 @@
 	<table>
 		<tr>
 			<th>ID JOB OFFER</th>
-			<th>DESCRIPTION JOB OFFER</th>
 			<th>TITLE JOB OFFER</th>
+			<th>DESCRIPTION JOB OFFER</th>
 			<th>START DATE</th>
 			<th>END DATE</th>
 			<th>ID COMPANY CLIENT</th>
 			<th>MIN RAL</th>
 			<th>MAX RAL</th>
 			<th>ID CONTRACT TYPE</th>
+			<th colspan="2">OPERATION</th>
 		</tr>
-	</table>
-
-
-	<table>
-		<tr>
-			<th>ID JOB OFFER SKILL</th>
-			<th>ID JOB OFFER</th>
-			<th>ID SKILL</th>
-		</tr>
-<%
- List <Candidate> res = (Candidate) request.getAttribute("Skill");
-%>
-	</table>
-
-	<table>
-		<tr>
-
-			<th>ID JOB INTERVIEW</th>
-			<th>ID CANDIDATE</th>
-			<th>DATE</th>
-			<th>ID STATE JOB INTERVIEW</th>
-			<th>OUTCOME</th>
-			<th>NOTES</th>
-			<th>ID EMPLOYEE</th>
-
-		</tr>
-	</table>
-
-	<table>
-		<tr>
-
-			<th>ID STATE JOB INTERVIEW</th>
-			<th>TITLE</th>
-			<th>DESCRIPTION</th>
-		</tr>
-<%		List <Candidate> res = (Candidate) %>
-	</table>
-
 	
+ <c:forEach var="res"  items="${listJobOffer}">
+ 
+ <tr>
+ <td>${res.idJobOffer}</td> 
+ <td>${res.title}</td>
+ <td>${res.description}</td>
+ <td>${res.startDate}</td>
+ <td>${res.endDate}</td>
+ <td>${res.companyClient.idCompanyClient}</td>
+ <td>${res.minRal}</td>
+ <td>${res.maxRal}</td>
+ <td>${res.contractType.idContractType}</td>
  
  
+
+
+<td><a href="${pageContext.request.contextPath}/JobOfferCtr/prePutJobOffer?idJobOffer=${res.idJobOffer}"><button>Aggiorna</button></a></td>
+<td><a href="${pageContext.request.contextPath}/JobOfferCtr/deleteJobOffer?idJobOffer=${res.idJobOffer}"><button>Elimina</button></a></td>
+</tr>
+</c:forEach>
+</table>
 </body>
 </html>

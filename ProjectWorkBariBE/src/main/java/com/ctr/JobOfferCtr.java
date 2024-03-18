@@ -64,17 +64,25 @@ public class JobOfferCtr {
 		jobOffer = jobOfferRep.findById(idJobOffer).get();
 		model.addAttribute("JobOffer", jobOffer);
 
-		return "";// creare e collegare una jsp di successo ricerca
+		return "resJobOffer";// creare e collegare una jsp di successo ricerca
 	}
 
 //------------------------------------------------------------------------------------
 
+	@GetMapping("/prePutJobOffer")
+	public String prePutJobOffer(Integer idJobOffer, Model model) {
+		JobOffer jobOffer = new JobOffer();
+		jobOffer = jobOfferRep.findById(idJobOffer).get();
+		model.addAttribute("JobOffer", jobOffer);
+		return "updateJobOffer";
+	}
+	
 	@PostMapping("/putJobOffer")
 	public String put(JobOffer jobOffer, Model model) {
+		
+        jobOfferRep.save(jobOffer);
 
-		jobOfferRep.save(jobOffer);
-
-		return "";// creare e collegare una jsp di successo aggiorna
+		return "success";// creare e collegare una jsp di successo aggiorna
 	}
 
 //------------------------------------------------------------------------------------
@@ -106,6 +114,8 @@ public String preFindByTitle(Model model,String title) {
 	
 	List<JobOffer> listJobOffer= (List<JobOffer>)jobOfferRep.findByTitle(title);
 	
+		
+		model.addAttribute("Title", listJobOffer);
 	    model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("Title", title);
 		
@@ -173,8 +183,8 @@ public String preFindByIdCompanyClient(Model model,String title) {
 	@GetMapping("/findByMinRalAfterAndMaxRalBefore")
 	public String findByMinRalAfterAndMaxRalBefore(Model model, Integer minRal, Integer maxRal) {
 
-		ArrayList<JobOffer> ralList = (ArrayList<JobOffer>) jobOfferRep.findByMinRalAfterAndMaxRalBefore(minRal, maxRal);
-		model.addAttribute("ralList", ralList);
+		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByMinRalAfterAndMaxRalBefore(minRal, maxRal);
+		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("minRal", minRal);
 		model.addAttribute("maxRal", maxRal);
 		
@@ -189,9 +199,9 @@ public String preFindByIdCompanyClient(Model model,String title) {
 	@GetMapping("/findByJobOfferSkills_Skill_Title")
 	public String findByJobOfferSkills_Skill_Title(Model model,String title) {
 
-		ArrayList<JobOffer> titleList = (ArrayList<JobOffer>) jobOfferRep.findByJobOfferSkills_Skill_Title(title);
-		model.addAttribute("titleList", titleList);
-		
+		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByJobOfferSkills_Skill_Title(title);
+		model.addAttribute("listJobOffer", listJobOffer);
+		model.addAttribute("title", title);
 		
 	    return "resJobOffer";
 	}
