@@ -1,5 +1,8 @@
 package com.ctr;
 
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.CompanyClientRepository;
 import com.model.CompanyClient;
+
 
 @Controller
 @RequestMapping("/CompanyClientCtr")
@@ -60,19 +64,30 @@ public class CompanyClientCtr {
 			c=companyClientRep.findById(idCompanyClient).get();
 			model.addAttribute("CompanyClient", c);
 			
-			return "success";//creare e collegare una jsp di successo ricerca
+			return "resCompanyClient";
 		}
 		
 		
     //------------------------------------------------------------------------------------
 		
+		 @GetMapping("/prePutCompanyClient")
+			public String prePutCompanyClient(Integer idCompanyClient,Model model) {
+			 CompanyClient c=new CompanyClient();
+				c=companyClientRep.findById(idCompanyClient).get();
+				model.addAttribute("CompanyClient", c);
+				
+			 return"UpdateCompanyClient";
+			 
+			}
 		
-		@PostMapping("/putCompanyClient")
+		
+		 @PostMapping("/UpdateCompanyClient")
+		  
 		public String put(CompanyClient c, Model model) {
 			
 			companyClientRep.save(c);
 			
-			return "";//creare e collegare una jsp di successo aggiorna
+			return "success";
 		}
 		
 		
@@ -83,12 +98,47 @@ public class CompanyClientCtr {
 			
 			companyClientRep.deleteById(idCompanyClient);
 			
-			return "";//creare e collegare una jsp di successo elimina
+			return "success";//creare e collegare una jsp di successo elimina
 		}
 
+  //------------------------------------------------------------------------------------
 
 
+		@GetMapping("/preFindByCityCompanyClient")
+		public String preFindByCity() {
+			return "findByCityCompanyClient";
+		}
+
+		@GetMapping("/findByCityCompanyClient")
+		public String findByCity(Model model,String city) {
+
+			List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByCity(city);
+			model.addAttribute("companyClientList", companyClientList);
+			model.addAttribute("city", city);
+			
+		    return "resCompanyClient";
+		}
+
+  //------------------------------------------------------------------------------------
 
 
+		@GetMapping("/preFindByNameCompanyClient")
+		public String preFindByName() {
+			return "findByNameCompanyClient";
+		}
+
+		@GetMapping("/findByNameCompanyClient")
+		public String findByName(Model model,String name) {
+
+			List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByName(name);
+			model.addAttribute("companyClientList",companyClientList);
+			model.addAttribute("name", name);
+			
+		    return "resCompanyClient";
+		}
+		
+		
+		
+		
 
 }
