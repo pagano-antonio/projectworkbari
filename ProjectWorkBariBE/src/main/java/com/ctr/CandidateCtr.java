@@ -24,49 +24,49 @@ public class CandidateCtr {
 	public String homePage() {
 		return "homePage";
 	}
-	
+
 // --------------------------------------------------------------------------------------- CHOOSE KEYWORD
-	
+
 	@GetMapping("/chooseFindKeyword")
 	public String chooseFindKeyword(String find) {
 		String resultPage = "";
-		
+
 		switch (find) {
 		case "surname":
 			resultPage = this.prefindBySurname();
 			break;
-		
+
 		case "city":
 			resultPage = this.prefindByCity();
 			break;
-			
+
 		case "phone":
 			resultPage = this.prefindByPhone();
 			break;
-			
+
 		case "skill":
 			resultPage = this.prefindBySkill();
 			break;
-			
+
 		case "educationDegreeType":
 			resultPage = this.prefindByIdEducationDegreeType();
 			break;
-			
+
 		case "jobInterview":
-			resultPage = this.prefindByIdEducationDegreeType();
+			resultPage = this.prefindByJobInterviews_StateJobInterview_IdStateJobInterview();
 			break;
-			
+
 		case "outcome":
 			resultPage = this.prefindByJobInterviews_Outcome();
 			break;
-			
+
 		case "workExperiences":
 			resultPage = this.prefindByWorkExperiences_Company();
 			break;
 		}
 		return resultPage;
 	}
-	
+
 // --------------------------------------------------------------------------------------- ADD
 
 	@GetMapping("/preAddCandidate")
@@ -94,7 +94,7 @@ public class CandidateCtr {
 
 		Candidate candidate = new Candidate();
 		candidate = candidateRep.findById(idCandidate).get();
-		model.addAttribute("Candidate", candidate);
+		model.addAttribute("CandidateList", candidate);
 
 		return "resCandidate";// creare e collegare una jsp di successo ricerca
 	}
@@ -104,7 +104,7 @@ public class CandidateCtr {
 	@GetMapping("/prePutCandidate")
 	public String prePutCandidate(Integer idCandidate, Model model) {
 		Candidate candidate = candidateRep.findById(idCandidate).get();
-		model.addAttribute("Candidate", candidate);
+		model.addAttribute("CandidateList", candidate);
 
 		return "putCandidate";// creare una jsp di preaggiunta
 	}
@@ -137,7 +137,7 @@ public class CandidateCtr {
 	public String findByPhone(Model model, BigInteger phone) {
 
 		List<Candidate> phoneList = (List<Candidate>) candidateRep.findByPhone(phone);
-		model.addAttribute("Candidate", phoneList);
+		model.addAttribute("CandidateList", phoneList);
 
 		return "resCandidate";
 	}
@@ -169,7 +169,7 @@ public class CandidateCtr {
 	public String findByCity(Model model, String city) {
 
 		List<Candidate> citiesList = (List<Candidate>) candidateRep.findByCity(city);
-		model.addAttribute("citiesFound", citiesList);
+		model.addAttribute("CandidateList", citiesList);
 
 		return "resCandidate";
 	}
@@ -185,7 +185,7 @@ public class CandidateCtr {
 	public String findBySkill(Model model, String title) {
 
 		List<Candidate> skillList = (List<Candidate>) candidateRep.findByCandidateSkills_Skill_Title(title);
-		model.addAttribute("skill", skillList);
+		model.addAttribute("CandidateList", skillList);
 
 		return "resCandidate";
 	}
@@ -198,11 +198,11 @@ public class CandidateCtr {
 	}
 
 	@PostMapping("/findByIdEducationDegreeType")
-	public String findByIdEducationDegreeType(Model model, Integer idEducationType) {
+	public String findByIdEducationDegreeType(Model model, Integer idEducationDegreeType) {
 
 		List<Candidate> degreeTypeList = (List<Candidate>) candidateRep
-				.findByEducations_EducationDegreeType_IdEducationDegreeType(idEducationType);
-		model.addAttribute("degreeType", degreeTypeList);
+				.findByEducations_EducationDegreeType_IdEducationDegreeType(idEducationDegreeType);
+		model.addAttribute("CandidateList", degreeTypeList);
 
 		return "resCandidate";
 	}
@@ -218,7 +218,7 @@ public class CandidateCtr {
 	public String findByWorkExperiences_Company(Model model, String company) {
 
 		List<Candidate> listCompanies = (List<Candidate>) candidateRep.findByWorkExperiences_Company(company);
-		model.addAttribute("companiesFound", listCompanies);
+		model.addAttribute("CandidateList", listCompanies);
 
 		return "resCandidate";
 	}
@@ -236,7 +236,7 @@ public class CandidateCtr {
 
 		List<Candidate> listIdStateJobInterviews = (List<Candidate>) candidateRep
 				.findByJobInterviews_StateJobInterview_IdStateJobInterview(idStateJobInterview);
-		model.addAttribute("stateJobInterviewsFound", listIdStateJobInterviews);
+		model.addAttribute("CandidateList", listIdStateJobInterviews);
 
 		return "resCandidate";
 	}
@@ -251,7 +251,7 @@ public class CandidateCtr {
 	public String findByJobInterviews_Outcome(Model model, Integer outcome) {
 
 		List<Candidate> listOutcomes = (List<Candidate>) candidateRep.findByJobInterviews_Outcome(outcome);
-		model.addAttribute("outcomesFound", listOutcomes);
+		model.addAttribute("CandidateList", listOutcomes);
 
 		return "resCandidate";
 	}

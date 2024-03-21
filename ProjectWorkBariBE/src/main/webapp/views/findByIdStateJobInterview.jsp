@@ -11,7 +11,7 @@
 <h3> Insert Id State Job Interview to find:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findByIdStateJobInterview">
 		
-		<input class="text" type="text" id="jobInterviews.stateJobInterview.idStateJobInterview" name="jobInterviews.stateJobInterview.idStateJobInterview" placeholder="Insert Id State Job Interview"> <br> 
+		<input class="text" type="text" id="idStateJobInterview" name="idStateJobInterview" placeholder="Insert Id State Job Interview"> <br> 
 		
 		<input class="submit" type="submit" value="Search">
 	</form>

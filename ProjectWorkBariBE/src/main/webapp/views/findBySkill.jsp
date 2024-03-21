@@ -11,7 +11,7 @@
 <h3> Insert Skill Title:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findBySkill">
 		
-		<input class="text" type="text" id="candidateSkills.skill.title" name="candidateSkills.skill.title" placeholder="Insert Skill"> <br> 
+		<input class="text" type="text" id="title" name="title" placeholder="Insert Skill"> <br> 
 		
 		<input class="submit" type="submit" value="Search">
 	</form>

@@ -11,7 +11,7 @@
 <h3> Insert a Degree Type Id:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findByIdEducationDegreeType">
 		
-		<input class="number" type="number" id="educations.educationDegreeType.idEducationDegreeType" name="educations.educationDegreeType.idEducationDegreeType" placeholder="Insert Degree Type Id"> <br> 
+		<input class="number" type="number" id="idEducationDegreeType" name="idEducationDegreeType" placeholder="Insert Degree Type Id"> <br> 
 		
 		<input class="submit" type="submit" value="Search">
 	</form>
