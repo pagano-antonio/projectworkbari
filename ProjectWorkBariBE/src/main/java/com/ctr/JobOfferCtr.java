@@ -146,11 +146,11 @@ public String preFindByTitle() {
 	List<JobOffer> listJobOffer= (List<JobOffer>)jobOfferRep.findByTitle(title);
 	
 		
-		model.addAttribute("Title", listJobOffer);
+		
 	    model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("Title", title);
 		
-		return "risultati";//da fare	
+		return "resJobOffer";	
 	}
 
 
@@ -171,7 +171,7 @@ public String preFindByStartEndDate() {
 	    model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("StartDate", startDate);
 		model.addAttribute("EndDate", endDate);
-		return "risultati";//da fare
+		return "resJobOffer";
 		
 		
 	}
@@ -193,15 +193,15 @@ public String preFindByIdCompanyClient() {
 	    model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("idCompanyClient",idCompanyClient);
 		
-		return "risultati";//da fare
+		return "resJobOffer";
 		
 	}
 
 
 //-------------------------------------------------------------------------------
-	@GetMapping("/prefindByMinRalAfterAndMaxRalBefore")
+	@GetMapping("/prefindByRal")
 	public String prefindByMinRalAfterAndMaxRalBefore() {
-		return "findByMinRalAfterAndMaxRalBefore";
+		return "findByRal";
 	}
 
 	@GetMapping("/findByMinRalAfterAndMaxRalBefore")

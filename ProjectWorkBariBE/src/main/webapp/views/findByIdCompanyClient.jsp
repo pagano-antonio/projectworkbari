@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form method ="get"action="${pageContext.request.contextPath}/CompanyClientCtr/findByIdCompanyClient">
+<form method ="get"action="${pageContext.request.contextPath}/JobOfferCtr/findByIdCompanyClient">
 
 
 <h3>Insert ID Company Client to find Job Offer:</h3>
@@ -18,6 +18,6 @@
 
 
 
-
+</form>
 </body>
 </html>
