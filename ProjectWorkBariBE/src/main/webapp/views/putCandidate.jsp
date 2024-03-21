@@ -18,7 +18,7 @@
 <body>
 
 
-<% Candidate c = (Candidate)request.getAttribute("Candidate"); %>
+<% Candidate c = (Candidate)request.getAttribute("CandidateList"); %>
 	<form method ="post"action="${pageContext.request.contextPath}/CandidateCtr/putCandidate" >
 	
 
