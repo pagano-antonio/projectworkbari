@@ -9,7 +9,7 @@
 <body>
 
 <h3> Insert Company to find:</h3>
-	<form method ="get" action="${pageContext.request.contextPath}/CandidateCtr/findByCompany">
+	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findByCompany">
 		
 		<input class="text" type="text" id="workExperiences.company" name="workExperiences.company" placeholder="Insert Company"> <br> 
 		

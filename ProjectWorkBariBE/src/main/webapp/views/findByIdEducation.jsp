@@ -7,12 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method ="get"action="${pageContext.request.contextPath}/EducationCtr/findByIdEducation">
+<form method ="post"action="${pageContext.request.contextPath}/EducationCtr/findByIdEducation">
 
 
 <h3>Insert ID Education to find :</h3>
 <input type="number" id="idEducation" name="idEducation" placeholder="ID Education:"> <br>
 <input type="submit" value="Invio">
-
+</form>
 </body>
 </html>

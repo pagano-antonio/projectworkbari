@@ -9,7 +9,7 @@
 <body>
 
 <h3> Insert a Degree Type Id:</h3>
-	<form method ="get" action="${pageContext.request.contextPath}/CandidateCtr/findByIdEducationDegreeType">
+	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findByIdEducationDegreeType">
 		
 		<input class="number" type="number" id="educations.educationDegreeType.idEducationDegreeType" name="educations.educationDegreeType.idEducationDegreeType" placeholder="Insert Degree Type Id"> <br> 
 		

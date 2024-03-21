@@ -9,7 +9,7 @@
 <body>
 
 <h3> Insert Outcome to find:</h3>
-	<form method ="get" action="${pageContext.request.contextPath}/CandidateCtr/findByOutcome">
+	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findByOutcome">
 		
 		<input class="text" type="text" id="jobInterviews.outcome" name="jobInterviews.outcome" placeholder="Insert Outcome"> <br> 
 		

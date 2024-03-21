@@ -9,7 +9,7 @@
 <body>
 
 <h3>Insert a valid City:</h3>
-	<form method ="get" action="${pageContext.request.contextPath}/CandidateCtr/findByCity">
+	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findByCity">
 		
 		<input class="text" type="text" id="city" name="city" placeholder="Insert City"> <br> 
 		

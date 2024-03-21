@@ -53,7 +53,7 @@ public class EducationCtr {
 			return"findByIdEducation ";//creare una jsp di ricerca per id 
 		}
 		
-		@GetMapping("/findByIdEducation")
+		@PostMapping("/findByIdEducation")
 		public String findById(Model model, Integer idEducation) {
 			
 			Education e=new Education();

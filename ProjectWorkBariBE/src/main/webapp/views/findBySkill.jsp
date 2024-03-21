@@ -9,7 +9,7 @@
 <body>
 
 <h3> Insert Skill Title:</h3>
-	<form method ="get" action="${pageContext.request.contextPath}/CandidateCtr/findBySkill">
+	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findBySkill">
 		
 		<input class="text" type="text" id="candidateSkills.skill.title" name="candidateSkills.skill.title" placeholder="Insert Skill"> <br> 
 		

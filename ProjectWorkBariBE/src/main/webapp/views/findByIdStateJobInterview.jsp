@@ -9,7 +9,7 @@
 <body>
 
 <h3> Insert Id State Job Interview to find:</h3>
-	<form method ="get" action="${pageContext.request.contextPath}/CandidateCtr/findByIdStateJobInterview">
+	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findByIdStateJobInterview">
 		
 		<input class="text" type="text" id="jobInterviews.stateJobInterview.idStateJobInterview" name="jobInterviews.stateJobInterview.idStateJobInterview" placeholder="Insert Id State Job Interview"> <br> 
 		
