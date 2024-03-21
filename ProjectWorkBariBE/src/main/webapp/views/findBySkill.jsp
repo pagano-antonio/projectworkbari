@@ -15,6 +15,6 @@
 		
 		<input class="submit" type="submit" value="Search">
 	</form>
-
+<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td> <br>
 </body>
 </html>

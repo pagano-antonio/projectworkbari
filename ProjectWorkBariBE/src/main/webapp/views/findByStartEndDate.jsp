@@ -16,11 +16,12 @@
 
 <input type="date" id="startDate" name="startDate" placeholder="Start Date:"> <br>
 <input type="date" id="endDate" name="endDate" placeholder="End Date:"> <br>
-<input type="submit" value="Invio">
+<input type="submit" value="Search">
 
 
 
 
-
+</form>
+<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td> <br>
 </body>
 </html>

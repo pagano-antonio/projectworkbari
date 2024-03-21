@@ -12,8 +12,9 @@
 <input type="number" id="minRal" name="minRal" placeholder="Insert min ral"><br>
 <input type="number" id="maxRal" name="maxRal" placeholder="Insert max ral"><br>
 
-<input type="submit" value="Submit">
-</form>
+<input type="submit" value="Search">
 
+</form>
+<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td> <br>
 </body>
 </html>
