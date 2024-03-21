@@ -11,7 +11,7 @@
 <h3> Insert Company to find:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findByCompany">
 		
-		<input class="text" type="text" id="workExperiences.company" name="workExperiences.company" placeholder="Insert Company"> <br> 
+		<input class="text" type="text" id="company" name="company" placeholder="Insert Company"> <br> 
 		
 		<input class="submit" type="submit" value="Search">
 	</form>
