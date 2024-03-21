@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.dao.JobOfferRepository;
 import com.model.JobOffer;
 
-@RestController
+@RestController //sempre request arrivano e il response sarà in json(non si vede sul browser).
+//servizi rest(get,post,put,delete) trasferiscono lo stato(il valore delle proprietà in quell'istante)di un oggetto sotto forma di json.
 @RequestMapping("JobOffer")
 public class JobOfferRest {
 

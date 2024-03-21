@@ -18,7 +18,7 @@ import com.dao.JobOfferRepository;
 import com.model.JobOffer;
 
 
-@Controller
+@Controller //questa classe gestisce request e dovrà fornire response(jsp,html).
 @RequestMapping("/JobOfferCtr")
 public class JobOfferCtr {
 
