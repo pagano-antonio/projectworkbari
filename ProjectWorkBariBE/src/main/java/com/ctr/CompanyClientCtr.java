@@ -27,6 +27,24 @@ public class CompanyClientCtr {
 	      return "homePage";
 
 	        }
+	 
+// --------------------------------------------------------------------------------------- CHOOSE KEYWORD
+		
+	@GetMapping("/chooseFindKeyword")
+	public String chooseFindKeyword(String find) {
+		String resultPage = "";
+		
+		switch (find) {
+		case "name":
+			resultPage = this.preFindByName();
+			break;
+		
+		case "city":
+			resultPage = this.preFindByCity();
+			break;	
+		}
+		return resultPage;
+	}
 
 	//------------------------------------------------------------------------------------
 
@@ -52,43 +70,42 @@ public class CompanyClientCtr {
 	//------------------------------------------------------------------------------------
 	
 	 
-	 @GetMapping("/prefindByIdCompanyClient")
-		public String prefindById() {
-			return"findByIdCompanyClient ";//creare una jsp di ricerca per id 
-		}
+	@GetMapping("/prefindByIdCompanyClient")
+	public String prefindById() {
+		return"findByIdCompanyClient ";//creare una jsp di ricerca per id 
+	}
 		
-		@GetMapping("/findByIdCompanyClient")
-		public String findById(Model model, Integer idCompanyClient) {
+	@GetMapping("/findByIdCompanyClient")
+	public String findById(Model model, Integer idCompanyClient) {
 			
 			CompanyClient c=new CompanyClient();
 			c=companyClientRep.findById(idCompanyClient).get();
 			model.addAttribute("CompanyClient", c);
 			
 			return "resCompanyClient";
+	}
+		
+		
+ //------------------------------------------------------------------------------------
+		
+	 @GetMapping("/prePutCompanyClient")
+		public String prePutCompanyClient(Integer idCompanyClient,Model model) {
+		 CompanyClient c=new CompanyClient();
+			c=companyClientRep.findById(idCompanyClient).get();
+			model.addAttribute("CompanyClient", c);
+			
+		 return"UpdateCompanyClient";
+		 
 		}
 		
 		
-    //------------------------------------------------------------------------------------
-		
-		 @GetMapping("/prePutCompanyClient")
-			public String prePutCompanyClient(Integer idCompanyClient,Model model) {
-			 CompanyClient c=new CompanyClient();
-				c=companyClientRep.findById(idCompanyClient).get();
-				model.addAttribute("CompanyClient", c);
-				
-			 return"UpdateCompanyClient";
-			 
-			}
-		
-		
-		 @PostMapping("/UpdateCompanyClient")
-		  
-		public String put(CompanyClient c, Model model) {
+	@PostMapping("/UpdateCompanyClient")
+	public String put(CompanyClient c, Model model) {
 			
 			companyClientRep.save(c);
 			
 			return "success";
-		}
+	}
 		
 		
    //------------------------------------------------------------------------------------
@@ -136,9 +153,5 @@ public class CompanyClientCtr {
 			
 		    return "resCompanyClient";
 		}
-		
-		
-		
-		
 
 }

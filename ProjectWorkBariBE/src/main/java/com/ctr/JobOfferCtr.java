@@ -32,6 +32,40 @@ public class JobOfferCtr {
 		return "homePage";
 
 	}
+	
+// --------------------------------------------------------------------------------------- CHOOSE KEYWORD
+	
+	@GetMapping("/chooseFindKeyword")
+	public String chooseFindKeyword(String find) {
+		String resultPage = "";
+		
+		switch (find) {
+		case "title":
+			resultPage = this.preFindByTitle();
+			break;
+		
+		case "date":
+			resultPage = this.preFindByStartEndDate();
+			break;
+			
+		case "companyClient":
+			resultPage = this.preFindByIdCompanyClient();
+			break;
+			
+		case "ral":
+			resultPage = this.prefindByMinRalAfterAndMaxRalBefore();
+			break;
+			
+		case "contractType":
+			resultPage = this.preFindByContractType();
+			break;
+			
+		case "skill":
+			resultPage = this.prefindByJobOfferSkills_Skill_Title();
+			break;
+		}
+		return resultPage;
+	}
 
 //------------------------------------------------------------------------------------
 
@@ -96,14 +130,11 @@ public class JobOfferCtr {
 	}
 
 
-
-
-
 //------------------------------------------------------------------------------------
 
 
 @GetMapping("/preFindByTitle")
-public String preFindByTitle(Model model,String title) {
+public String preFindByTitle() {
 	
 	return "findByTitle";
 
@@ -119,16 +150,14 @@ public String preFindByTitle(Model model,String title) {
 	    model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("Title", title);
 		
-		return "risultati";//da fare
-		
-		
+		return "risultati";//da fare	
 	}
 
 
 //------------------------------------------------------------------------------------
 
 @GetMapping("/preFindByStartEndDate")
-public String preFindByStartEndDate(Model model,String title) {
+public String preFindByStartEndDate() {
 	
 	return "findByStartEndDate";
 
@@ -150,7 +179,7 @@ public String preFindByStartEndDate(Model model,String title) {
 //------------------------------------------------------------------------------------
 
 @GetMapping("/preFindByIdCompanyClient")
-public String preFindByIdCompanyClient(Model model,String title) {
+public String preFindByIdCompanyClient() {
 	
 	return "findByIdCompanyClient";
 
@@ -166,12 +195,7 @@ public String preFindByIdCompanyClient(Model model,String title) {
 		
 		return "risultati";//da fare
 		
-		
 	}
-
-
-
-
 
 
 //-------------------------------------------------------------------------------
@@ -190,14 +214,29 @@ public String preFindByIdCompanyClient(Model model,String title) {
 		
 	    return "resJobOffer";
 	}
+	
+//-------------------------------------------------------------------------------
+	@GetMapping("/preFindByContractType")
+	public String preFindByContractType() {
+		return "findByContractType";	
+	}
+	
+	@PostMapping("/findByContractType")
+	public String findByContractType (Model model, Integer idContractType) {
+		
+		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByContractType_idContractType(idContractType);
+		model.addAttribute("listJobOffer", listJobOffer);
+		return "resJobOffer";
+	}
+	
 //-------------------------------------------------------------------------------
 	@GetMapping("/prefindByJobOfferSkills_Skill_Title")
 	public String prefindByJobOfferSkills_Skill_Title () {
-		return "findByJobOfferSkills_Skill_Title";
+		return "findBySkillTitle";
 	}
 
-	@GetMapping("/findByJobOfferSkills_Skill_Title")
-	public String findByJobOfferSkills_Skill_Title(Model model,String title) {
+	@PostMapping("/findBySkillTitle")
+	public String findByJobOfferSkills_Skill_Title(Model model, String title) {
 
 		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByJobOfferSkills_Skill_Title(title);
 		model.addAttribute("listJobOffer", listJobOffer);

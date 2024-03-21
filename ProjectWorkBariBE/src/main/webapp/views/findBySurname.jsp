@@ -9,7 +9,7 @@
 <body>
 
 <h3>Insert a valid Surname:</h3>
-	<form method ="get" action="${pageContext.request.contextPath}/CandidateCtr/findBySurname">
+	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findBySurname">
 		
 		<input class="text" type="text" id="surname" name="surname" placeholder="Insert Surname"> <br> 
 		

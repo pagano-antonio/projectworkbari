@@ -27,7 +27,7 @@
 	  
        <tr>
 	
-	      <th>ID</th>
+	     <th>ID</th>
 	     <th>NAME</th>
 	     <th>SURNAME</th>
 	     <th>BIRTHDAY</th>
@@ -41,7 +41,7 @@
 	   </tr>
 
 
-  
+ <c:forEach var="Candidate" items="${CandidateList}">
   
 	<tr>
 	
@@ -61,7 +61,7 @@
 
 
   </tr>
-  
+ </c:forEach> 
 	
 	</table>
 </body>

@@ -49,7 +49,7 @@
 
 
 <h3> Return to HOME</h3>
-	<a href="${pageContext.request.contextPath}/EmployeeCtr/home"><button>HOME</button></a> <br>
+	<a href="${pageContext.request.contextPath}/EmployeeCtr/homePage"><button>HOME</button></a> <br>
 
 </body>
 </html>

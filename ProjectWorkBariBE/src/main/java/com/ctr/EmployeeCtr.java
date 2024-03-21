@@ -28,7 +28,7 @@ public class EmployeeCtr {
 //------------------------------------------------------------------------------------------- LOGIN
 	 @GetMapping("/login")
 		public String login() {
-			return"findByLogin";//creare una jsp di ricerca per id employee
+			return"login";//creare una jsp di ricerca per id employee
 		}
 		
 	 @PostMapping("/findByLogin")

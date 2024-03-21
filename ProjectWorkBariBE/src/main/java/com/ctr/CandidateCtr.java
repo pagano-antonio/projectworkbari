@@ -24,7 +24,49 @@ public class CandidateCtr {
 	public String homePage() {
 		return "homePage";
 	}
-
+	
+// --------------------------------------------------------------------------------------- CHOOSE KEYWORD
+	
+	@GetMapping("/chooseFindKeyword")
+	public String chooseFindKeyword(String find) {
+		String resultPage = "";
+		
+		switch (find) {
+		case "surname":
+			resultPage = this.prefindBySurname();
+			break;
+		
+		case "city":
+			resultPage = this.prefindByCity();
+			break;
+			
+		case "phone":
+			resultPage = this.prefindByPhone();
+			break;
+			
+		case "skill":
+			resultPage = this.prefindBySkill();
+			break;
+			
+		case "educationDegreeType":
+			resultPage = this.prefindByIdEducationDegreeType();
+			break;
+			
+		case "jobInterview":
+			resultPage = this.prefindByIdEducationDegreeType();
+			break;
+			
+		case "outcome":
+			resultPage = this.prefindByJobInterviews_Outcome();
+			break;
+			
+		case "workExperiences":
+			resultPage = this.prefindByWorkExperiences_Company();
+			break;
+		}
+		return resultPage;
+	}
+	
 // --------------------------------------------------------------------------------------- ADD
 
 	@GetMapping("/preAddCandidate")
@@ -111,7 +153,7 @@ public class CandidateCtr {
 	public String findBySurname(Model model, String surname) {
 
 		List<Candidate> surnameList = (List<Candidate>) candidateRep.findBySurname(surname);
-		model.addAttribute("surnameFound", surnameList);
+		model.addAttribute("CandidateList", surnameList);
 
 		return "resCandidate";
 	}
