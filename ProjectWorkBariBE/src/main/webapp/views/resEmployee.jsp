@@ -15,9 +15,14 @@ body{
     margin-left: 15px;
     margin-right: auto;
 	background-color: #FFF8EA;
-	background-image:url(https://i.pinimg.com/originals/e1/c8/7f/e1c87f161ebf164dbb6c3c9b0cdcce66.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
+	 text-align: center;
+        vertical-align:middle;
+         display: block;
+        margin-left: 300px;
+        margin-right: 300px;
+	 
 	}
 	
     	.button {
@@ -29,6 +34,9 @@ body{
 	border-radius: 10px;
     margin-bottom: 15px;
     margin-upper: 15px;
+     margin-left: auto;
+     margin-right: auto;
+        
 	 }
 	
 	
@@ -46,6 +54,8 @@ body{
           border:1px solid #ddd;
           border-color: #594545;
           padding:4px 4px;
+        
+          
          } 
 
 
@@ -59,6 +69,7 @@ body{
                 border:1.5px solid #ddd;
                 border-color: #815B5B;     
                 padding:4px;
+              
                
                 }  
             
