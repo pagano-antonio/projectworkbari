@@ -34,6 +34,6 @@
 	<input type="submit" value="Update">
 	
 	</form>
-
+<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td> <br>
 </body>
 </html>
