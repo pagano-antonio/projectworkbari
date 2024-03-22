@@ -10,7 +10,8 @@
 <form action="${pageContext.request.contextPath}/JobOfferCtr/findBySkillTitle" method="POST">
 <h3>Insert title to find: </h3>
 <input type="text" id="title" name="title" placeholder="Insert title"><br>
-<input type="submit" value="Submit">
+<input type="submit" value="Search">
 </form>
+<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td> <br>
 </body>
 </html>

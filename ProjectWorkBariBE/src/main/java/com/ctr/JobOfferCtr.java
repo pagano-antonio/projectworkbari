@@ -126,7 +126,7 @@ public class JobOfferCtr {
 
 		jobOfferRep.deleteById(idJobOffer);
 
-		return "";// creare e collegare una jsp di successo elimina
+		return "success";
 	}
 
 

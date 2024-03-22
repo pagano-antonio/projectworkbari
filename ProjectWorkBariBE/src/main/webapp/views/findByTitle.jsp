@@ -16,8 +16,9 @@
 
 <input type="text" id="title" name="title" placeholder="Job Offer Title:"> <br>
 
-<input type="submit" value="Invio">
+<input type="submit" value="Search">
 
-
+</form>
+<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td> <br>
 </body>
 </html>

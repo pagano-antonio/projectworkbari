@@ -18,7 +18,7 @@
 <body>
 
 
-<% Candidate c = (Candidate)request.getAttribute("Candidate"); %>
+<% Candidate c = (Candidate)request.getAttribute("CandidateList"); %>
 	<form method ="post"action="${pageContext.request.contextPath}/CandidateCtr/putCandidate" >
 	
 
@@ -39,6 +39,8 @@
 
 	 
 	</form>
+	<br>
+	<td><a href="${pageContext.request.contextPath}/CandidateCtr/homePage"><button>HOME</button></a></td> <br>
 	
 </body>
 </html>

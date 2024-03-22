@@ -33,8 +33,7 @@ CompanyClient c =(CompanyClient)request.getAttribute("CompanyClient");%>
  <input type="text" id="city" name="city" value=<%out.print(c.getCity());%>>
  <input type="submit" value="Aggiorna">
  
- 
- </table>
- </form>
+</form>
+</table>
 </body>
 </html>
