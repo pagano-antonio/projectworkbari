@@ -13,11 +13,12 @@
 
 <h3>Insert ID Company Client to find Job Offer:</h3>
 <input type="number" id="idCompanyClient" name="idCompanyClient" placeholder="ID CompanyClient:"> <br>
-<input type="submit" value="Invio">
+<input type="submit" value="Search">
 
 
 
 
 </form>
+<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td> <br>
 </body>
 </html>
