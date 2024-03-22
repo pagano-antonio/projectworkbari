@@ -39,6 +39,8 @@
 
 	 
 	</form>
+	<br>
+	<td><a href="${pageContext.request.contextPath}/CandidateCtr/homePage"><button>HOME</button></a></td> <br>
 	
 </body>
 </html>
