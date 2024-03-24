@@ -133,68 +133,75 @@ public class JobOfferCtr {
 //------------------------------------------------------------------------------------
 
 
-@GetMapping("/preFindByTitle")
-public String preFindByTitle() {
-	
-	return "findByTitle";
+	@GetMapping("/preFindByTitle")
+	public String preFindByTitle() {
 
-}
+		return "findByTitle";
 
-@GetMapping("/findByTitle")
- public String findByTitle(Model model,String title){
-	
-	List<JobOffer> listJobOffer= (List<JobOffer>)jobOfferRep.findByTitle(title);
-	
-		
-		
-	    model.addAttribute("listJobOffer", listJobOffer);
-		model.addAttribute("Title", title);
-		
-		return "resJobOffer";	
 	}
 
+	@GetMapping("/findByTitle")
+	public String findByTitle(Model model, String title) {
+
+		List<JobOffer> listJobOffer = (List<JobOffer>) jobOfferRep.findByTitle(title);
+
+		model.addAttribute("listJobOffer", listJobOffer);
+		model.addAttribute("Title", title);
+		if (listJobOffer.size() > 0) {
+
+			return "resJobOffer";
+		} else {
+			return "error";
+		}
+	}
 
 //------------------------------------------------------------------------------------
 
-@GetMapping("/preFindByStartEndDate")
-public String preFindByStartEndDate() {
-	
-	return "findByStartEndDate";
+	@GetMapping("/preFindByStartEndDate")
+	public String preFindByStartEndDate() {
 
-}
+		return "findByStartEndDate";
 
-@GetMapping("/findByStartEndDate")
- public String findByStartEndDate(Model model,Date startDate, Date endDate){
-	
-	List<JobOffer> listJobOffer= (List<JobOffer>)jobOfferRep.findByStartDateAfterAndEndDateBefore(startDate, endDate);
-	
-	    model.addAttribute("listJobOffer", listJobOffer);
+	}
+
+	@GetMapping("/findByStartEndDate")
+	public String findByStartEndDate(Model model, Date startDate, Date endDate) {
+
+		List<JobOffer> listJobOffer = (List<JobOffer>) jobOfferRep.findByStartDateAfterAndEndDateBefore(startDate,
+				endDate);
+
+		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("StartDate", startDate);
 		model.addAttribute("EndDate", endDate);
-		return "resJobOffer";
-		
-		
+		if (listJobOffer.size() > 0) {
+			return "resJobOffer";
+		} else {
+			return "error";
+		}
+
 	}
 
 //------------------------------------------------------------------------------------
 
-@GetMapping("/preFindByIdCompanyClient")
-public String preFindByIdCompanyClient() {
-	
-	return "findByIdCompanyClient";
+	@GetMapping("/preFindByIdCompanyClient")
+	public String preFindByIdCompanyClient() {
 
-}
+		return "findByIdCompanyClient";
 
-@GetMapping("/findByIdCompanyClient")
- public String findByIdCompanyClient(Model model,Integer idCompanyClient){
-	
-	List<JobOffer> listJobOffer=(List<JobOffer>)jobOfferRep.findByCompanyClient_idCompanyClient(idCompanyClient);
-	
-	    model.addAttribute("listJobOffer", listJobOffer);
-		model.addAttribute("idCompanyClient",idCompanyClient);
-		
-		return "resJobOffer";
-		
+	}
+
+	@GetMapping("/findByIdCompanyClient")
+	public String findByIdCompanyClient(Model model, Integer idCompanyClient) {
+
+		List<JobOffer> listJobOffer = (List<JobOffer>) jobOfferRep.findByCompanyClient_idCompanyClient(idCompanyClient);
+
+		model.addAttribute("listJobOffer", listJobOffer);
+		model.addAttribute("idCompanyClient", idCompanyClient);
+		if (listJobOffer.size() > 0) {
+			return "resJobOffer";
+		} else {
+			return "error";
+		}
 	}
 
 
@@ -207,31 +214,40 @@ public String preFindByIdCompanyClient() {
 	@GetMapping("/findByMinRalAfterAndMaxRalBefore")
 	public String findByMinRalAfterAndMaxRalBefore(Model model, Integer minRal, Integer maxRal) {
 
-		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByMinRalAfterAndMaxRalBefore(minRal, maxRal);
+		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByMinRalAfterAndMaxRalBefore(minRal,
+				maxRal);
 		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("minRal", minRal);
 		model.addAttribute("maxRal", maxRal);
-		
-	    return "resJobOffer";
+		if (listJobOffer.size() > 0) {
+			return "resJobOffer";
+		} else {
+			return "error";
+		}
 	}
 	
 //-------------------------------------------------------------------------------
 	@GetMapping("/preFindByContractType")
 	public String preFindByContractType() {
-		return "findByContractType";	
+		return "findByContractType";
 	}
-	
+
 	@PostMapping("/findByContractType")
-	public String findByContractType (Model model, Integer idContractType) {
-		
-		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByContractType_idContractType(idContractType);
+	public String findByContractType(Model model, Integer idContractType) {
+
+		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep
+				.findByContractType_idContractType(idContractType);
 		model.addAttribute("listJobOffer", listJobOffer);
-		return "resJobOffer";
+		if (listJobOffer.size() > 0) {
+			return "resJobOffer";
+		} else {
+			return "error";
+		}
 	}
 	
 //-------------------------------------------------------------------------------
 	@GetMapping("/prefindByJobOfferSkills_Skill_Title")
-	public String prefindByJobOfferSkills_Skill_Title () {
+	public String prefindByJobOfferSkills_Skill_Title() {
 		return "findBySkillTitle";
 	}
 
@@ -241,7 +257,10 @@ public String preFindByIdCompanyClient() {
 		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByJobOfferSkills_Skill_Title(title);
 		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("title", title);
-		
-	    return "resJobOffer";
+		if (listJobOffer.size() > 0) {
+			return "resJobOffer";
+		} else {
+			return "error";
+		}
 	}
 }

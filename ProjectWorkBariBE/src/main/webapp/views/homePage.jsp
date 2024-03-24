@@ -9,8 +9,19 @@
 	
 	<style>
 	
+
+	
+	
+	
+	
+	
 	body{
-	background-color: #FFF8EA;}
+	background-color: #FFF8EA;
+	background-image:url(https://i.pinimg.com/originals/f7/89/05/f78905347ceb391cd84288a97c74001c.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+
 	
 	h1 {
 	text-align: center;
@@ -22,12 +33,13 @@
 	font-family: Trebuchet MS, sans-serif;
 	background-color: #594545;
 	color: white;
-	
+	margin: 0px 0px;
+	margin-bottom: 15px;
 	}
 	
 	.login {
 	position: absolute;
-	top: 5%;
+	top:3%;
 	right: 5%;
 	font-family: Trebuchet MS, sans-serif;
 	}
@@ -36,8 +48,14 @@
 	position: relative;
 	display: inline-block;
 	width: 25%;
+	border-width: 2px;
 	text-align:center;
-
+    border:2px solid #ddd;
+    background-color: #FFF8EA;
+    border-color: #594545;
+    margin: 5px 5px;
+    margin-left: 15px;
+    margin-right: auto;
 	}
 	
 	.label {
@@ -63,7 +81,8 @@
 	border: none;
 	color: white;
 	padding: 5px 15px;
-	
+	border-radius: 10px;
+    margin-bottom: 15px;
 	}
 	
 	hr{
@@ -72,22 +91,34 @@
 	width: 92%;
 	}
 	
+	img {
+	position: absolute;
+	height: 45px;
+	width: 45px;
+	margin-left: 15px;
+	}
+	
 	
 	</style>
 </head>
 
 <body>
 
+   
+
 <!-- Login -->
 	<div class="login">
 		<a href="${pageContext.request.contextPath}/EmployeeCtr/login"><button class="button">Login</button></a> <br>
 	</div>
-	<br>
-	
-<h1>Welcome to Java Final Project</h1>
+
+	 <img src="https://i.pinimg.com/originals/be/b7/61/beb7617a1228d96dabb3c252509ce6b5.jpg" alt="logo"> 
+	 
+  <h1> Welcome to Java Final Project</h1>
+<br>
+<br>
 
 <!-- Candidate -->
-	<div class="blocco">
+	<div class="blocco"> 
 		<h3>Candidate</h3>
 		<form action="${pageContext.request.contextPath}/CandidateCtr/chooseFindKeyword">
 			<label class="label" for="find">Find By</label>
