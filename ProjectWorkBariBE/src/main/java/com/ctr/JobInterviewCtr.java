@@ -28,18 +28,18 @@ public class JobInterviewCtr {
 //------------------------------------------------------------------------------------	
 
 	@GetMapping("/preAddJobInterview")
-	public String preAdd(Model model) {
-
-		return "addJobInterview"; // aggiungi jsp
+	public String preAdd(Model model, Integer idCandidate) {
+		model.addAttribute("idCandidate", idCandidate);
+		return "addJobInterview";
 
 	}
 
 	@PostMapping("/addJobInterview")
-	public String add(JobInterview j) {
+	public String add(JobInterview j, Integer idCandidate) {
 
 		jobInterviewRep.save(j);
 
-		return "success"; // aggiungi jsp
+		return "success";
 	}
 
 //------------------------------------------------------------------------------------
@@ -60,13 +60,23 @@ public class JobInterviewCtr {
 	}
 
 //------------------------------------------------------------------------------------	
+	@GetMapping("/preUpdateJobInterview")
+	public String preUpdateJobInterview (Model model, Integer idJobInterview) {
+		
+		JobInterview jobInterview = jobInterviewRep.findById(idJobInterview).get();
+		model.addAttribute("Interview", jobInterview);
 
-	@PostMapping("/putJobInterview")
+		return "updateJobInterview";
+	}
+	
+	
+	
+	@PostMapping("/updateJobInterview")
 	public String put(JobInterview jobInterview, Model model) {
 
 		jobInterviewRep.save(jobInterview);
 
-		return "";// creare e collegare una jsp di successo aggiorna
+		return "success";
 	}
 
 //------------------------------------------------------------------------------------		
@@ -76,7 +86,7 @@ public class JobInterviewCtr {
 
 		jobInterviewRep.deleteById(idJobInterview);
 
-		return "";// creare e collegare una jsp di successo elimina
+		return "success";
 	}
 
 }

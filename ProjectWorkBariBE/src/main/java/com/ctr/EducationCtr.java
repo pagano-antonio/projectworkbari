@@ -27,19 +27,19 @@ public class EducationCtr {
 	//------------------------------------------------------------------------------------
 
 	 @GetMapping("/preAddEducation")
-	    public String preAdd (Model model) {
-
-	        return "addEducation";//aggiungi jsp
+	    public String preAdd (Model model, Integer idCandidate) {
+		 	model.addAttribute("idCandidate", idCandidate);
+	        return "addEducation";
 
 	    }
 
 
 	 @PostMapping("/addEducation")
-	    public String add(Education e) {
+	    public String add(Education e, Integer idCandidate) {
 
 	        educationRep.save(e);
 
-	          return "success";//aggiungi jsp
+	          return "success";
 
 	    }
 	 
@@ -60,19 +60,26 @@ public class EducationCtr {
 			e=educationRep.findById(idEducation).get();
 			model.addAttribute("Education", e);
 			
-			return "success";//creare e collegare una jsp di successo ricerca
+			return "success";
 		}
 		
 		
 //------------------------------------------------------------------------------------
+	@GetMapping("/preUpdateEducation")
+		public String preUpdateEducation(Model model, Integer idEducation) {
+			
+			Education education = educationRep.findById(idEducation).get();
+			model.addAttribute("Education", education);
+
+			return "updateEducation";
+	}
 		
-		
-		@PostMapping("/putEducation")
-		public String put(Education e, Model model) {
+	@PostMapping("/updateEducation")
+		public String putEducation(Education e, Model model) {
 			
 			educationRep.save(e);
 			
-			return "";//creare e collegare una jsp di successo aggiorna
+			return "success";
 		}
 		
 		
@@ -83,7 +90,7 @@ public class EducationCtr {
 			
 			educationRep.deleteById(idEducation);
 			
-			return "";//creare e collegare una jsp di successo elimina
+			return "success";
 		}
 
 

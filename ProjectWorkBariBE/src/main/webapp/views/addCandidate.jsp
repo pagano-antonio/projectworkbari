@@ -5,8 +5,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Add Candidate</title>
+	<meta charset="ISO-8859-1">
+	<title>Add Candidate</title>
+	
 </head>
 <body>
 <form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/addCandidate">
