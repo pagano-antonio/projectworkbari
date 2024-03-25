@@ -9,9 +9,10 @@ public class GestoreEccezioni {
 
 	@ExceptionHandler(value = Exception.class)
 	public String handleGlobalException(Exception e, Model model) {
-	String msg=e.getMessage();
-	e.printStackTrace();
-	model.addAttribute("messaggioErrore");
-	return "Error";
-}
+		String msg = e.getMessage();
+		e.printStackTrace();
+		model.addAttribute("messaggioErrore", msg);
+		return "Error";
+	}
+
 }
