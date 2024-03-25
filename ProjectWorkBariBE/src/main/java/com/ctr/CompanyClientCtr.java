@@ -57,11 +57,12 @@ public class CompanyClientCtr {
 
 
 	 @PostMapping("/addCompanyClient")
-	    public String add(CompanyClient c) {
+	    public String add(Model model,CompanyClient c) {
 
 	        companyClientRep.save(c);
-
-	          return "success";//aggiungi jsp
+             model.addAttribute("CompanyClient",c);
+	       
+	          return "successAddCompanyClient";//aggiungi jsp
 
 	    }
 	 
@@ -78,13 +79,15 @@ public class CompanyClientCtr {
 	@GetMapping("/findByIdCompanyClient")
 	public String findById(Model model, Integer idCompanyClient) {
 			
+		if(idCompanyClient !=0) {
 			CompanyClient c=new CompanyClient();
 			c=companyClientRep.findById(idCompanyClient).get();
 			model.addAttribute("CompanyClient", c);
-			
-			return "resCompanyClient";
+		    return "resCompanyClient";
+		}else {
+		    return "Error";
+		}
 	}
-		
 		
  //------------------------------------------------------------------------------------
 		

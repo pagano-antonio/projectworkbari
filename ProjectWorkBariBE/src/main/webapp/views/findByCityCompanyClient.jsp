@@ -13,8 +13,10 @@
 		<input class="text" type="text" id="city" name="city" placeholder="Insert Company Client city:"> <br> 
 		
 		<input class="submit" type="submit" value="Search">
+		
 	</form>
 
-
+<h3> Return to HOME</h3>
+	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button>HOME</button></a> <br>
 </body>
 </html>

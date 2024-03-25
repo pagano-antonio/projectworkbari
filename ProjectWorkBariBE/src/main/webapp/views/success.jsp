@@ -8,5 +8,8 @@
 </head>
 <body>
 Successful operation!
+
+<h3> Return to HOME</h3>
+	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button>HOME</button></a> <br>
 </body>
 </html>
