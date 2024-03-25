@@ -12,16 +12,16 @@
 
 body{
     margin: 5px 5px;
-    margin-left: 15px;
+    margin-left: auto;
     margin-right: auto;
 	background-color: #FFF8EA;
 	background-size: cover;
 	background-repeat: no-repeat;
-	 text-align: center;
-        vertical-align:middle;
-         display: block;
-        margin-left: 300px;
-        margin-right: 300px;
+	text-align: center;
+    vertical-align:middle;
+    display: block;
+    margin-left: 300px;
+    margin-right: 300px;
 	 
 	}
 	
@@ -61,7 +61,7 @@ body{
 
            td {
                 color: #594545;
-                background-color: #FFF8EA;
+                background-color: white;
                 font-family: Trebuchet MS, sans-serif;
                 font-size: 16px;
                 text-align: center;
