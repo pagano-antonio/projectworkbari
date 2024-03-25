@@ -8,12 +8,55 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Updating</title>
+
+
+<style>
+
+body{
+    margin: 5px 5px;
+    margin-left: auto;
+    margin-right: auto;
+	background-color: #FFF8EA;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+    vertical-align:middle;
+    display: block;
+    margin-left: 300px;
+    margin-right: 300px;
+	 
+	}
+	
+	  h3 {
+	  font-family: Trebuchet MS, sans-serif;
+      color: #594545;
+	   }
+   	
+    	.button {
+	font-family: Trebuchet MS, sans-serif;
+	background-color: #815B5B;
+	border: none;
+	color: white;
+	padding: 5px 15px;
+	border-radius: 10px;
+    margin-bottom: 15px;
+    margin-upper: 15px;
+    margin-left: auto;
+    margin-right: auto;
+        
+	 }
+
+
+
+</style>
+
 </head>
 <body>
 
 
 
 <div>
+<br>
 	<h3>Update your profile informations:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/EmployeeCtr/putEmployee">
 		
@@ -25,12 +68,12 @@
 		<input class="dati" type="text" id="username" name="username" value="${employee.username}" placeholder="Username"> <br>
 		<input class="dati" type="text" id="password" name="password" value="${employee.password}" placeholder="Password"> <br>
 		
-		<input class="submit" type="submit" value="Update">
+		<br><input class="button" type="submit" value="Update">
 	</form>
 </div>
 
 <h3> Return to your profile</h3>
-	<a href="${pageContext.request.contextPath}/views/resEmployee.jsp"><button>Go Back</button></a> <br>
+	<a href="${pageContext.request.contextPath}/views/resEmployee.jsp"><button class="button">Go Back</button></a> <br>
 
 </body>
 </html>
