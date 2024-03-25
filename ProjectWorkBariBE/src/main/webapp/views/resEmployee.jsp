@@ -15,47 +15,44 @@ body{
     margin-left: auto;
     margin-right: auto;
 	background-color: #FFF8EA;
+	background-image:url(https://i.pinimg.com/originals/5d/48/05/5d4805c0b10e0c526be005bffa60a3f7.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	text-align: center;
     vertical-align:middle;
-    display: block;
-    margin-left: 300px;
-    margin-right: 300px;
-	 
+    display: block; 
 	}
 	
-    	.button {
-	font-family: Trebuchet MS, sans-serif;
-	background-color: #815B5B;
-	border: none;
-	color: white;
-	padding: 5px 15px;
-	border-radius: 10px;
-    margin-bottom: 15px;
-    margin-upper: 15px;
-     margin-left: auto;
-     margin-right: auto;
-        
-	 }
+ .container {
+       width: 70%; 
+       margin: 0 auto; 
+       padding: 20px; 
+       box-sizing: border-box; 
+        }
+	
+	 
+	    table {
+          border-collapse:collapse;
+          width: 100%;
+          height: 100%;
+          
+          }
 	
 	
 	 th {
+	      text-align: center;
+          font-family: Trebuchet MS, sans-serif;
           background-color: #594545;
-          border-style: dashed;
-          border-color: #305274;
           border-width: 2px;
           border-radius: 0px;
           color: white;
-          font-family: Trebuchet MS, sans-serif;
           font-size: 15px;
-          text-align: center;
-          vertical-align: middle;
-          border:1px solid #ddd;
-          border-color: #594545;
-          padding:4px 4px;
-        
-          
+          margin: 0px 0px;
+	      margin-bottom: 10px;
+          border:2 px solid #ddd;
+          border-color: #3d2f2d;
+          border-style: outset;
+           
          } 
 
 
@@ -66,11 +63,11 @@ body{
                 font-size: 16px;
                 text-align: center;
                 vertical-align: middle;
+                height: 30px;
                 border:1.5px solid #ddd;
                 border-color: #815B5B;     
                 padding:4px;
               
-               
                 }  
             
    h3 {
@@ -78,14 +75,24 @@ body{
       color: #594545;
 	   }
    
-
-
-   table {
-          border-collapse:collapse;
-          }
+   
+  .button {
+	  font-family: Trebuchet MS, sans-serif;
+	  background-color: #815B5B;
+	  border: none;
+	  color: white;
+	  border-radius: 10px;
+	  display: inline-block;
+      padding: 5px 15px;
+      margin-left: auto;
+      margin-right: auto;
+        
+	 }
 
 
 </style>
+
+ 
 
 </head>
 <body>
@@ -93,14 +100,15 @@ body{
 <br>
 <br>
 
+<div class ="container">
 <table>
 
 		<tr>
-				<th>Id Employee</th>
-				<th>Name</th>
-				<th>Surname</th>
-				<th>E-mail</th>
-				<th>Username</th>
+				<th>ID EMPLOYEE</th>
+				<th>NAME</th>
+				<th>SURNAME</th>
+				<th>E-MAIL</th>
+				<th>USERNAME</th>
 				<th></th>
 							
 		</tr>		
@@ -118,12 +126,13 @@ body{
 		
 	 </tr>
 </table>
+
 <br>
 	
 <table>
 	<tr>
-    	<th>Id Employee Type</th>
-		<th>Description</th>
+    	<th>ID EMPLOYEE TYPE</th>
+		<th>DESCRIPTION</th>
 	</tr>
 	<tr>			
     	<td> ${employee.employeeType.idEmployeeType} </td>
@@ -131,6 +140,8 @@ body{
 	</tr>
 
 </table>
+</div>
+
 
 <br>
 <h3> Return to HOME</h3>

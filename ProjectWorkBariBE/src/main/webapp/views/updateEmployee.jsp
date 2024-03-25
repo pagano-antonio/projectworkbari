@@ -17,6 +17,7 @@ body{
     margin-left: auto;
     margin-right: auto;
 	background-color: #FFF8EA;
+	background-image:url(https://i.pinimg.com/originals/5d/48/05/5d4805c0b10e0c526be005bffa60a3f7.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	text-align: center;

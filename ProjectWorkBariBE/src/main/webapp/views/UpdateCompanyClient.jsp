@@ -17,6 +17,7 @@ body{
     margin-left: auto;
     margin-right: auto;
 	background-color: #FFF8EA;
+	background-image:url(https://i.pinimg.com/originals/5d/48/05/5d4805c0b10e0c526be005bffa60a3f7.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	text-align: center;
@@ -32,7 +33,7 @@ body{
       color: #594545;
 	   }
    	
-    	.button {
+  .button {
 	font-family: Trebuchet MS, sans-serif;
 	background-color: #815B5B;
 	border: none;
@@ -61,7 +62,7 @@ body{
 	<form method ="post" action="${pageContext.request.contextPath}/CompanyClientCtr/UpdateCompanyClient">
 		
 		<input class="" readonly id="idCompanyClient" name="idCompanyClient" value="${CompanyClient.idCompanyClient}" placeholder="ID COMPANY CLIENT"> <br> 
-		<input class="dati" type="text" id="name" name="name" value="${CompanyClient.name}" placeholder="Name"> <br>
+		<br><input class="dati" type="text" id="name" name="name" value="${CompanyClient.name}" placeholder="Name"> <br>
 		<input class="dati" type="text" id="address" name="address" value="${CompanyClient.address}" placeholder="Address"> <br>  
 		<input class="dati" type="text" id="city" name="city" value="${CompanyClient.city}" placeholder="City"><br>
 		

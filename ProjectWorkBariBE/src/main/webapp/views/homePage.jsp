@@ -32,9 +32,15 @@
 	text-align: center;
 	font-family: Trebuchet MS, sans-serif;
 	background-color: #594545;
+	border-width: 2px;
+    border-radius: 0px;
 	color: white;
 	margin: 0px 0px;
 	margin-bottom: 15px;
+    border:2 px solid #ddd;
+    border-color: #3d2f2d;
+    border-style: outset;
+	
 	}
 	
 	.login {
@@ -67,7 +73,7 @@
 	text-align: center;
 	font-family: Trebuchet MS, sans-serif;
 	background-color: white;
-	padding: 5px 15px;
+	padding: 4px 10px;
 	border: 1px solid #815B5B;
 	}
 	
