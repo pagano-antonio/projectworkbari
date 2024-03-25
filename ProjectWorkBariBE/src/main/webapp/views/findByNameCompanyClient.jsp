@@ -58,13 +58,15 @@ div{
 
 </head>
 <body>
-	<form method ="post"action="${pageContext.request.contextPath}/CompanyClientCtr/findByNameCompanyClient">
+	<form method ="get"action="${pageContext.request.contextPath}/CompanyClientCtr/findByNameCompanyClient">
 		<div>
 		<h3>Insert Company Client name:</h3><br>
         <input class="text" type="text" id="name" name="name" placeholder="Insert Company Client Name:"><br> <br> 
-		<input class= "button" type="submit" value="Sumbit"> <br> <br>
+		<input class= "submit" type="submit" value="Sumbit"> <br> <br>
 		</div>
 	</form>
+<h3> Return to HOME</h3>
+	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button class="button">HOME</button></a>
 
 </body>
 </html>

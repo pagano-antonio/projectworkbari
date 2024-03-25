@@ -78,7 +78,10 @@ body{
 	  font-family: Trebuchet MS, sans-serif;
       color: #594545;
 	   }
-   
+   h2 {
+	  font-family: Trebuchet MS, sans-serif;
+      color: #594545;
+	   }
 
 
    table {
@@ -93,7 +96,10 @@ body{
 <br>
 <br>
 <br>
+ <c:choose>
+    <c:when test="${not empty companyClientList}">
 
+ 
 <table>
 
 		<tr>
@@ -121,10 +127,16 @@ body{
 
 </tr>
 </c:forEach>
-</table>
-  <h3> Return to HOME</h3>
-	  <a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button>HOME</button></a> <br>
 
+</table>
+</c:when>
+<c:otherwise>
+<h2>Result not found!</h2><br>
+</c:otherwise>
+</c:choose>
+ 
+<h3> Return to HOME</h3>
+	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button class="button">HOME</button></a>
 
 </body>	    	
 </html>

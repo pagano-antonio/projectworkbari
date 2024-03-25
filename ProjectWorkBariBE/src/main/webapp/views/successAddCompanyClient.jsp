@@ -38,7 +38,8 @@
 </tr>
 
 <h3> Return to HOME</h3>
-	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button>HOME</button></a> <br>
+	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button class="button">HOME</button></a>
+
 
 </table>
 </body>

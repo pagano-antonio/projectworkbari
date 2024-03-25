@@ -133,10 +133,14 @@ public class CompanyClientCtr {
 		public String findByCity(Model model,String city) {
 
 			List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByCity(city);
+			
 			model.addAttribute("companyClientList", companyClientList);
 			model.addAttribute("city", city);
 			
+			
 		    return "resCompanyClient";
+		
+			
 		}
 
   //------------------------------------------------------------------------------------
