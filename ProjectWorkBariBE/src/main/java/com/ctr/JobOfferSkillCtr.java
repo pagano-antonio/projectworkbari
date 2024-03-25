@@ -35,8 +35,9 @@ public class JobOfferSkillCtr {
 	}
 
 	@PostMapping("/addJobOfferSkill")
-	public String add(JobOfferSkill j) {
-
+	public String add(JobOfferSkill j, Model model) {
+		
+       
 		jobOfferSkillRep.save(j);
 
 		return "success"; // aggiungi jsp

@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.JobOfferRepository;
+import com.dao.JobOfferSkillRepository;
 import com.model.JobOffer;
+import com.model.JobOfferSkill;
 
 
 @Controller //questa classe gestisce request e dovrà fornire response(jsp,html).
@@ -24,7 +26,7 @@ public class JobOfferCtr {
 
 	@Autowired
 	private JobOfferRepository jobOfferRep;
-
+	
 //------------------------------------------------------------------------------------
 
 	@GetMapping("/homePage")
@@ -72,23 +74,24 @@ public class JobOfferCtr {
 	@GetMapping("/preAddJobOffer")
 	public String preAdd(Model model) {
 
-		return "addJobOffer"; // aggiungi jsp
+		return "addJobOffer"; 
 
 	}
 
 	@PostMapping("/addJobOffer")
-	public String add(JobOffer j) {
-
-		jobOfferRep.save(j);
-
-		return "success"; // aggiungi jsp
+	public String add(JobOffer jobOffer, Model model) {
+		
+		JobOffer jobOfferAdd = jobOfferRep.save(jobOffer);
+		
+        model.addAttribute("resJobOffer", jobOfferAdd);
+		return "successUpdateJobOffer"; 
 	}
 
 //------------------------------------------------------------------------------------
 
 	@GetMapping("/prefindByIdJobOffer")
 	public String prefindByIdJobOffer() {
-		return "findByIdJobOffer";// creare una jsp di ricerca per id candidato
+		return "findByIdJobOffer";
 	}
 
 	@GetMapping("/findByIdJobOffer")
@@ -98,7 +101,7 @@ public class JobOfferCtr {
 		jobOffer = jobOfferRep.findById(idJobOffer).get();
 		model.addAttribute("JobOffer", jobOffer);
 
-		return "resJobOffer";// creare e collegare una jsp di successo ricerca
+		return "resJobOffer";
 	}
 
 //------------------------------------------------------------------------------------
@@ -114,9 +117,12 @@ public class JobOfferCtr {
 	@PostMapping("/putJobOffer")
 	public String put(JobOffer jobOffer, Model model) {
 		
-        jobOfferRep.save(jobOffer);
+        
+        JobOffer jobOfferUpdate = jobOfferRep.save(jobOffer);
+        model.addAttribute("resJobOffer", jobOfferUpdate);
+		return "successUpdateJobOffer"; 
 
-		return "success";// creare e collegare una jsp di successo aggiorna
+		
 	}
 
 //------------------------------------------------------------------------------------
@@ -235,8 +241,7 @@ public class JobOfferCtr {
 	@PostMapping("/findByContractType")
 	public String findByContractType(Model model, Integer idContractType) {
 
-		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep
-				.findByContractType_idContractType(idContractType);
+		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByContractType_idContractType(idContractType);
 		model.addAttribute("listJobOffer", listJobOffer);
 		if (listJobOffer.size() > 0) {
 			return "resJobOffer";
@@ -263,4 +268,14 @@ public class JobOfferCtr {
 			return "error";
 		}
 	}
+//-------------------------------------------------------------------------
+	@GetMapping("/skillJobOffer")
+	public String skillJobOffer(Integer idJobOffer, Model model) {
+		JobOffer jobOffer = new JobOffer();
+		jobOffer = jobOfferRep.findById(idJobOffer).get();
+		model.addAttribute("JobOffer", jobOffer);
+		model.addAttribute("skillJobOffer", jobOffer.getJobOfferSkills());
+		return "skillJobOffer";
+	}
+
 }

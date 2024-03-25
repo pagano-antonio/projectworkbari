@@ -24,28 +24,33 @@
 			<th>ID CONTRACT TYPE</th>
 			<th colspan="2">OPERATION</th>
 		</tr>
-	
- <c:forEach var="res"  items="${listJobOffer}">
- 
- <tr>
- <td>${res.idJobOffer}</td> 
- <td>${res.title}</td>
- <td>${res.description}</td>
- <td>${res.startDate}</td>
- <td>${res.endDate}</td>
- <td>${res.companyClient.idCompanyClient}</td>
- <td>${res.minRal}</td>
- <td>${res.maxRal}</td>
- <td>${res.contractType.idContractType}</td>
- 
- 
+
+		<c:forEach var="res" items="${listJobOffer}">
+
+			<tr>
+				<td>${res.idJobOffer}</td>
+				<td>${res.title}</td>
+				<td>${res.description}</td>
+				<td>${res.startDate}</td>
+				<td>${res.endDate}</td>
+				<td>${res.companyClient.idCompanyClient}</td>
+				<td>${res.minRal}</td>
+				<td>${res.maxRal}</td>
+				<td>${res.contractType.idContractType}</td>
 
 
-<td><a href="${pageContext.request.contextPath}/JobOfferCtr/prePutJobOffer?idJobOffer=${res.idJobOffer}"><button>Update</button></a></td>
-<td><a href="${pageContext.request.contextPath}/JobOfferCtr/deleteJobOffer?idJobOffer=${res.idJobOffer}"><button>Delete</button></a></td>
-<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td> <br>
-</tr>
-</c:forEach>
-</table>
+
+
+				<td><a
+					href="${pageContext.request.contextPath}/JobOfferCtr/prePutJobOffer?idJobOffer=${res.idJobOffer}"><button>Update</button></a></td>
+				<td><a
+					href="${pageContext.request.contextPath}/JobOfferCtr/deleteJobOffer?idJobOffer=${res.idJobOffer}"><button>Delete</button></a></td>
+				
+				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=${res.idJobOffer}"><button>Skill</button></a></td>
+				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td>
+				<br>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>

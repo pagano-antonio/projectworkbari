@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.model.JobOffer;
+import com.model.Skill;
 
 @Repository
 public interface JobOfferRepository extends JpaRepository<JobOffer, Integer> {
@@ -17,4 +18,5 @@ public interface JobOfferRepository extends JpaRepository<JobOffer, Integer> {
 	List<JobOffer> findByMinRalAfterAndMaxRalBefore(Integer minRal, Integer maxRal);
 	List<JobOffer> findByContractType_idContractType(Integer idContractType);
 	List<JobOffer> findByJobOfferSkills_Skill_Title(String title);
+	List<JobOffer> findByJobOfferSkills_Skill(Skill skill);
 }
