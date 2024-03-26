@@ -76,7 +76,7 @@
         <label class="text" for="phone">Phone:</label><br>
         <input class="dati" type="number" id="phone" name="phone" value="<%=c.getPhone()%>"> <br>
 
-        <input class="submit" type="submit" value="Submit">
+        <input class="button" type="submit" value="Submit">
 
 	 
 	</form>
