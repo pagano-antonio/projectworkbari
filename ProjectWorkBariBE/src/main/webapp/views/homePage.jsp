@@ -134,7 +134,7 @@
 		        <option value="city">City</option>
 		        <option value="phone">Phone</option>
 		        <option value="skill">Skill</option>
-		        <option value="educationDegreeType">Id Education</option>
+		        <option value="educationDegreeType">Id Education Type</option>
 		        <option value="jobInterview">Id State Job Interview</option>
 		        <option value="outcome">Outcome</option>
 		        <option value="workExperiences">Company</option>

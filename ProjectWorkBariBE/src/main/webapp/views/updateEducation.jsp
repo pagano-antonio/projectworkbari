@@ -22,7 +22,7 @@
 	    margin-right: 300px;	 
 		}
 	
-		h3 {
+		h3, .text {
 		font-family: Trebuchet MS, sans-serif;
 	    color: #594545;
 	   	}
@@ -47,17 +47,17 @@
 <div>
 	  <h3>Update Education Informations:</h3>
 	  <form method ="post" action="${pageContext.request.contextPath}/EducationCtr/updateEducation">
-        <h3>Id Candidate:</h3>
+        <label class="text" for="candidate.idCandidate">Id Candidate:</label><br>
         <input class="dati" readonly type="number" id="candidate.idCandidate" name="candidate.idCandidate" value="${Education.candidate.idCandidate}" placeholder="Id Candidate"> <br>
-        <h3>Education Degree Type:</h3>
+        <label class="text" for="educationDegreeType.idEducationDegreeType">Id Education Degree Type:</label><br>
         <input class="dati" type="number" id="educationDegreeType.idEducationDegreeType" name="educationDegreeType.idEducationDegreeType" value="${Education.educationDegreeType.idEducationDegreeType}" placeholder="Id Education Degree Type"> <br>
-        <h3>School Name:</h3>
+        <label class="text" for="schoolName">School Name:</label><br>
         <input class="dati" type="text" id="schoolName" name="schoolName" value="${Education.schoolName}" placeholder="School Name"> <br>
-        <h3>Place:</h3>
+        <label class="text" for="place">Place:</label><br>
         <input class="dati" type="text" id="place" name="place" value="${Education.place}" placeholder="Place"> <br>
-         <h3>Date:</h3>
+        <label class="text" for="date">Date:</label><br>
         <input class="dati" type="date" id="date" name="date" value="${Education.date}" placeholder="Date"> <br>
-         <h3>Final Grade:</h3>
+        <label class="text" for="finalGrade">Final Grade:</label><br>
         <input class="dati" type="number" id="finalGrade" name="finalGrade" value="${Education.finalGrade}" placeholder="Final Grade"> <br>
         
         <input class="submit" type="submit" value="Submit">

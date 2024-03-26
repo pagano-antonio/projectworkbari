@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.JobOfferRepository;
-import com.dao.JobOfferSkillRepository;
 import com.model.JobOffer;
-import com.model.JobOfferSkill;
 
 
 @Controller //questa classe gestisce request e dovrà fornire response(jsp,html).
