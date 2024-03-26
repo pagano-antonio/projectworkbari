@@ -71,15 +71,18 @@ public class CandidateCtr {
 
 	@GetMapping("/preAddCandidate")
 	public String preAdd() {
-		return "addCandidate";// creare una jsp di preaggiunta
+		return "addCandidate";
 	}
 
 	@PostMapping("/addCandidate")
-	public String add(@ModelAttribute Candidate candidate) {
+	public String add(@ModelAttribute Candidate candidate, Model model) {
+		
+	
+		candidate = candidateRep.save(candidate);
+		System.out.println(candidate.getIdCandidate());
+		model.addAttribute("candidate", candidate);
 
-		candidateRep.save(candidate);
-
-		return "success";// creare una jsp di aggiunta candidate
+		return "successAddCandidate";
 	}
 
 // --------------------------------------------------------------------------------------- FIND by ID
@@ -96,7 +99,7 @@ public class CandidateCtr {
 		candidate = candidateRep.findById(idCandidate).get();
 		model.addAttribute("CandidateList", candidate);
 
-		return "resCandidate";// creare e collegare una jsp di successo ricerca
+		return "resCandidate";
 	}
 
 // --------------------------------------------------------------------------------------- UPDATE
@@ -106,7 +109,7 @@ public class CandidateCtr {
 		Candidate candidate = candidateRep.findById(idCandidate).get();
 		model.addAttribute("CandidateList", candidate);
 
-		return "putCandidate";// creare una jsp di preaggiunta
+		return "putCandidate";
 	}
 
 	@PostMapping("/putCandidate")
@@ -114,7 +117,7 @@ public class CandidateCtr {
 
 		candidateRep.save(candidate);
 
-		return "success";// creare e collegare una jsp di successo aggiorna
+		return "success";
 	}
 
 // --------------------------------------------------------------------------------------- DELETE
@@ -122,8 +125,7 @@ public class CandidateCtr {
 	public String delete(Integer idCandidate, Model model) {
 
 		candidateRep.deleteById(idCandidate);
-
-		return "success";// creare e collegare una jsp di successo elimina
+		return "success";
 	}
 
 // --------------------------------------------------------------------------------------- FIND BY PHONE
@@ -240,7 +242,7 @@ public class CandidateCtr {
 
 		return "resCandidate";
 	}
-// ----------------------------------------------------------------------- FIND BY OUTCOMES
+// --------------------------------------------------------------------------------- FIND BY OUTCOMES
 
 	@GetMapping("/prefindByJobInterviews_Outcome")
 	public String prefindByJobInterviews_Outcome() {
@@ -255,5 +257,56 @@ public class CandidateCtr {
 
 		return "resCandidate";
 	}
+	
+// --------------------------------------------------------------------------------- VIEW SKILL
 
+	@GetMapping("/resCandidateSkill")
+	public String resCandidateSkill(Model model, Integer idCandidate) {
+
+		Candidate candidate = new Candidate();
+		candidate = candidateRep.findById(idCandidate).get();
+		model.addAttribute("Candidate", candidate);
+		model.addAttribute("CandidateSkillList", candidate.getCandidateSkills());
+
+		return "resCandidateSkill";
+	}
+	
+// --------------------------------------------------------------------------------- VIEW WORK EXPERIENCE
+
+	@GetMapping("/resWorkExperience")
+	public String resWorkExperience (Model model, Integer idCandidate) {
+
+		Candidate candidate = new Candidate();
+		candidate = candidateRep.findById(idCandidate).get();
+		model.addAttribute("Candidate", candidate);
+		model.addAttribute("WorkExperienceList", candidate.getWorkExperiences());
+
+		return "resWorkExperience";
+	}
+		
+// --------------------------------------------------------------------------------- VIEW JOB INTERVIEWS
+
+	@GetMapping("/resJobInterviews")
+	public String resJobInterviews(Model model, Integer idCandidate) {
+
+		Candidate candidate = new Candidate();
+		candidate = candidateRep.findById(idCandidate).get();
+		model.addAttribute("Candidate", candidate);
+		model.addAttribute("JobInterviewsList", candidate.getJobInterviews());
+
+		return "resJobInterviews";
+	}
+	
+// --------------------------------------------------------------------------------- VIEW EDUCATION
+
+	@GetMapping("/resEducation")
+	public String resEducation(Model model, Integer idCandidate) {
+
+		Candidate candidate = new Candidate();
+		candidate = candidateRep.findById(idCandidate).get();
+		model.addAttribute("Candidate", candidate);
+		model.addAttribute("EducationList", candidate.getEducations());
+
+		return "resEducation";
+	}
 }

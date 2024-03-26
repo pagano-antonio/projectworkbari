@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,22 +22,27 @@ public class CandidateSkillCtr {
 		return"homePage";
 	}
 	
+// --------------------------------------------------------------------------------------------------- ADD	
+	
 	@GetMapping("preAddCandidateSkill")
-	public String preAdd() {
-		return"addCandidateSkill";//creare una jsp di preaggiunta
+	public String preAdd(Model model, Integer idCandidate) {
+		model.addAttribute("idCandidate", idCandidate);
+		return"addCandidateSkill";
 	}
 	
 	@PostMapping("/addCandidateSkill")
-	public String add(@ModelAttribute CandidateSkill candidateSkill) {
+	public String add(CandidateSkill candidateSkill, Integer idCandidate) {
 		
 		candidateSkillRep.save(candidateSkill);
 		
-		return"success";//creare e collegare una jsp di aggiunta candidateSkill
+		return"success";
 	}
+	
+// --------------------------------------------------------------------------------------------------- FIND BY ID	
 	
 	@GetMapping("/prefindByIdCandidateSkill")
 	public String prefindById() {
-		return"";//creare una jsp di ricerca per idCandidateSkill
+		return"findByIdCandidateSkill";
 	}
 	
 	@GetMapping("/findByIdCandidateSkill")
@@ -48,23 +52,36 @@ public class CandidateSkillCtr {
 		candidateSkill=candidateSkillRep.findById(idCandidateSkill).get();
 		model.addAttribute("candidateSkill", candidateSkill);
 		
-		return"";//creare e collegare jsp di successo ricerca
+		return"resCandidateSkill";
 	}
 	
-	@PostMapping("/putCandidateSkill")
+// ------------------------------------------------------------------------------------ PUT	
+	
+	@GetMapping("/prePutCandidateSkill")
+	public String prePutCandidateSkill(Integer idCandidateSkill, Model model) {
+		
+		CandidateSkill candidateSkill = candidateSkillRep.findById(idCandidateSkill).get();
+		model.addAttribute("candidateSkill", candidateSkill);
+
+		return "updateCandidateSkill";
+	}
+	
+	@PostMapping("/updateCandidateSkill")
 	public String put(CandidateSkill candidateSkill, Model model) {
 		
 		candidateSkillRep.save(candidateSkill);
 		
-		return"";//creare e collegare jsp di successo aggiorna
+		return"success";
 	}
+	
+// ------------------------------------------------------------------------------------ DELETE	
 	
 	@GetMapping("/deleteCandidateSkill")
 	public String delete(Integer idCandidateSkill, Model model) {
 		
 		candidateSkillRep.deleteById(idCandidateSkill);
 		
-		return"";//creare e collegare jsp di successo elimina
+		return"success";
 	}
 
 }

@@ -3,19 +3,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Add Education</title>
+	<meta charset="ISO-8859-1">
+	<title>Add Education</title>
+	<style>
+		body{
+	    margin: 5px 5px;
+	    margin-left: auto;
+	    margin-right: auto;
+		background-color: #FFF8EA;
+		background-image:url(https://i.pinimg.com/originals/5d/48/05/5d4805c0b10e0c526be005bffa60a3f7.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		text-align: center;
+	    vertical-align:middle;
+	    display: block;
+	    margin-left: 300px;
+	    margin-right: 300px;
+	 	}
+	
+		h3 {
+		font-family: Trebuchet MS, sans-serif;
+	    color: #594545;
+		}
+   	
+		.button {
+		font-family: Trebuchet MS, sans-serif;
+		background-color: #815B5B;
+		border: none;
+		color: white;
+		padding: 5px 15px;
+		border-radius: 10px;
+	    margin-bottom: 15px;
+	    margin-upper: 15px;
+	    margin-left: auto;
+	    margin-right: auto;
+	    }
+	
+	</style>
+	
 </head>
 <body>
-<form method ="post" action="${pageContext.request.contextPath}/EducationCtr/addEducation">
-        <h3>Insert Education:</h3>
-        <input class="dati" type="number" id="EducationDegreeType.idEducationDegreeType" name="EducationDegreeType.idEducationDegreeType" placeholder="Add idEducationDegreeType"> <br>
-        <input class="dati" type="text" id="schoolName" name="schoolName" placeholder="Add School Name"> <br>
-        <input class="dati" type="text" id="place" name="place" placeholder="Add place"> <br>
-        <input class="dati" type="date" id="date" name="date" placeholder="Add Date"> <br>
-        <input class="dati" type="number" id="finalGrade" name="finalGrade" placeholder="Add finalGrade"> <br>
-        <input class="dati" type="number" id="Candidate.idCandidate" name="Candidate.idCandidate" placeholder="Add idCandidate"> <br>
-        <input class="submit" type="submit" value="Submit">
-</form>
+<div>
+	<form method ="post" action="${pageContext.request.contextPath}/EducationCtr/addEducation">
+	        <h3>Insert Education:</h3>
+	        <h3>Id Candidate:</h3>
+	        <input class="dati" readonly type="number" id="candidate.idCandidate" name="candidate.idCandidate" value="${idCandidate}" placeholder="Id Candidate"> <br>
+	        <h3>Education Degree Type:</h3>
+	        <input class="dati" type="number" id="educationDegreeType.idEducationDegreeType" name="educationDegreeType.idEducationDegreeType" placeholder="Id EducationDegreeType"> <br>
+	        <h3>School Name:</h3>
+	        <input class="dati" type="text" id="schoolName" name="schoolName" placeholder="School Name"> <br>
+	        <h3>Place:</h3>
+	        <input class="dati" type="text" id="place" name="place" placeholder="Place"> <br>
+	         <h3>Date:</h3>
+	        <input class="dati" type="date" id="date" name="date" placeholder="Date"> <br>
+	         <h3>Final Grade:</h3>
+	        <input class="dati" type="number" id="finalGrade" name="finalGrade" placeholder="Final Grade"> <br>
+	        
+	        <input class="button" type="submit" value="Submit">
+	</form>
+	
+	<h3> Return to HOME</h3>
+		<a href="${pageContext.request.contextPath}/Home"><button class="button">HOME</button></a> <br>
+</div>
 </body>
 </html>

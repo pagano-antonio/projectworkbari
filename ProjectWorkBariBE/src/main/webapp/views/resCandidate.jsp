@@ -59,10 +59,23 @@
     <td> <a href= "${pageContext.request.contextPath}/CandidateCtr/prePutCandidate?idCandidate=${Candidate.idCandidate}"><button class = "button"> UPDATE </button> </a></td>
     <td> <a href= "${pageContext.request.contextPath}/CandidateCtr/deleteCandidate?idCandidate=${Candidate.idCandidate}"><button class = "button"> DELETE </button> </a></td>
 
-
   </tr>
+  
+  <tr>
+  <td>
+  <h3> About ${Candidate.surname} ${Candidate.name}:</h3>
+<a href="${pageContext.request.contextPath}/CandidateCtr/resCandidateSkill?idCandidate=${Candidate.idCandidate}"><button class="button">Skill</button></a>
+<a href="${pageContext.request.contextPath}/CandidateCtr/resWorkExperience?idCandidate=${Candidate.idCandidate}"><button class="button">Work Experience</button></a>
+<a href="${pageContext.request.contextPath}/CandidateCtr/resJobInterviews?idCandidate=${Candidate.idCandidate}"><button class="button">Job Interview</button></a>
+<a href="${pageContext.request.contextPath}/CandidateCtr/resEducation?idCandidate=${Candidate.idCandidate}"><button class="button">Education</button></a>
+	 </td>
+	</tr>
  </c:forEach> 
 	
 	</table>
+	
+
+<h3> Return to HOME</h3>
+	<a href="${pageContext.request.contextPath}/Home"><button>HOME</button></a> <br>
 </body>
 </html>

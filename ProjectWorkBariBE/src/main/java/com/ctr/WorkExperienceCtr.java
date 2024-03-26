@@ -26,7 +26,8 @@ public class WorkExperienceCtr {
 //-------------------------------------------------------
 	
 	@GetMapping("/preAddWorkExperience")
-	public String preAdd(Model model) {
+	public String preAdd(Model model, Integer idCandidate) {
+		model.addAttribute("idCandidate", idCandidate);
         return "addWorkExperience";
 	
 }
@@ -52,12 +53,22 @@ public class WorkExperienceCtr {
 		return "";
 	}
 //--------------------------------------------------------
-	@PostMapping("/putWorkExperience")
+	@GetMapping("/prePutWorkExperience")
+	public String prePutWorkExperience(Model model, Integer idWorkExperience) {
+		
+		WorkExperience workExperience =new WorkExperience();
+		workExperience =workExperienceRep.findById(idWorkExperience).get();
+		model.addAttribute("WorkExperience", workExperience);
+		return"updateWorkExperience";
+	}
+	
+	
+	@PostMapping("/updateWorkExperience")
 	public String put(WorkExperience workExperience, Model model) {
 		
 		workExperienceRep.save(workExperience);
 		
-		return "";
+		return "success";
 	}
 //--------------------------------------------------------
 	@GetMapping("/deleteWorkExperience")
