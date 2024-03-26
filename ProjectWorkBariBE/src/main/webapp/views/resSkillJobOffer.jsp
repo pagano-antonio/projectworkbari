@@ -1,18 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<%@ page import="com.model.Skill" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Job Offer Skill</title>
 <style>
 
 body{
     margin: 5px 5px;
-    margin-left: auto;
+    margin-left: 15px;
     margin-right: auto;
 	background-color: #FFF8EA;
 	background-image:url(https://i.pinimg.com/originals/5d/48/05/5d4805c0b10e0c526be005bffa60a3f7.jpg);
@@ -23,22 +21,23 @@ body{
     display: block; 
 	}
 	
- .container {
+	 .container {
        width: 70%; 
        margin: 0 auto; 
        padding: 20px; 
        box-sizing: border-box; 
         }
-	
-	 
-   table {
+        
+        
+         table {
           border-collapse:collapse;
           width: 100%;
           height: 100%;
+          
           } 
-          
-          
-      th {
+	
+ 
+		 th {
 	      text-align: center;
           font-family: Trebuchet MS, sans-serif;
           background-color: #594545;
@@ -67,15 +66,15 @@ body{
                 border-color: #815B5B;     
                 padding:4px;
               
-                } 
-                
+                }   
+            
    h3 {
 	  font-family: Trebuchet MS, sans-serif;
       color: #594545;
-	   }   
-	   
-	   
- .button {
+	   }    
+          
+             
+  .button {
 	  font-family: Trebuchet MS, sans-serif;
 	  background-color: #815B5B;
 	  border: none;
@@ -87,43 +86,48 @@ body{
       margin-right: auto;
         
 	 }
-	
-	</style>
-	
-	
-	
+	 
+  h2 {
+	  font-family: Trebuchet MS, sans-serif;
+      color: #594545;
+	   }
+
+
+</style>
+
 </head>
 <body>
-<br>
-<br>
-<br>
- <div class ="container">
-<table>
+<c:choose>
+    <c:when test="${not empty skillJobOffer}">
+	<table>
 		<tr>
 			<th>ID SKILL</th>
 			<th>TITLE</th>
 			<th>DESCRIPTION</th>
-			<th colspan="3">OPERATION</th>
+			<th colspan="4">OPERATION</th>
+
+		</tr>
+		<c:forEach var="skill" items="${skillJobOffer}">
+			<tr>
+				<td>${skill.skill.idSkill}</td>
+				<td>${skill.skill.title}</td>
+				<td>${skill.skill.description}</td>
+				
+				
+				<td><a href="${pageContext.request.contextPath}/SkillCtr/prePutSkill?idSkill=${skill.skill.idSkill}"><button>Update</button></a></td>
+				
+				<td><a href="${pageContext.request.contextPath}/SkillCtr/deleteSkill?idSkill=${skill.skill.idSkill}"><button>Delete</button></a></td>
+				
+				<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill"><button>Add New Skill</button></a></td>
+				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td>
+				<br>
 			</tr>
-	
- <% Skill s = (Skill)request.getAttribute("resSkill");%>
- 
- <tr>
- <td><%= s.getIdSkill() %></td> 
- <td><%= s.getTitle() %></td>
- <td><%= s.getDescription() %></td>
- 
-<td><a href="${pageContext.request.contextPath}/SkillCtr/prePutSkill?idSkill=<%= s.getIdSkill() %>"><button class="button">UPDATE</button></a></td>
-<td><a href="${pageContext.request.contextPath}/SkillCtr/deleteSkill?idSkill=<%= s.getIdSkill() %>"><button class="button">DELETE</button></a></td>
-<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill"><button class="button">ADD NEW SKILL</button></a></td>
-
-
-</tr>
-</table>
-<br>
-<h3> Return to HOME</h3>
-<td><a href="${pageContext.request.contextPath}/SkillCtr/homePage"><button class="button">HOME</button></a></td>
-
-</div>
+		</c:forEach>
+	</table>
+</c:when>
+<c:otherwise>
+<h2>Result not found!</h2><br>
+</c:otherwise>
+</c:choose>
 </body>
 </html>

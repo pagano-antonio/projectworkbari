@@ -59,5 +59,6 @@ body{
         <input class="dati" type="text" id="city" name="city" placeholder="Add City"><br>
        <br> <input class="button" type="submit" value="Submit">
     </form>
+    <td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
 </body>
 </html>
