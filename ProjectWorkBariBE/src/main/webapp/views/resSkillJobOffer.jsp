@@ -114,12 +114,12 @@ body{
 				<td>${skill.skill.description}</td>
 				
 				
-				<td><a href="${pageContext.request.contextPath}/SkillCtr/prePutSkill?idSkill=${skill.skill.idSkill}"><button>Update</button></a></td>
+				<td><a href="${pageContext.request.contextPath}/SkillCtr/prePutSkill?idSkill=${skill.skill.idSkill}"><button class="button">UPDATE</button></a></td>
 				
-				<td><a href="${pageContext.request.contextPath}/SkillCtr/deleteSkill?idSkill=${skill.skill.idSkill}"><button>Delete</button></a></td>
+				<td><a href="${pageContext.request.contextPath}/SkillCtr/deleteSkill?idSkill=${skill.skill.idSkill}"><button class="button">DELETE</button></a></td>
 				
-				<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill"><button>Add New Skill</button></a></td>
-				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td>
+				<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill"><button class="button">ADD NEW SKILL</button></a></td>
+				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
 				<br>
 			</tr>
 		</c:forEach>

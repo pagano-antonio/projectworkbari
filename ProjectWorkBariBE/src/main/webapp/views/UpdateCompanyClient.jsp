@@ -71,7 +71,7 @@ body{
 		<input class="dati" type="text" id="city" name="city" value="${CompanyClient.city}" placeholder="City"><br>
 		
 		
-		<br><input class="button" type="submit" value="Update">
+		<br><input class="button" type="submit" value="Submit">
 	</form>
 
 

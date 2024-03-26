@@ -68,7 +68,7 @@ div{
 		<div>
 		<h3>Insert a valid Contract Type:</h3>
 		<input class="text" type="number" id="idContractType" name="idContractType" placeholder="Insert Id Contract Type"> <br> 
-		<input class="submit" type="submit" value="Search">
+		<input class="button" type="submit" value="SEARCH"> <br> 
 	</div>
 	</form>
 	<br>

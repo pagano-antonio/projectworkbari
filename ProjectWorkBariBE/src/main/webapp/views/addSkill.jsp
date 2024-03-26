@@ -23,10 +23,10 @@ body{
 	 
 	}
 	
-	h3 {
-	  font-family: Trebuchet MS, sans-serif;
-      color: #594545;
-	   }
+	h3, .text {
+		font-family: Trebuchet MS, sans-serif;
+	    color: #594545;
+	   	}
    	
 .button {
 	font-family: Trebuchet MS, sans-serif;
@@ -51,11 +51,14 @@ body{
 <br>
         <h3>Insert Skill:</h3>
         
+        
         <input type="hidden" id="jobOffer.idJobOffer" name="jobOffer.idJobOffer" value="${idJobOffer}"> <br>
+        <label class="text" for="title">Title:</label><br>
         <input class="dati" type="text" id="title" name="title" placeholder="Add title"> <br>
+        <label class="text" for="description">Description:</label><br>
         <input class="dati" type="text" id="description" name="description" placeholder="Add description"> <br>
         <br>
-        <input class="submit" type="submit" value="Submit">
+        <input class="button" type="submit" value="Submit"> <br> 
 </form>
 <td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
 </body>

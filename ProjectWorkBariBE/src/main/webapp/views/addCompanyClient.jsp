@@ -58,8 +58,8 @@ body{
         <label class="text" for="address">Address:</label><br>
         <input class="dati" type="text" id="address" name="address" placeholder="Address"> <br>
         <label class="text" for="city">City:</label><br>
-        <input class="dati" type="text" id="city" name="city" placeholder="City"><br>
-        <br> <input class="button" type="submit" value="Submit">
+        <input class="dati" type="text" id="city" name="city" placeholder="City"><br> <br>
+        <input class="button" type="submit" value="Submit">
     </form>
     <td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
 </body>

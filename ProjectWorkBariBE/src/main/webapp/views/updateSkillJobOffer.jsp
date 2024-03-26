@@ -54,7 +54,7 @@
 <label class="text" for="description">Description:</label><br>
 <input type="text" id="description" name="description" value="<%= s.getDescription() %>"> <br>
 <br>
-<input class="button" type="submit" value="Update">
+<input class="button" type="submit" value="Submit">
 
 </form>
 <td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td> <br>

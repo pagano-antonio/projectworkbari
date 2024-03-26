@@ -133,12 +133,12 @@ body{
 
 
 				<td><a
-					href="${pageContext.request.contextPath}/JobOfferCtr/prePutJobOffer?idJobOffer=${res.idJobOffer}"><button>Update</button></a></td>
+					href="${pageContext.request.contextPath}/JobOfferCtr/prePutJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">UPDATE</button></a></td>
 				<td><a
-					href="${pageContext.request.contextPath}/JobOfferCtr/deleteJobOffer?idJobOffer=${res.idJobOffer}"><button>Delete</button></a></td>
+					href="${pageContext.request.contextPath}/JobOfferCtr/deleteJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">DELETE</button></a></td>
 				
-				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=${res.idJobOffer}"><button>Skill</button></a></td>
-				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button>HOME</button></a></td>
+				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">SKILL</button></a></td>
+				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
 				<br>
 			</tr>
 		</c:forEach>

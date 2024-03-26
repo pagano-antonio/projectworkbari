@@ -67,7 +67,7 @@
 	<label class="text" for="idContractType">Id Contract Type:</label><br>
     <input readonly id="contractType.idContractType" name="contractType.idContractType" value="<%= j.getContractType().getIdContractType() %>"> <br>
 	<br>
-	<input class="button" type="submit" value="Update">
+	<input class="button" type="submit" value="Submit">
 	
 	</form>
 	
