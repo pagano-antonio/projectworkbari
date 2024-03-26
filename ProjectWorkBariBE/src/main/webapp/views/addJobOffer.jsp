@@ -72,6 +72,7 @@ body{
        <br> 
        <input class="button" type="submit" value="Submit"> <br> 
     </form>
-    <td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
+    	<h3> Return to HOME</h3>
+    <a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a>
 </body>
 </html>
