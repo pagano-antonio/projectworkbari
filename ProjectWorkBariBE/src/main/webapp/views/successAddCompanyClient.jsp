@@ -130,7 +130,7 @@ body{
 </tr>
 
 </table>
-
+<br>
 <a href="${pageContext.request.contextPath}/CompanyClientCtr/preAddCompanyClient?idCompanyClient=${CompanyClient.idCompanyClient}"><button class="button">ADD NEW COMPANY CLIENT</button></a>
 <br>
 <h3> Return to HOME</h3>
