@@ -65,7 +65,7 @@
         <label class="text" for="email">Email:</label><br>
         <input class="dati" type="text" id="email" name="email" placeholder="Add email"> <br>
         <label class="text" for="phone">Phone:</label><br>
-        <input class="dati" type="number" id="phone" name="phone" placeholder="Add phone"> <br>
+        <input class="dati" type="number" id="phone" name="phone" placeholder="Add phone"> <br> <br>
 
         <input class="button" type="submit" value="Submit">
     </form>

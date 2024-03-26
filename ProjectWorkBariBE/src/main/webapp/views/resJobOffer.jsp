@@ -138,7 +138,7 @@ body{
 	<tr>
 	<td colspan="11">	
 	<h3> About this Job Offer:</h3>
-	<a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">SKILL</button></a></td>	
+	<a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">SKILL</button></a></td>
 	</tr>	
 		</c:forEach>
 	</table>

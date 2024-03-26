@@ -69,8 +69,8 @@ div{
 
 <h3>Insert Job Offer Title:</h3>
 
-<input type="text" id="title" name="title" placeholder="Job Offer Title:"> <br>
-<input class="button" type="submit" value="SEARCH"> <br> <br>
+<input type="text" id="title" name="title" placeholder="Job Offer Title:"> <br> <br>
+<input class="button" type="submit" value="SEARCH"> <br>
 
 </div>
 </form>
