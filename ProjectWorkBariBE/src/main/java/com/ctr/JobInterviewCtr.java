@@ -1,5 +1,7 @@
 package com.ctr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,8 +9,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.dao.EmployeeRepository;
 import com.dao.JobInterviewRepository;
+import com.dao.SkillRepository;
+import com.dao.StateJobInterviewRepository;
+import com.model.CandidateSkill;
+import com.model.Employee;
 import com.model.JobInterview;
+import com.model.Skill;
+import com.model.StateJobInterview;
 
 @Controller
 @RequestMapping("/JobInterviewCtr")
@@ -16,6 +25,10 @@ public class JobInterviewCtr {
 
 	@Autowired
 	private JobInterviewRepository jobInterviewRep;
+	@Autowired
+	private StateJobInterviewRepository  stateJobInterviewRep;
+	@Autowired
+	private EmployeeRepository employeeRep;
 
 //------------------------------------------------------------------------------------	
 
@@ -30,6 +43,11 @@ public class JobInterviewCtr {
 	@GetMapping("/preAddJobInterview")
 	public String preAdd(Model model, Integer idCandidate) {
 		model.addAttribute("idCandidate", idCandidate);
+		List<StateJobInterview> listStateJobInterview=(List<StateJobInterview>)stateJobInterviewRep.findAll();
+		model.addAttribute("listStateJobInterview",listStateJobInterview);
+		List<Employee> listEmployee=(List<Employee>)employeeRep.findAll();
+		model.addAttribute("listEmployee",listEmployee);
+		
 		return "addJobInterview";
 
 	}

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
     
 <!DOCTYPE html>
@@ -55,14 +56,24 @@
        <label class="text" for="date">Date:</label><br>
         <input class="dati" type="date" id="date" name="date" placeholder="Add Date"><br>
        <label class="text" for="stateJobInterview.idStateJobInterview">Id State Job Interview:</label><br>
-       	<input class="dati" type="number" id="stateJobInterview.idStateJobInterview" name="stateJobInterview.idStateJobInterview" placeholder="Add id State Job Interview"> <br>
+       	<select name="stateJobInterview.idStateJobInterview" id="stateJobInterview.idStateJobInterview">
+        <c:forEach var="stateJobInterview" items="${listStateJobInterview}">
+            <option value="${stateJobInterview.idStateJobInterview}" ${stateJobInterview.idStateJobInterview == Candidate.stateJobInterview.idStateJobInterview ? 'selected' : ''}>${stateJobInterview.idStateJobInterview}</option>
+        </c:forEach>
+        </select><br>
+       	<!--  <input class="dati" type="number" id="stateJobInterview.idStateJobInterview" name="stateJobInterview.idStateJobInterview" placeholder="Add id State Job Interview"> <br>-->
        <label class="text" for="outcome">Outcome:</label><br>
        	<input class="dati" type="number" id="outcome" name="outcome" placeholder="Add Outcome"> <br>
        <label class="text" for="notes">Notes:</label><br>
        	<input class="dati" type="text" id="notes" name="notes" placeholder="Add Notes"> <br>
        <label class="text" for="employee.idEmployee">Id Employee:</label><br>
-        <input class="dati" type="number" id="employee.idEmployee" name="employee.idEmployee" placeholder="Add id Employee"> <br>
-       
+        <select name="employee.idEmployee" id="employee.idEmployee">
+        <c:forEach var="employee" items="${listEmployee}">
+            <option value="${employee.idEmployee}" ${employee.idEmployee == Candidate.employee.idEmployee ? 'selected' : ''}>${employee.idEmployee}</option>
+        </c:forEach>
+        </select><br>
+        <!--  <input class="dati" type="number" id="employee.idEmployee" name="employee.idEmployee" placeholder="Add id Employee"> <br>-->
+       <br>
         <input class="button" type="submit" value="Submit">
     	</form>
 

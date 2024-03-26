@@ -1,5 +1,7 @@
 package com.ctr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,13 +11,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import com.dao.CandidateSkillRepository;
+import com.dao.SkillRepository;
 import com.model.CandidateSkill;
+import com.model.Skill;
 
 @Controller
 @RequestMapping("CandidateSkillCtr")
 public class CandidateSkillCtr {
 	@Autowired
 	private CandidateSkillRepository candidateSkillRep;
+	
+	@Autowired
+	private SkillRepository  skillRep;
 	
 	@GetMapping("homePage")
 	public String homePage() {
@@ -27,6 +34,10 @@ public class CandidateSkillCtr {
 	@GetMapping("preAddCandidateSkill")
 	public String preAdd(Model model, Integer idCandidate) {
 		model.addAttribute("idCandidate", idCandidate);
+		List<CandidateSkill> listCandidateSkill=(List<CandidateSkill>)candidateSkillRep.findAll();
+		model.addAttribute("listCandidateSkill",listCandidateSkill);
+		List<Skill> listSkill=(List<Skill>)skillRep.findAll();
+		model.addAttribute("listSkill",listSkill);
 		return"addCandidateSkill";
 	}
 	

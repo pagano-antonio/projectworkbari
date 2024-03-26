@@ -1,5 +1,7 @@
 package com.ctr;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,9 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-
+import com.dao.EducationDegreeTypeRepository;
 import com.dao.EducationRepository;
+import com.model.CandidateSkill;
 import com.model.Education;
+import com.model.EducationDegreeType;
 
 @Controller
 @RequestMapping("/EducationCtr")
@@ -17,6 +21,8 @@ public class EducationCtr {
 	 @Autowired
 	    private EducationRepository educationRep; 
 
+	 @Autowired
+	 private EducationDegreeTypeRepository educationDegreeTypeRep;
 
 	 @GetMapping("/homePage")
 	    public String homePage(Model model) {
@@ -29,7 +35,9 @@ public class EducationCtr {
 	 @GetMapping("/preAddEducation")
 	    public String preAdd (Model model, Integer idCandidate) {
 		 	model.addAttribute("idCandidate", idCandidate);
-	        return "addEducation";
+		 	List<EducationDegreeType> listEducationDegreeType=(List<EducationDegreeType>)educationDegreeTypeRep.findAll();
+			model.addAttribute("listEducationDegreeType",listEducationDegreeType);
+		 	return "addEducation";
 
 	    }
 

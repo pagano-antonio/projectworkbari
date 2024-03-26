@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,12 +49,22 @@
         <h3>Insert Candidate Skill:</h3>
         <label class="text" for="candidate.idCandidate">Id Candidate:</label><br>
         <input class="dati" readonly type="number" id="candidate.idCandidate" name="candidate.idCandidate" value="${idCandidate}"> <br>
-        <label class="text" for="idCandidateSkill">Id Candidate Skill:</label><br>
-        <input class="dati" type="number" id="idCandidateSkill" name="idCandidateSkill" placeholder="Id Candidate Skill"><br>
-        <label class="text" for="skill.idSkill">Id Skill:</label><br>
-        <input class="dati" type="number" id="skill.idSkill" name="skill.idSkill" placeholder="Add idSkill"> <br>
         
-
+        <label class="text" for="idCandidateSkill">Id Candidate Skill:</label><br>
+         <select name="candidateSkills.idCandidateSkill" id="candidateSkills.idCandidateSkill">
+        <c:forEach var="candidateSkills" items="${listCandidateSkill}">
+            <option value="${candidateSkills.idCandidateSkill}" ${candidateSkills.idCandidateSkill == Candidate.candidateSkills.idCandidateSkill ? 'selected' : ''}>${candidateSkills.idCandidateSkill}</option>
+        </c:forEach>
+        </select><br>
+       <!--  <input class="dati" type="number" id="idCandidateSkill" name="idCandidateSkill" placeholder="Id Candidate Skill"><br>-->
+        <label class="text" for="skill.idSkill">Id Skill:</label><br>
+        <!--  <input class="dati" type="number" id="skill.idSkill" name="skill.idSkill" placeholder="Add idSkill"> <br>-->
+         <select name="skill.idSkill" id="skill.idSkill">
+        <c:forEach var="skill" items="${listSkill}">
+            <option value="${skill.idSkill}" ${skill.idSkill == Candidate.skill.idSkill ? 'selected' : ''}>${skill.idSkill}</option>
+        </c:forEach>
+        </select><br>
+        <br>
         <input class="button" type="submit" value="Submit">
     </form>
     

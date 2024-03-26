@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +50,12 @@
 	        <label class="text" for="candidate.idCandidate">Id Candidate:</label><br>
 	        <input class="dati" readonly type="number" id="candidate.idCandidate" name="candidate.idCandidate" value="${idCandidate}" placeholder="Id Candidate"> <br>
 	        <label class="text" for="educationDegreeType.idEducationDegreeType">Id Education Degree Type:</label><br>
-	        <input class="dati" type="number" id="educationDegreeType.idEducationDegreeType" name="educationDegreeType.idEducationDegreeType" placeholder="Id EducationDegreeType"> <br>
+	        <select name="educationDegreeType.idEducationDegreeType" id="educationDegreeType.idEducationDegreeType">
+            <c:forEach var="educationDegreeType" items="${listEducationDegreeType}">
+            <option value="${educationDegreeType.idEducationDegreeType}" ${educationDegreeType.idEducationDegreeType == Candidate.educationDegreeType.idEducationDegreeType ? 'selected' : ''}>${educationDegreeType.idEducationDegreeType}</option>
+            </c:forEach>
+            </select><br>
+	        <!--  <input class="dati" type="number" id="educationDegreeType.idEducationDegreeType" name="educationDegreeType.idEducationDegreeType" placeholder="Id EducationDegreeType"> <br>-->
 	        <label class="text" for="schoolName">School Name:</label><br>
 	        <input class="dati" type="text" id="schoolName" name="schoolName" placeholder="School Name"> <br>
 	        <label class="text" for="place">Place:</label><br>

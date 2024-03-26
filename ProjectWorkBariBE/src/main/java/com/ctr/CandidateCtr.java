@@ -11,14 +11,19 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.dao.CandidateSkillRepository;
 import com.dao.CanditateRepository;
+import com.dao.SkillRepository;
 import com.model.Candidate;
+import com.model.CandidateSkill;
+import com.model.Skill;
 
 @Controller
 @RequestMapping("CandidateCtr")
 public class CandidateCtr {
 	@Autowired
 	private CanditateRepository candidateRep;
+	
 
 	@GetMapping("/homePage")
 	public String homePage() {
@@ -268,6 +273,7 @@ public class CandidateCtr {
 		model.addAttribute("Candidate", candidate);
 		model.addAttribute("CandidateSkillList", candidate.getCandidateSkills());
 
+		
 		return "resCandidateSkill";
 	}
 	
