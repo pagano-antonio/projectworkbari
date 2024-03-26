@@ -26,10 +26,10 @@ body{
 	 
 	}
 	
-	h3 {
-	  font-family: Trebuchet MS, sans-serif;
-      color: #594545;
-	   }
+	h3, .text {
+        font-family: Trebuchet MS, sans-serif;
+        color: #594545;
+           }
    	
 .button {
 	font-family: Trebuchet MS, sans-serif;
@@ -53,11 +53,13 @@ body{
 <form method ="post" action="${pageContext.request.contextPath}/CompanyClientCtr/addCompanyClient">
 <br>
         <h3>Insert Company Client Data:</h3>
-        
-        <input class="dati" type="text" id="name" name="name" placeholder="Add Company Client name"> <br>
-        <input class="dati" type="text" id="address" name="address" placeholder="Add Address"> <br>
-        <input class="dati" type="text" id="city" name="city" placeholder="Add City"><br>
-       <br> <input class="button" type="submit" value="Submit">
+        <label class="text" for="name">Name:</label><br>
+        <input class="dati" type="text" id="name" name="name" placeholder="Company Client name"> <br>
+        <label class="text" for="address">Address:</label><br>
+        <input class="dati" type="text" id="address" name="address" placeholder="Address"> <br>
+        <label class="text" for="city">City:</label><br>
+        <input class="dati" type="text" id="city" name="city" placeholder="City"><br>
+        <br> <input class="button" type="submit" value="Submit">
     </form>
     <td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
 </body>
