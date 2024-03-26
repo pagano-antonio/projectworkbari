@@ -25,7 +25,7 @@ body{
 	}
 	
 	 .container {
-       width: 70%; 
+       width: 60%; 
        margin: 0 auto; 
        padding: 20px; 
        box-sizing: border-box; 
@@ -115,8 +115,8 @@ body{
                 <th>NAME</th>
                 <th>ADDRESS</th>
                 <th>CITY</th>
-				<th></th>
-				<th></th>
+				<th colspan= "2">OPERATIONS</th>
+				
 							
 		</tr>		
 

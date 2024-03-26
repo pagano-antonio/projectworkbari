@@ -26,7 +26,7 @@ body{
 	 
 	}
 	
-	h3 {
+	h3, .text {
 	  font-family: Trebuchet MS, sans-serif;
       color: #594545;
 	   }
@@ -42,7 +42,7 @@ body{
     margin-upper: 15px;
     margin-left: auto;
     margin-right: auto;
-        
+      
 	 }
 	
 	
@@ -54,10 +54,18 @@ body{
 <br>
         <h3>Insert Company Client Data:</h3>
         
-        <input class="dati" type="text" id="name" name="name" placeholder="Add Company Client name"> <br>
-        <input class="dati" type="text" id="address" name="address" placeholder="Add Address"> <br>
-        <input class="dati" type="text" id="city" name="city" placeholder="Add City"><br>
+        <label class="text" for="name">Name:</label><br>
+        <input class="dati" type="text" id="name" name="name" placeholder="Company Name"> <br>
+        <label class="text" for="address">Address:</label><br>
+        <input class="dati" type="text" id="address" name="address" placeholder="Address"> <br>
+        <label class="text" for="city">City:</label><br>
+        <input class="dati" type="text" id="city" name="city" placeholder="City"><br>
+        
        <br> <input class="button" type="submit" value="Submit">
     </form>
+    
+    <h3> Return to HOME</h3>
+	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button class="button">HOME</button></a> <br>
+	
 </body>
 </html>

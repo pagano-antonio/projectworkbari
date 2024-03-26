@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Updating</title>
+<title>Updating Company Client</title>
 
 
 <style>
@@ -28,10 +28,10 @@ body{
 	 
 	}
 	
-	  h3 {
-	  font-family: Trebuchet MS, sans-serif;
-      color: #594545;
-	   }
+	h3, .text {
+        font-family: Trebuchet MS, sans-serif;
+        color: #594545;
+           }
    	
   .button {
 	font-family: Trebuchet MS, sans-serif;
@@ -61,9 +61,14 @@ body{
 	<h3>Update Company Client informations:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/CompanyClientCtr/UpdateCompanyClient">
 		
+		
+		<label class="text" for="idCompanyClient">Id Company Client:</label><br>
 		<input class="" readonly id="idCompanyClient" name="idCompanyClient" value="${CompanyClient.idCompanyClient}" placeholder="ID COMPANY CLIENT"> <br> 
-		<br><input class="dati" type="text" id="name" name="name" value="${CompanyClient.name}" placeholder="Name"> <br>
+		<label class="text" for="name">Name:</label><br>
+		<input class="dati" type="text" id="name" name="name" value="${CompanyClient.name}" placeholder="Name"> <br>
+		<label class="text" for="address">Address:</label><br>
 		<input class="dati" type="text" id="address" name="address" value="${CompanyClient.address}" placeholder="Address"> <br>  
+		<label class="text" for="city">City:</label><br>
 		<input class="dati" type="text" id="city" name="city" value="${CompanyClient.city}" placeholder="City"><br>
 		
 		
@@ -71,7 +76,7 @@ body{
 	</form>
 </div>
 
-<h3> Return to your profile</h3>
+<h3> Return to HOME</h3>
 	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button class="button">HOME</button></a> <br>
 
 </body>
