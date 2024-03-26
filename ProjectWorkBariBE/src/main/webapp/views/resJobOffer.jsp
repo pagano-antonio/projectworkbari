@@ -113,7 +113,7 @@ body{
 			<th>MIN RAL</th>
 			<th>MAX RAL</th>
 			<th>ID CONTRACT TYPE</th>
-			<th colspan="4">OPERATION</th>
+			<th colspan="2">OPERATION</th>
 		</tr>
 
 		<c:forEach var="res" items="${listJobOffer}">
@@ -130,23 +130,27 @@ body{
 				<td>${res.contractType.idContractType}</td>
 
 
-
-
 				<td><a
 					href="${pageContext.request.contextPath}/JobOfferCtr/prePutJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">UPDATE</button></a></td>
 				<td><a
 					href="${pageContext.request.contextPath}/JobOfferCtr/deleteJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">DELETE</button></a></td>
-				
-				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">SKILL</button></a></td>
-				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
-				<br>
 			</tr>
+	<tr>
+	<td colspan="11">	
+	<h3> About this Job Offer:</h3>
+	<a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">SKILL</button></a></td>	
+	</tr>	
 		</c:forEach>
 	</table>
+	<br>
 	</c:when>
-<c:otherwise>
-<h2>Result not found!</h2><br>
-</c:otherwise>
-</c:choose>
+	
+	<c:otherwise>
+	<h2>Result not found!</h2><br>
+	</c:otherwise>
+	</c:choose>
+	
+	<h3> Return to HOME</h3>
+		<a href="${pageContext.request.contextPath}/Home"><button class="button">HOME</button></a> <br>
 </body>
 </html>

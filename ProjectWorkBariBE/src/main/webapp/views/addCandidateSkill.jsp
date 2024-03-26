@@ -54,7 +54,7 @@
         <input class="dati" type="number" id="skill.idSkill" name="skill.idSkill" placeholder="Add idSkill"> <br>
         
 
-        <input class="submit" type="submit" value="Submit">
+        <input class="button" type="submit" value="Submit">
     </form>
     
     <h3> Return to HOME</h3>

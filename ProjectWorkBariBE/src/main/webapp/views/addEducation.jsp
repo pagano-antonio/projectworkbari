@@ -58,7 +58,7 @@
 	        <input class="dati" type="date" id="date" name="date" placeholder="Date"> <br>
 	        <label class="text" for="finalGrade">Final Grade:</label><br>
 	        <input class="dati" type="number" id="finalGrade" name="finalGrade" placeholder="Final Grade"> <br>
-	        
+	        <br>
 	        <input class="button" type="submit" value="Submit">
 	</form>
 	
