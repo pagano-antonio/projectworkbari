@@ -22,7 +22,7 @@
 	    margin-right: 300px;
 	 	}
 	
-		h3 {
+		h3, .text {
 		font-family: Trebuchet MS, sans-serif;
 	    color: #594545;
 		}
@@ -47,19 +47,19 @@
 <div>
 	<form method ="post" action="${pageContext.request.contextPath}/WorkExperienceCtr/addWorkExperience">
         <h3>Insert New Work Experience:</h3>
-        <h3>Id Candidate:</h3>
+        <label class="text" for="candidate.idCandidate">Id Candidate:</label><br>
         <input class="dati" readonly type="number" id="candidate.idCandidate" name="candidate.idCandidate" value="${idCandidate}"> <br>
-        <h3>Title:</h3>
+        <label class="text" for="title">Title:</label><br>
         <input class="dati" type="text" id="title" name="title" placeholder="Add title"> <br>
-        <h3>Description:</h3>
+        <label class="text" for="description">Description:</label><br>
         <input class="dati" type="text" id="description" name="description" placeholder="Add description"> <br>
-        <h3>Start Date:</h3>
+        <label class="text" for="startDate">Start Date:</label><br>
         <input class="dati" type="date" id="startDate" name="startDate" placeholder="Add startDate"><br>
-        <h3>End Date:</h3>
+        <label class="text" for="endDate">End Date:</label><br>
         <input class="dati" type="date" id="endDate" name="endDate" placeholder="Add endDate"><br>
-        <h3>Company:</h3>
+        <label class="text" for="company">Company:</label><br>
         <input class="dati" type="text" id="company" name="company" placeholder="Add company"> <br>
-        <h3>City:</h3>
+        <label class="text" for="city">City:</label><br>
         <input class="dati" type="text" id="city" name="city" placeholder="Add city"> <br>
         
         <input class="button" type="submit" value="Submit">

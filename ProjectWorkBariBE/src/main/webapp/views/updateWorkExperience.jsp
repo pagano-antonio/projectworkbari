@@ -22,7 +22,7 @@
 	    margin-right: 300px;	 
 		}
 	
-		h3 {
+		h3, .text {
 		font-family: Trebuchet MS, sans-serif;
 	    color: #594545;
 	   	}
@@ -46,14 +46,21 @@
 <div>
 	<h3>Update Work Experience:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/WorkExperienceCtr/updateWorkExperience">
-		
+		<label class="text" for="idWorkExperience">Id Work Experience:</label><br>
 		<input class="" readonly id="idWorkExperience" name="idWorkExperience" value="${WorkExperience.idWorkExperience}"> <br> 
+		<label class="text" for="candidate.idCandidate">Id Candidate:</label><br>
 		<input class="" readonly id="idCandidate" name="idCandidate" value="${WorkExperience.candidate.idCandidate}" placeholder="Id Candidate"> <br>
+		<label class="text" for="title">Title:</label><br>
 		<input class="" type= "text" id="title" name="title" value="${WorkExperience.title}" placeholder="Title"> <br>
+		<label class="text" for="description">Description:</label><br>
 		<input class="" type= "text" id="description" name="description" value="${WorkExperience.description}" placeholder="Description"> <br>
+		<label class="text" for="startDate">Start Date:</label><br>
 		<input class="" type= "date" id="startDate" name="startDate" value="${WorkExperience.startDate}" placeholder="Start Date"> <br>
+		<label class="text" for="endDate">End Date:</label><br>
 		<input class="" type= "date" id="endDate" name="endDate" value="${WorkExperience.endDate}" placeholder="End Date"> <br>
+		<label class="text" for="company">Company:</label><br>
 		<input class="" type= "text" id="company" name="company" value="${WorkExperience.company}" placeholder="Company"> <br>
+		<label class="text" for="city">City:</label><br>
 		<input class="" type= "text" id="city" name="city" value="${WorkExperience.city}" placeholder="City"> <br>
 		
 		<input class="submit" type="submit" value="Update">

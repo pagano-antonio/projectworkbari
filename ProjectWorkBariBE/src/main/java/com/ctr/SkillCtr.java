@@ -47,7 +47,7 @@ public class SkillCtr {
 		System.out.println("la lista è" + skillJobOffer.size());
 		model.addAttribute("JobOffer", jobOffer);
 		model.addAttribute("skillJobOffer", skillJobOffer);
-	    return "skillJobOffer";
+	    return "success";
 
 	}
 //-----------------------------------------------------------

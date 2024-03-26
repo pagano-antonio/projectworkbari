@@ -117,7 +117,6 @@ body{
                 <th>CITY</th>
 				<th colspan= "2">OPERATIONS</th>
 				
-							
 		</tr>		
 
 		

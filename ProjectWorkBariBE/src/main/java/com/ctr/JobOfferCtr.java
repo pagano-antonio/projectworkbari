@@ -15,9 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.JobOfferRepository;
-import com.dao.JobOfferSkillRepository;
 import com.model.JobOffer;
-import com.model.JobOfferSkill;
 
 
 @Controller //questa classe gestisce request e dovrà fornire response(jsp,html).
@@ -153,12 +151,9 @@ public class JobOfferCtr {
 
 		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("Title", title);
-		if (listJobOffer.size() > 0) {
-
-			return "resJobOffer";
-		} else {
-			return "error";
-		}
+		
+		return "resJobOffer";
+		
 	}
 
 //------------------------------------------------------------------------------------
@@ -179,11 +174,9 @@ public class JobOfferCtr {
 		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("StartDate", startDate);
 		model.addAttribute("EndDate", endDate);
-		if (listJobOffer.size() > 0) {
-			return "resJobOffer";
-		} else {
-			return "error";
-		}
+		
+		return "resJobOffer";
+		
 
 	}
 
@@ -203,11 +196,9 @@ public class JobOfferCtr {
 
 		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("idCompanyClient", idCompanyClient);
-		if (listJobOffer.size() > 0) {
-			return "resJobOffer";
-		} else {
-			return "error";
-		}
+		
+	    return "resJobOffer";
+		
 	}
 
 
@@ -225,11 +216,9 @@ public class JobOfferCtr {
 		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("minRal", minRal);
 		model.addAttribute("maxRal", maxRal);
-		if (listJobOffer.size() > 0) {
-			return "resJobOffer";
-		} else {
-			return "error";
-		}
+		
+		return "resJobOffer";
+		
 	}
 	
 //-------------------------------------------------------------------------------
@@ -243,11 +232,9 @@ public class JobOfferCtr {
 
 		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByContractType_idContractType(idContractType);
 		model.addAttribute("listJobOffer", listJobOffer);
-		if (listJobOffer.size() > 0) {
-			return "resJobOffer";
-		} else {
-			return "error";
-		}
+		
+		return "resJobOffer";
+		
 	}
 	
 //-------------------------------------------------------------------------------
@@ -262,11 +249,9 @@ public class JobOfferCtr {
 		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByJobOfferSkills_Skill_Title(title);
 		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("title", title);
-		if (listJobOffer.size() > 0) {
-			return "resJobOffer";
-		} else {
-			return "error";
-		}
+		
+	    return "resJobOffer";
+		
 	}
 //-------------------------------------------------------------------------
 	@GetMapping("/skillJobOffer")
@@ -275,7 +260,7 @@ public class JobOfferCtr {
 		jobOffer = jobOfferRep.findById(idJobOffer).get();
 		model.addAttribute("JobOffer", jobOffer);
 		model.addAttribute("skillJobOffer", jobOffer.getJobOfferSkills());
-		return "skillJobOffer";
+		return "resSkillJobOffer";
 	}
 
 }

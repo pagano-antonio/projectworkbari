@@ -22,7 +22,7 @@
 	    margin-right: 300px;	 
 		}
 	
-		h3 {
+		h3, .text {
 		font-family: Trebuchet MS, sans-serif;
 	    color: #594545;
 	   	}
@@ -47,21 +47,22 @@
 	<h3>Update Job Informations:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/JobInterviewCtr/updateJobInterview">
 		<h3>Id Job Interview:</h3>
+		<label class="text" for="idJobInterview">Id Job Interview:</label><br>
 		<input class="" readonly type="number" id="idJobInterview" name="idJobInterview" value="${Interview.idJobInterview}" placeholder="Id Job Interview"> <br> 
-		<h3>Id Candidate:</h3>
+		<label class="text" for="candidate.idCandidate">Id Candidate:</label><br>
 		<input class="" readonly type= "number" id="candidate.idCandidate" name="candidate.idCandidate" value="${Interview.candidate.idCandidate}" placeholder="Id Candidate Skill"> <br>
-		<h3>Date:</h3>
+		<label class="text" for="date">Date:</label><br>
 		<input class="" type= "date" id="date" name="date" value="${Interview.date}" placeholder="Date"> <br>
-		<h3>Id State Job Interview:</h3>
+		<label class="text" for="stateJobInterview.idStateJobInterview">Id State Job Interview:</label><br>
 		<input class="" type= "number" id="stateJobInterview.idStateJobInterview" name="stateJobInterview.idStateJobInterview" value="${Interview.stateJobInterview.idStateJobInterview}" placeholder="Id State Job Interview"> <br>
-		<h3>Outcome:</h3>
+		<label class="text" for="outcome">Outcome:</label><br>
 		<input class="" type= "number" id="outcome" name="outcome" value="${Interview.outcome}" placeholder="Outcome"> <br>
-		<h3>Notes:</h3>
+		<label class="text" for="notes">Notes:</label><br>
 		<input class="" type= "text" id="notes" name="notes" value="${Interview.notes}" placeholder="Notes"> <br>
-		<h3>Id Employee:</h3>
+		<label class="text" for="employee.idEmployee">Id Employee:</label><br>
 		<input class="" type= "number" id="employee.idEmployee" name="employee.idEmployee" value="${Interview.employee.idEmployee}" placeholder="Id Employee"> <br>
 		
-		<input class="submit" type="submit" value="Update">
+		<input class="button" type="submit" value="Update">
 	</form>
 </div>
 

@@ -28,10 +28,12 @@ body{
 	 
 	}
 	
-	h3, .text {
-        font-family: Trebuchet MS, sans-serif;
-        color: #594545;
-           }
+
+	  h3, .text {
+		font-family: Trebuchet MS, sans-serif;
+	    color: #594545;
+	   	}
+
    	
   .button {
 	font-family: Trebuchet MS, sans-serif;
@@ -56,12 +58,12 @@ body{
 
 
 
-<div>
+
 <br>
 	<h3>Update Company Client informations:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/CompanyClientCtr/UpdateCompanyClient">
 		
-		
+		<br>
 		<label class="text" for="idCompanyClient">Id Company Client:</label><br>
 		<input class="" readonly id="idCompanyClient" name="idCompanyClient" value="${CompanyClient.idCompanyClient}" placeholder="ID COMPANY CLIENT"> <br> 
 		<label class="text" for="name">Name:</label><br>
@@ -72,9 +74,9 @@ body{
 		<input class="dati" type="text" id="city" name="city" value="${CompanyClient.city}" placeholder="City"><br>
 		
 		
-		<br><input class="button" type="submit" value="Update">
+		<br><input class="button" type="submit" value="Submit">
 	</form>
-</div>
+
 
 <h3> Return to HOME</h3>
 	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button class="button">HOME</button></a> <br>

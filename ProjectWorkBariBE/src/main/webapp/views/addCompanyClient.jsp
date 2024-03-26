@@ -30,6 +30,7 @@ body{
 	  font-family: Trebuchet MS, sans-serif;
       color: #594545;
 	   }
+
    	
 .button {
 	font-family: Trebuchet MS, sans-serif;
@@ -66,6 +67,6 @@ body{
     
     <h3> Return to HOME</h3>
 	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button class="button">HOME</button></a> <br>
-	
+
 </body>
 </html>

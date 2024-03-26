@@ -67,9 +67,11 @@ div{
 <body>
 	<form method ="get"action="${pageContext.request.contextPath}/CompanyClientCtr/findByNameCompanyClient">
 	 <div>
+
 		<h3>Insert Company Client name:</h3>
         <input class="text" type="text" id="name" name="name" placeholder="Company Name:"><br> <br> 
-		<input class= "button" type="submit" value="Sumbit"> <br> 
+		<input class= "button" type="submit" value="SEARCH"> <br> 
+
 	 </div>
 	</form>	
 <br>

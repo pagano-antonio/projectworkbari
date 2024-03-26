@@ -27,6 +27,11 @@
 	    border-color: #3d2f2d;
 	    border-style: outset;
 		}
+		
+		h4 {
+      	font-family: Trebuchet MS, sans-serif;
+      	color: white; 
+      	}
 	
 		div{
 		position: relative;
@@ -60,10 +65,13 @@
 	<form method ="post" action="${pageContext.request.contextPath}/CandidateCtr/findBySurname">
 		
 		<input class="text" type="text" id="surname" name="surname" placeholder="Insert Surname"> <br> 
-		
+		<br>
 		<input class="button" type="submit" value="Search">
 	</form>
 </div>
+
+<h4> Return to HOME</h4>
+		<a href="${pageContext.request.contextPath}/Home"><button class="button">HOME</button></a> <br>
 
 </body>
 </html>

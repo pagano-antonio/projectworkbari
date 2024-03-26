@@ -22,7 +22,7 @@
 	    margin-right: 300px;	 
 		}
 	
-		h3 {
+		h3, .text {
 		font-family: Trebuchet MS, sans-serif;
 	    color: #594545;
 	   	}
@@ -47,11 +47,11 @@
 <div>
 	<h3>Update skill informations:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/CandidateSkillCtr/putCandidateSkill">
-		<h3>Id Candidate:</h3>
+		<label class="text" for="candidate.idCandidate">Id Candidate:</label><br>
 		<input class="" readonly type="number" id="candidate.idCandidate" name="candidate.idCandidate" value="${candidateSkill.candidate.idCandidate}" placeholder="Id candidate"> <br> 
-		<h3>Id Candidate Skill:</h3>
+		<label class="text" for="idCandidateSkill">Id Candidate Skill:</label><br>
 		<input class="" type= "number" id="idCandidateSkill" name="idCandidateSkill" value="${candidateSkill.idCandidateSkill}" placeholder="Id Candidate Skill"> <br>
-		<h3>Id Skill:</h3>
+		<label class="text" for="idSkill">Id Skill:</label><br>
 		<input class="" type= "number" id="idSkill" name="idSkill" value="${candidateSkill.skill.idSkill}" placeholder="Id Skill"> <br>
 		
 		<input class="button" type="submit" value="Update">
