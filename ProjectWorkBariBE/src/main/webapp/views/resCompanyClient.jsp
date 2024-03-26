@@ -115,8 +115,7 @@ body{
                 <th>NAME</th>
                 <th>ADDRESS</th>
                 <th>CITY</th>
-				<th></th>
-				<th></th>
+				<th colspan="2">OPERATION</th>
 							
 		</tr>		
 
