@@ -69,7 +69,7 @@ div{
 	 <div>
 		<h3>Insert Company Client name:</h3><br>
         <input class="text" type="text" id="name" name="name" placeholder="Insert Company Client Name:"><br> <br> 
-		<input class= "button" type="submit" value="Sumbit"> <br> <br>
+		<input class="button" type="submit" value="SEARCH"> <br> <br>
 	 </div>
 	</form>	
 <br>

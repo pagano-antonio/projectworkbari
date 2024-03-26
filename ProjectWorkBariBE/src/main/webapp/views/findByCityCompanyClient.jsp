@@ -67,7 +67,7 @@ div{
 	  <div>
 		<h3>Insert a valid City:</h3> <br>
 		<input class="text" type="text" id="city" name="city" placeholder="Insert Company Client city:"> <br> <br>
-		<input class="button" type="submit" value="Search"> <br> <br>
+		<input class="button" type="submit" value="SEARCH"> <br> <br>
 	 </div>
 	</form>
 <br>
