@@ -75,9 +75,9 @@ div{
 </div>
 </form>
 <br>
-<br>
-<h4> Return to HOME</h4>
-	<a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a>
 
+<h4> Return to HOME</h4>
+		<a href="${pageContext.request.contextPath}/Home"><button class="button">HOME</button></a> <br>
+<br>
 </body>
 </html>

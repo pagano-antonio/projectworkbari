@@ -108,7 +108,7 @@ body{
             <th>NAME</th>
             <th>ADDRESS</th>
             <th>CITY</th>
-            <th colspan="3">OPERATION</th>
+            <th colspan="2">OPERATION</th>
             
         </tr>
 
@@ -123,13 +123,15 @@ body{
  
  
  
-<td><a href="${pageContext.request.contextPath}/CompanyClientCtr/preAddCompanyClient?idCompanyClient=${CompanyClient.idCompanyClient}"><button class="button">ADD NEW COMPANY CLIENT</button></a></td>
+
 <td><a href="${pageContext.request.contextPath}/CompanyClientCtr/prePutCompanyClient?idCompanyClient=${CompanyClient.idCompanyClient}"><button class="button">UPDATE</button></a></td>
 <td><a href="${pageContext.request.contextPath}/CompanyClientCtr/deleteCompanyClient?idCompanyClient=${CompanyClient.idCompanyClient}"><button class="button">DELETE</button></a></td>
 
 </tr>
 
 </table>
+
+<a href="${pageContext.request.contextPath}/CompanyClientCtr/preAddCompanyClient?idCompanyClient=${CompanyClient.idCompanyClient}"><button class="button">ADD NEW COMPANY CLIENT</button></a>
 <br>
 <h3> Return to HOME</h3>
 	<a href="${pageContext.request.contextPath}/CompanyClientCtr/homePage"><button class="button">HOME</button></a>

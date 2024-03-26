@@ -60,13 +60,19 @@ body{
 <br>
 	<h3>Update your profile informations:</h3>
 	<form method ="post" action="${pageContext.request.contextPath}/EmployeeCtr/putEmployee">
-		
+		<label class="text" for="idEmployee">Id Employee:</label><br>
 		<input class="" readonly id="idEmployee" name="idEmployee" value="${employee.idEmployee}" placeholder="ID"> <br> 
+		<label class="text" for="employeeType.idEmployeeType">Id Employee Type:</label><br>
 		<input class="" type= "hidden" id="employeeType.idEmployeeType" name="employeeType.idEmployeeType" value="${employee.employeeType.idEmployeeType}" placeholder="ID"> <br>
+		<label class="text" for="name">Name:</label><br>
 		<input class="dati" type="text" id="name" name="name" value="${employee.name}" placeholder="Name"> <br>
+		<label class="text" for="surname">Surname:</label><br>
 		<input class="dati" type="text" id="surname" name="surname" value="${employee.surname}" placeholder="Surname"> <br>  
+		<label class="text" for="email">Email:</label><br>
 		<input class="dati" type="text" id="email" name="email" value="${employee.email}" placeholder="E-mail"><br>
+		<label class="text" for="username">Username:</label><br>
 		<input class="dati" type="text" id="username" name="username" value="${employee.username}" placeholder="Username"> <br>
+		<label class="text" for="password">Password:</label><br>
 		<input class="dati" type="text" id="password" name="password" value="${employee.password}" placeholder="Password"> <br>
 		
 		<br><input class="button" type="submit" value="Update">
