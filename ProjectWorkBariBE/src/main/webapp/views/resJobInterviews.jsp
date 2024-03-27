@@ -99,7 +99,7 @@
 			<tr>
 				<th>Id Job Interview</th>
 				<th>Date</th>
-				<th>Id State Job Interview</th>
+				<th>State Job Interview</th>
 				<th>Outcome</th>
 				<th>Notes</th>
 				<th colspan="2">Operation</th>
@@ -110,7 +110,7 @@
 			<tr>	
 				<td> ${interviews.idJobInterview} </td>
 				<td> ${interviews.date} </td>
-				<td> ${interviews.stateJobInterview.idStateJobInterview} </td>
+				<td> ${interviews.stateJobInterview.title} </td>
 				<td> ${interviews.outcome} </td>
 				<td> ${interviews.notes} </td>	
 				
