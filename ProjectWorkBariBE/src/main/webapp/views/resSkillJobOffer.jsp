@@ -117,12 +117,6 @@ body{
 				<td><a href="${pageContext.request.contextPath}/SkillCtr/prePutSkill?idSkill=${skill.skill.idSkill}"><button class="button">UPDATE</button></a></td>
 				
 				<td><a href="${pageContext.request.contextPath}/SkillCtr/deleteSkill?idSkill=${skill.skill.idSkill}"><button class="button">DELETE</button></a></td>
-				
-
-				<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill?idJobOffer=${skill.jobOffer.idJobOffer}"><button class="button">ADD NEW SKILL</button></a></td>
-
-				<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill"><button class="button">ADD NEW SKILL</button></a></td>
-				<br>
 			</tr>
 		</c:forEach>
 	</table>
@@ -131,6 +125,8 @@ body{
 <h2>Result not found!</h2><br>
 </c:otherwise>
 </c:choose>
+<h3>About this Skill:</h3>
+		<a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill?idJobOffer=${skill.jobOffer.idJobOffer}"><button class="button">ADD NEW SKILL</button></a><br>
 <h3> Return to HOME</h3>
 		<a href="${pageContext.request.contextPath}/Home"><button class="button">HOME</button></a> <br>
 </body>
