@@ -118,13 +118,10 @@ body{
 				
 				<td><a href="${pageContext.request.contextPath}/SkillCtr/deleteSkill?idSkill=${skill.skill.idSkill}"><button class="button">DELETE</button></a></td>
 				
-<<<<<<< HEAD
+
 				<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill?idJobOffer=${skill.jobOffer.idJobOffer}"><button class="button">ADD NEW SKILL</button></a></td>
-				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
-=======
+
 				<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill"><button class="button">ADD NEW SKILL</button></a></td>
-				
->>>>>>> 75684501c3eb126b71340b042c328279a7a415e8
 				<br>
 			</tr>
 		</c:forEach>
