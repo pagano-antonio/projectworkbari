@@ -14,7 +14,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.dao.CompanyClientRepository;
+import com.dao.ContractTypeRepository;
 import com.dao.JobOfferRepository;
+import com.dao.SkillRepository;
+import com.model.CandidateSkill;
+import com.model.CompanyClient;
+import com.model.ContractType;
 import com.model.JobOffer;
 
 
@@ -24,6 +30,10 @@ public class JobOfferCtr {
 
 	@Autowired
 	private JobOfferRepository jobOfferRep;
+	@Autowired
+	private ContractTypeRepository  contractTypeRep;
+	@Autowired
+	private CompanyClientRepository companyClientRep;
 	
 //------------------------------------------------------------------------------------
 
@@ -70,7 +80,12 @@ public class JobOfferCtr {
 //------------------------------------------------------------------------------------
 
 	@GetMapping("/preAddJobOffer")
-	public String preAdd(Model model) {
+	public String preAdd(Model model, Integer idJobOffer) {
+		model.addAttribute("idJobOffer", idJobOffer);
+		List<ContractType> listContractType=(List<ContractType>)contractTypeRep.findAll();
+		model.addAttribute("listContractType",listContractType);
+		List<CompanyClient> listCompanyClient=(List<CompanyClient>)companyClientRep.findAll();
+		model.addAttribute("listCompanyClient",listCompanyClient);
 
 		return "addJobOffer"; 
 

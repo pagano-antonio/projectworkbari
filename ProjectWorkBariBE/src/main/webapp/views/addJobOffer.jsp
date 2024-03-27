@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     
 <!DOCTYPE html>
 <html>
@@ -61,14 +61,24 @@ body{
        <input class="dati" type="date" id="startDate" name="startDate" placeholder="Add Start Date"><br>
        <label class="text" for="endDate">End Date:</label><br>
        <input class="dati" type="date" id="endDate" name="endDate" placeholder="Add End Date"><br>
-       <label class="text" for="idCompanyClient">Id Company Client:</label><br>
-       <input class="dati" type="number" id="companyClient.idCompanyClient" name="companyClient.idCompanyClient" placeholder="Add id Company Client"> <br>
+       <label class="text" for="idCompanyClient">Company Client:</label><br>
+       <select name="companyClient.idCompanyClient" id="companyClient.idCompanyClient">
+        <c:forEach var="companyClient" items="${listCompanyClient}">
+            <option value="${companyClient.idCompanyClient}" ${companyClient.idCompanyClient == JobOffer.companyClient.idCompanyClient ? 'selected' : ''}>${companyClient.name}</option>
+        </c:forEach>
+        </select><br>
+       <!--<input class="dati" type="number" id="companyClient.idCompanyClient" name="companyClient.idCompanyClient" placeholder="Add id Company Client"> <br>-->
        <label class="text" for="minRal">Min Ral:</label><br>
        <input class="dati" type="number" id="minRal" name="minRal" placeholder="Add Min Ral"> <br>
        <label class="text" for="maxRal">Max Ral:</label><br>
        <input class="dati" type="number" id="maxRal" name="maxRal" placeholder="Add Max Ral"> <br>
-       <label class="text" for="idContractType">Id Contract Type:</label><br>
-       <input class="dati" type="number" id="contractType.idContractType" name="contractType.idContractType" placeholder="Add id Contract Type"> <br>
+       <label class="text" for="idContractType">Contract Type:</label><br>
+       <select name="contractType.idContractType" id="contractType.idContractType">
+        <c:forEach var="contractType" items="${listContractType}">
+            <option value="${contractType.idContractType}" ${contractType.idContractType == JobOffer.contractType.idContractType ? 'selected' : ''}>${contractType.title}</option>
+        </c:forEach>
+        </select><br>
+       <!--<input class="dati" type="number" id="contractType.idContractType" name="contractType.idContractType" placeholder="Add id Contract Type"> <br>-->
        <br> 
        <input class="button" type="submit" value="Submit"> <br> 
     </form>
