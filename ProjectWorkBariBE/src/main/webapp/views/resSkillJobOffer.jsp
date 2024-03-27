@@ -104,7 +104,7 @@ body{
 			<th>ID SKILL</th>
 			<th>TITLE</th>
 			<th>DESCRIPTION</th>
-			<th colspan="4">OPERATION</th>
+			<th colspan="3">OPERATION</th>
 
 		</tr>
 		<c:forEach var="skill" items="${skillJobOffer}">
@@ -119,7 +119,7 @@ body{
 				<td><a href="${pageContext.request.contextPath}/SkillCtr/deleteSkill?idSkill=${skill.skill.idSkill}"><button class="button">DELETE</button></a></td>
 				
 				<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill"><button class="button">ADD NEW SKILL</button></a></td>
-				<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td>
+				
 				<br>
 			</tr>
 		</c:forEach>
@@ -129,5 +129,7 @@ body{
 <h2>Result not found!</h2><br>
 </c:otherwise>
 </c:choose>
+<h3> Return to HOME</h3>
+		<a href="${pageContext.request.contextPath}/Home"><button class="button">HOME</button></a> <br>
 </body>
 </html>
