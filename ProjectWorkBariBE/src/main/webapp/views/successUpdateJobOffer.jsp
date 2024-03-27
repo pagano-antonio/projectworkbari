@@ -130,11 +130,14 @@ body{
 
 <td><a href="${pageContext.request.contextPath}/JobOfferCtr/prePutJobOffer?idJobOffer=<%= j.getIdJobOffer() %>"><button class="button">UPDATE</button></a></td>
 <td><a href="${pageContext.request.contextPath}/JobOfferCtr/deleteJobOffer?idJobOffer=<%= j.getIdJobOffer() %>"><button class="button">DELETE</button></a></td>
-<td><a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=<%=j.getIdJobOffer() %>"><button class="button">SKILL</button></a></td>
-<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill?idJobOffer=<%= j.getIdJobOffer() %>"><button class="button">ADD NEW SKILL</button></a></td>
+<!-- <td><a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=<%=j.getIdJobOffer() %>"><button class="button">SKILL</button></a></td> -->
+
 
 </tr>
 </table>
+<h3>About this Job Offer:</h3>
+<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill?idJobOffer=<%= j.getIdJobOffer() %>"><button class="button">ADD NEW SKILL</button></a></td>
+
 <h3>Return to HOME</h3>
 <td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td> 
 
