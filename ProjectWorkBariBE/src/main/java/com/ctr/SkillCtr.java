@@ -1,6 +1,7 @@
 package com.ctr;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.dao.JobOfferRepository;
 import com.dao.SkillRepository;
 import com.model.JobOffer;
+import com.model.JobOfferSkill;
 import com.model.Skill;
 
 
@@ -40,7 +43,14 @@ public class SkillCtr {
 	
 }
 	@PostMapping("/addSkill")
-	public String add(Skill s, Model model) {
+	public String add(@RequestParam Integer idJobOffer, Skill s, Model model) {
+		System.out.println(idJobOffer);
+		JobOfferSkill jobOfferSkill = new JobOfferSkill();
+		jobOfferSkill.setJobOffer(jobOfferRep.findById(idJobOffer).get());
+		jobOfferSkill.setSkill(s);
+		List<JobOfferSkill> listJobOfferSkill = new ArrayList<>();
+		listJobOfferSkill.add(jobOfferSkill);
+		s.setJobOfferSkills(listJobOfferSkill);
 		skillRep.save(s);
 		JobOffer jobOffer = new JobOffer();
 		List <JobOffer> skillJobOffer = jobOfferRep.findByJobOfferSkills_Skill(s);

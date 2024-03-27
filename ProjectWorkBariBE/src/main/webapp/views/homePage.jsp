@@ -206,7 +206,7 @@
 	</div>
 	
 	<div id="notifiche" class="notifiche-box">
-  <h3>Notifiche</h3>
+  <h3>Notifications</h3>
 </div>
 	<script>
         // Codice JavaScript per rendere il testo dinamico
@@ -223,11 +223,12 @@
             welcomeText.addEventListener('mouseout', function() {
                 welcomeText.textContent = 'Welcome to Java Final Project';
             });
+            simulazioneNotifiche();
         };
         
      // Array di notifiche simulate
         var notificheSimulate = [
-            { testo: "Aggiornamento disponibile in data 28/03. Il sito non sarà disponibile dalle ore 00:00 alle ore 06:00. Per info contattare il centro assistenza." },
+            { testo: "Update available on 28/03. The site will be unavailable from 00:00 to 06:00. For info, please contact the service centre." },
             
         ];
 
@@ -248,11 +249,6 @@
             });
         }
 
-        // Avvia la simulazione delle notifiche quando la pagina si carica
-        window.onload = function() {
-        	//mostraNotifica();
-            simulazioneNotifiche();
-        };
         
         
         </script>
