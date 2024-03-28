@@ -155,4 +155,14 @@ public class JobOffer implements Serializable {
 		return jobOfferSkill;
 	}
 
+	@Override
+	public String toString() {
+		return "JobOffer [idJobOffer=" + idJobOffer + ", description=" + description + ", endDate=" + endDate
+				+ ", maxRal=" + maxRal + ", minRal=" + minRal + ", startDate=" + startDate + ", title=" + title
+				+ ", companyClient=" + companyClient + ", contractType=" + contractType + ", jobOfferSkills="
+				+ jobOfferSkills + "]";
+	}
+	
+	
+
 }

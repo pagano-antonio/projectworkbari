@@ -59,4 +59,11 @@ public class JobOfferSkill implements Serializable {
 		this.skill = skill;
 	}
 
+	@Override
+	public String toString() {
+		return "JobOfferSkill [idJobOfferSkill=" + idJobOfferSkill + ", skill=" + skill + "]";
+	}
+	
+	
+
 }

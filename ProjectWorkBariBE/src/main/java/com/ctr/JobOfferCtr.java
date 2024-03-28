@@ -275,6 +275,8 @@ public class JobOfferCtr {
 		jobOffer = jobOfferRep.findById(idJobOffer).get();
 		model.addAttribute("JobOffer", jobOffer);
 		model.addAttribute("skillJobOffer", jobOffer.getJobOfferSkills());
+		System.out.println(jobOffer);
+		System.out.println(jobOffer.getJobOfferSkills());
 		return "resSkillJobOffer";
 	}
 
