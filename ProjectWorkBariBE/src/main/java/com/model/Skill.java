@@ -3,7 +3,10 @@ package com.model;
 import java.io.Serializable;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToMany;
@@ -18,6 +21,7 @@ public class Skill implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idSkill;
 
 	private String description;
@@ -29,7 +33,7 @@ public class Skill implements Serializable {
 	private List<CandidateSkill> candidateSkills;
 
 	// bi-directional many-to-one association to JobOfferSkill
-	@OneToMany(mappedBy = "skill")
+	@OneToMany(mappedBy = "skill", cascade = CascadeType.ALL)
 	private List<JobOfferSkill> jobOfferSkills;
 
 	public Skill() {
@@ -102,5 +106,12 @@ public class Skill implements Serializable {
 
 		return jobOfferSkill;
 	}
+
+	@Override
+	public String toString() {
+		return "Skill [idSkill=" + idSkill + ", description=" + description + ", title=" + title + "]";
+	}
+	
+	
 
 }

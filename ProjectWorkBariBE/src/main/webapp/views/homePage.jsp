@@ -1,19 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<html lang="en">
 <html>
 
 <head>
-	<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="ISO-8859-1">
 	<title>Home</title>
 	
 	<style>
 	
 
-	
-	
-	
-	
 	
 	body{
 	background-color: #FFF8EA;
@@ -103,6 +102,16 @@
 	width: 45px;
 	margin-left: 15px;
 	}
+	.notifiche-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #FFF8EA;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 300px;
+}
 	
 	
 	</style>
@@ -118,8 +127,12 @@
 	</div>
      <a href=" http://localhost:4200">  
 	 <img src="https://i.pinimg.com/originals/be/b7/61/beb7617a1228d96dabb3c252509ce6b5.jpg" alt="logo"> 
+
 	 </a>
-  <h1> Welcome to Java Final Project</h1>
+
+	 
+  <h1 id="welcome-text"> Welcome to Java Final Project</h1>
+
 <br>
 <br>
 
@@ -195,6 +208,54 @@
 <!-- Image -->
 	<div>
 	</div>
+	
+	<div id="notifiche" class="notifiche-box">
+  <h3>Notifications</h3>
+</div>
+	<script>
+        // Codice JavaScript per rendere il testo dinamico
+        window.onload = function() {
+            var welcomeText = document.getElementById('welcome-text');
+            var greetings = ['Welcome', 'Bienvenido', 'Bienvenue', 'Willkommen', 'Benvenuto', 'Namaste'];
+
+            welcomeText.addEventListener('mouseover', function() {
+                var randomIndex = Math.floor(Math.random() * greetings.length);
+                welcomeText.textContent = greetings[randomIndex] + ' to Java Final Project';
+            });
+
+            // Ripristina il testo originale quando il mouse esce dall'elemento
+            welcomeText.addEventListener('mouseout', function() {
+                welcomeText.textContent = 'Welcome to Java Final Project';
+            });
+            simulazioneNotifiche();
+        };
+        
+     // Array di notifiche simulate
+        var notificheSimulate = [
+            { testo: "Update available on 28/03. The site will be unavailable from 00:00 to 06:00. For info, please contact the service centre." },
+            
+        ];
+
+        // Funzione per visualizzare una notifica
+        function mostraNotifica(testo) {
+            var notificheDiv = document.getElementById("notifiche");
+            var notificaElemento = document.createElement("div");
+            notificaElemento.innerText = testo;
+            notificheDiv.appendChild(notificaElemento);
+        }
+
+        // Simulazione del flusso di notifiche
+        function simulazioneNotifiche() {
+            notificheSimulate.forEach(function(notifica) {
+                setTimeout(function() {
+                    mostraNotifica(notifica.testo);
+                }, Math.random() * 5000); // Simula l'arrivo delle notifiche in intervalli casuali
+            });
+        }
+
+        
+        
+        </script>
 
 </body>
 </html>

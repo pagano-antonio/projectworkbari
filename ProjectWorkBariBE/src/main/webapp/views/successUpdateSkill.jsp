@@ -115,7 +115,7 @@ body{
  
 <td><a href="${pageContext.request.contextPath}/SkillCtr/prePutSkill?idSkill=<%= s.getIdSkill() %>"><button class="button">UPDATE</button></a></td>
 <td><a href="${pageContext.request.contextPath}/SkillCtr/deleteSkill?idSkill=<%= s.getIdSkill() %>"><button class="button">DELETE</button></a></td>
-<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill"><button class="button">ADD NEW SKILL</button></a></td>
+<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill?idJobOffer=${skill.jobOffer.idJoboffer}"><button class="button">ADD NEW SKILL</button></a></td>
 
 
 </tr>

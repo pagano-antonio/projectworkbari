@@ -49,10 +49,10 @@
 	        <h3>Insert Education:</h3>
 	        <label class="text" for="candidate.idCandidate">Id Candidate:</label><br>
 	        <input class="dati" readonly type="number" id="candidate.idCandidate" name="candidate.idCandidate" value="${idCandidate}" placeholder="Id Candidate"> <br>
-	        <label class="text" for="educationDegreeType.idEducationDegreeType">Id Education Degree Type:</label><br>
+	        <label class="text" for="educationDegreeType.idEducationDegreeType">Education Degree Type:</label><br>
 	        <select name="educationDegreeType.idEducationDegreeType" id="educationDegreeType.idEducationDegreeType">
             <c:forEach var="educationDegreeType" items="${listEducationDegreeType}">
-            <option value="${educationDegreeType.idEducationDegreeType}" ${educationDegreeType.idEducationDegreeType == Candidate.educationDegreeType.idEducationDegreeType ? 'selected' : ''}>${educationDegreeType.idEducationDegreeType}</option>
+            <option value="${educationDegreeType.idEducationDegreeType}" ${educationDegreeType.idEducationDegreeType == Candidate.educationDegreeType.idEducationDegreeType ? 'selected' : ''}>${educationDegreeType.description}</option>
             </c:forEach>
             </select><br>
 	        <!--  <input class="dati" type="number" id="educationDegreeType.idEducationDegreeType" name="educationDegreeType.idEducationDegreeType" placeholder="Id EducationDegreeType"> <br>-->

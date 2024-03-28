@@ -55,10 +55,10 @@
         <input class="dati" readonly type="number" id="candidate.idCandidate" name="candidate.idCandidate" value="${idCandidate}" placeholder="Id Candidate"> <br>
        <label class="text" for="date">Date:</label><br>
         <input class="dati" type="date" id="date" name="date" placeholder="Add Date"><br>
-       <label class="text" for="stateJobInterview.idStateJobInterview">Id State Job Interview:</label><br>
+       <label class="text" for="stateJobInterview.idStateJobInterview">State Job Interview:</label><br>
        	<select name="stateJobInterview.idStateJobInterview" id="stateJobInterview.idStateJobInterview">
         <c:forEach var="stateJobInterview" items="${listStateJobInterview}">
-            <option value="${stateJobInterview.idStateJobInterview}" ${stateJobInterview.idStateJobInterview == Candidate.stateJobInterview.idStateJobInterview ? 'selected' : ''}>${stateJobInterview.idStateJobInterview}</option>
+            <option value="${stateJobInterview.idStateJobInterview}" ${stateJobInterview.idStateJobInterview == Candidate.stateJobInterview.idStateJobInterview ? 'selected' : ''}>${stateJobInterview.title}</option>
         </c:forEach>
         </select><br>
        	<!--  <input class="dati" type="number" id="stateJobInterview.idStateJobInterview" name="stateJobInterview.idStateJobInterview" placeholder="Add id State Job Interview"> <br>-->

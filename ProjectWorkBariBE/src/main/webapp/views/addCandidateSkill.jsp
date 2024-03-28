@@ -57,11 +57,11 @@
         </c:forEach>
         </select><br>
        <!--  <input class="dati" type="number" id="idCandidateSkill" name="idCandidateSkill" placeholder="Id Candidate Skill"><br>-->
-        <label class="text" for="skill.idSkill">Id Skill:</label><br>
+        <label class="text" for="skill.idSkill">Skill:</label><br>
         <!--  <input class="dati" type="number" id="skill.idSkill" name="skill.idSkill" placeholder="Add idSkill"> <br>-->
          <select name="skill.idSkill" id="skill.idSkill">
         <c:forEach var="skill" items="${listSkill}">
-            <option value="${skill.idSkill}" ${skill.idSkill == Candidate.skill.idSkill ? 'selected' : ''}>${skill.idSkill}</option>
+            <option value="${skill.idSkill}" ${skill.idSkill == Candidate.skill.idSkill ? 'selected' : ''}>${skill.title}</option>
         </c:forEach>
         </select><br>
         <br>
