@@ -130,7 +130,7 @@ body{
 
 <td><a href="${pageContext.request.contextPath}/JobOfferCtr/prePutJobOffer?idJobOffer=<%= j.getIdJobOffer() %>"><button class="button">UPDATE</button></a></td>
 <td><a href="${pageContext.request.contextPath}/JobOfferCtr/deleteJobOffer?idJobOffer=<%= j.getIdJobOffer() %>"><button class="button">DELETE</button></a></td>
-<!-- <td><a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=<%=j.getIdJobOffer() %>"><button class="button">SKILL</button></a></td> -->
+<%-- <td><a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=<%=j.getIdJobOffer() %>"><button class="button">SKILL</button></a></td>--%>
 
 
 </tr>
