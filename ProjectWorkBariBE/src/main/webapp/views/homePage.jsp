@@ -116,9 +116,9 @@
 	<div class="login">
 		<a href="${pageContext.request.contextPath}/EmployeeCtr/login"><button class="button">Login</button></a> <br>
 	</div>
-
+     <a href=" http://localhost:4200">  
 	 <img src="https://i.pinimg.com/originals/be/b7/61/beb7617a1228d96dabb3c252509ce6b5.jpg" alt="logo"> 
-	 
+	 </a>
   <h1> Welcome to Java Final Project</h1>
 <br>
 <br>

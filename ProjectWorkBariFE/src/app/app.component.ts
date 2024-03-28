@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './projectworkbarife/home/home.component';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',

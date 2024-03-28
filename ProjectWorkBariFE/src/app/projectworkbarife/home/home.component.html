@@ -1,8 +1,228 @@
-<p>Welcome to Java Girls World!</p>
 
-<button (click) = "viewGirls()"> About Java Girls </button>
-<button (click) = "viewWork()"> How do we work </button>
-<button (click) = "viewInfo()"> Our contacts </button>
+
+  <div class="container-fluid">
+    <div class="full-page-wrapper">
+ 
+
+    
+<br>
+<h1>Welcome to Java Girls World!</h1>
+<div class="pagina"> 
+<button (click)="viewGirls()" class="btn btn-lg m-4" style="background-color:#67a1d9; border: 2px solid #ffffff; border-radius: 50px;"> About Java Girls </button>
+<div *ngIf = "viewGirlsDiv" class="divGirls"> 
+
+    <div class="text-center"> 
+        <div class="row"> 
+           <h2 class= "text-center"> Dicono di noi: </h2> <br>
+           <div class="col-3">
+           </div>
+           <div class="col-4 text-start">
+             <h5 class= "fst-italic"> "Mi ricordate quel meme" </h5>
+             <h5 class="b-5">Il meme:</h5>
+             <img class="image" style="width: 40rem; height: 28rem;" src = "assets/img/titanic.jpg" >
+           </div>
+           <div class="col-4">
+           </div>
+           <div class="row justify-content-center; p-3" >
+            <h5> Può sembrare una cosa negativa, ma è la prova che riusciamo ad andare avanti anche nei momenti critici! </h5> <br>
+           </div>
+          
+       </div>
+    </div>
+
+   <div class="container text-center"> 
+    <div class="row">
+      <h1>Il team: </h1> <br>
+      <br>
+       <div class="col-4">
+        <img class="img-fluid" src="assets/img/eleonora.jpg" alt="Eleonora"> 
+       </div>
+
+       <div class="col-4">
+         <div class="text">
+          <h3>Eleonora Fileni</h3>
+          <h6><em>"Signorine, è stato un piacere suonare con voi"</em></h6>
+          <h6>Scrum Master del gruppo non per scelta, si è formata nei peggiori locali di ristorazione della zona ed è la perfetta rappresentazione del meme "That's Fine" (con il cane che sorseggia caffè in mezzo alle fiamme) o dei musicisti che continuano a suonare mentre il Titanic affonda, motivo per cui è stata eletta direttrice d'orchestra. </h6> <br>
+          <ul>
+              <h5>Punti di forza</h5>
+              <li>Precisione (fino quasi ad essere troppo rompiscatole)</li>
+              <li>Capacità da direttrice (che non sapeva di avere)</li>
+              <li>Amante dei gatti (che conquisteranno il mondo)</li>
+          </ul>
+         </div>
+      </div>
+    </div>
+    
+    <hr> 
+    
+    <div class="row">
+    
+        
+        <div class="col-4"></div>
+       <div class="col-4">
+            <div class="text">
+              <h3>Noemi Denaro</h3>
+              <h6><em>*duck sound*</em></h6>
+              <h6>Dal carattere forte e zero voglia di farsi mettere i piedi in testa, potrebbe essere paragonata al treno di Harry Potter: non fai neanche in tempo a capire dove sia il binario 9e3/4 che quello è già partito verso nuove magiche avventure. Trascina spesso il gruppo con il suo ritmo incalzante ed è di supporto ogni volta che si para davanti un nuovo strano errore da correggere.</h6> <br>
+              <ul>
+                  <h5>Punti di forza</h5>
+                  <li>Time Management (o forse è più un metronomo?)</li>
+                  <li>Ottima conoscenza delle lingue</li>
+                  <li>Cultura nerd</li>
+              </ul>
+            </div>
+        </div>
+ 
+        <div class="col-4">
+            <img class="img-fluid" src="assets/img/noemi.jpg" alt="Noemi"> 
+       </div>
+     </div>
+
+     <hr> 
+
+     <div class="row">
+         <div class="col-4">
+          <img class="img-fluid" src="assets/img/jessica.jpg" alt="Jessica"> 
+         </div>
+  
+         <div class="col-4">
+           <div class="text">
+            <h3>Jessica Pizzo</h3>
+<h6>Grafica e designer del gruppo, affronta il front-end con serietà e una discreta dote di perfezionismo, perchè si può anche andare a fondo con la nave, ma basta farlo con stile (o, in questo caso, con  <em>   style   </em> ). Nonostante il tono sempre tranquillo, è una persona molto determinata e non ha paura di affrontare nuove sfide (anche se consistono nell'imparare a destreggiarsi con un nuovo linguaggio il giorno prima di una consegna). </h6> <br>
+<ul>
+    <h5>Punti di forza</h5>
+    <li>Indirizzata al full-stack</li>
+    <li>Creativa</li>
+    <li><em>"Aspetta che quella scritta va alzata di almeno un pixel"</em></li>
+</ul>
+           </div>
+        </div>
+      </div>
+
+      <hr> 
+
+      <div class="row">
+       
+        <div class="col-4"></div>
+       <div class="col-4">
+            <div class="text">
+              <h3>Marta Quattromani</h3>
+              <h6>Se in ogni band c'è una front-girl che conferisce una certa immagine al gruppo, le Java Girls possono sicuramente contare su Marta per il suo modo di fare pacato e l'aspetto professionale. Rassicurante per il gruppo per i suoi modi calmi, è anche una ragazza dai molti talenti, tra cui il multitasking, con cui riesce a gestire sia la sua bimba a casa che <em>"le bimbe"</em> (cit. Elena) su discord, e le doti da traduttrice, che la portano spesso ad essere l'intermediaria tra lo Scrum Muster e il resto del gruppo.</h6> <br>
+              <ul>
+                  <h5>Punti di forza</h5>
+                  <li>Forte spirito di team work</li>
+                  <li>Versatile</li>
+                  <li>Rappresentazione del detto "bella e brava"</li>
+              </ul>
+            </div>
+        </div>
+ 
+        <div class="col-4">
+            <img class="img-fluid" src="assets/img/marta.jpg" alt="Marta"> 
+       </div>
+     </div>
+
+     <hr> 
+
+     <div class="row">
+         <div class="col-4">
+          <img class="img-fluid" src="assets/img/mary.jpg" alt="Mary"> 
+         </div>
+  
+         <div class="col-4">
+           <div class="text">
+            <h3>Mary Paolini</h3>
+<h6>Data l'inestinguibile riserva di energia e la frizzantezza di spirito, Mary è senza ombra di dubbio la motivatrice del gruppo. Tiene alti gli animi delle compagne, sdrammatizzando all'occorrenza e assicurandosi che le altre non svengano davanti al pc in preda alla disperazione. Potrebbe mettere la soundbar di discord tra le nuove esperienze acquistite con il corso e nell'orchestra della nave che affonda suonerebbe di sicuro le percussioni. </h6> <br>
+<ul>
+    <h5>Punti di forza</h5>
+    <li>Propositiva</li>
+    <li>Inarrestabile</li>
+    <li> <em> "Condividi che vediamo!" </em> </li>
+</ul>
+           </div>
+        </div>
+      </div>
+   </div>
+    
+</div>
+
+
+<button (click)="viewWork()" class="btn btn-lg m-4" style="background-color:#c08ab9; border: 2px solid #ffffff; border-radius: 50px"> How do we work </button>
+<div *ngIf = "viewWorkDiv" class="divWork"> 
+
+  <div class="testowork">
+ <ul> <h4> Per la realizzazione del nostro progetto sono stati utilizzati i seguenti strumenti: </h4>
+    <li>
+        <h3>Back-End</h3>
+        <h5>Il linguaggio di programmazione utilizzato per la parte di Back-End è Java, nello specifico per la realizzazione del codice ci siamo avvalse di Spring Boot (strumento del framework Spring). 
+        L'IDE in uso è Eclipse. </h5> 
+       
+    </li>
+    <div class="row justify-content-center">
+      <img class="imagelogo" style= "max-width: 30%;
+      max-height:25%; "  src = "/assets/img/BackEnd.png">
+   </div>
+    <li>
+        <h3>Front-End</h3>
+        <h5>Il Front-End è stata gestito in gran parte attraverso l'utilizzo di CSS direttamente nelle JSP, arricchendo le dinamiche tramite l'utilizzo di Javascript. La pagina di presentazione del gruppo è stata invece realizzata con Angular.</h5>
+    </li>
+    <div class="row justify-content-center">
+      <img class="imagelogo" style= "max-width: 40%;
+      max-height:25%; "  src = "/assets/img/FrontEnd.png">
+   </div>
+    <li>
+        <h3>Organizzazione</h3>
+        <h5>Le Java Girls lavorano principalmente su Discord, in squadre o in solitaria, dividendosi il lavoro e sincronizzando le varie parti tramite l'utilizzo di GitHub (sia per Back-End che per Front-End). </h5>
+    </li>
+    <div class="row justify-content-center">
+      <img class="imagelogo" style= "max-width: 25%;
+      max-height:25%; "  src = "/assets/img/Organizzazione.png">
+   </div>
+ </ul>
+</div>
+</div>
+
+<button (click)="viewInfo()" class="btn btn-lg m-4" style="background-color:#e7a0a0; border: 2px solid #ffffff; border-radius: 50px"> Our contacts </button>
+<div *ngIf = "viewInfoDiv" class="divInfo"> 
+
+ <h4>Ecco come potrete rintracciare le Java Girls:</h4>
+ <div class="contatti">
+  <br><br>
+        <h4>Su Linkedin:</h4> <br>
+        <h4>Eleonora: <a href= "https://www.linkedin.com/in/eleonora-fileni" style="text-decoration:none" > 🎻 </a></h4>
+        
+
+        <h4>Jessica:  <a href="https://www.linkedin.com/in/jessica-manuela-pizzo/" style="text-decoration:none" > ✍🏼 </a></h4>
+       
+      
+        <h4>Marta:  <a href="https://www.linkedin.com/in/marta-quattromani-69783b203" style="text-decoration:none"> 💻 </a></h4>
+       
+
+        <h4>Mary: <a href="https://www.linkedin.com/in/marypaolini95/" style="text-decoration:none"> 🥁 </a></h4>
+        
+
+        <h4>Noemi:  <a href="https://www.linkedin.com/in/noemidenaro/" style="text-decoration:none"> 🦆 </a></h4>
+       
+
+    <br> <br>
+
+        <h5>Ovunque ci sia musica di violino triste</h5>
+    
+    <br><br>
+    
+        <h5>Nei vostri sogni (o forse nei peggiori incubi)</h5>
+    
+  
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+
 
 
 

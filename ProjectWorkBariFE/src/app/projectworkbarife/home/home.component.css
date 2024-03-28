@@ -1,0 +1,105 @@
+
+.full-page-background {
+  background-image: url('/assets/img/SfondoJAVAGIRLSsparkles.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  width: 100vw; 
+  background-repeat: no-repeat; 
+}
+
+.full-page-wrapper {
+  min-height: 100vh; 
+  background-image: url('/assets/img/SfondoJAVAGIRLSsparkles.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+li, ul {
+ text-align: left;
+
+}
+
+h6 {
+
+  text-align: justify;
+}
+
+
+
+
+h1, h2 {
+  text-align: center;
+ color: #4756a5;
+ font-weight: bold;
+ font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+ 
+
+ }
+
+.divTeamRight {
+    display: inline-block;
+    align-items: right;
+  }
+  .divTeamLeft {
+    display: inline-block;
+    align-items: left;
+  }
+
+
+  .imageGirlsLeft {
+    max-width: 25%;
+    max-height:15%;
+    position: relative;
+  }
+
+  .imageGirlsRight {
+    max-width: 25%;
+    max-height:15%;
+    position: relative;
+  }
+  
+  .text {
+    font-size: 20px;
+    padding-left: 20px;
+    padding-top: 5%;
+    position: relative;
+  }
+  
+
+  image {
+    max-width: 25%;
+    max-height:15%;
+  }
+
+  hr{
+    color:whitesmoke;
+    border-width: 5px;
+    
+  }
+
+  
+
+  .pagina {
+
+   text-align: center;
+  }
+
+  .testowork {
+   text-align: justify;
+   padding-left: 45px;
+   padding-right: 45px;
+
+  }
+
+  .contatti {
+    text-align: center;
+   
+  }
+ 
