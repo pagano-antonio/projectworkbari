@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.EmployeeRepository;
 import com.dao.JobInterviewRepository;
-import com.dao.SkillRepository;
+
 import com.dao.StateJobInterviewRepository;
-import com.model.CandidateSkill;
+
 import com.model.Employee;
 import com.model.JobInterview;
-import com.model.Skill;
+
 import com.model.StateJobInterview;
 
 @Controller

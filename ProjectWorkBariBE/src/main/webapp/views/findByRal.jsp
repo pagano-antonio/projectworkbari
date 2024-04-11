@@ -64,9 +64,9 @@ div{
 	<div>
 	<form action="${pageContext.request.contextPath}/JobOfferCtr/findByMinRalAfterAndMaxRalBefore" method="GET">
 	<h3>Insert min ral and max ral: </h3>
-	<input type="number" id="minRal" name="minRal" placeholder="Insert min ral"><br>
-	<input type="number" id="maxRal" name="maxRal" placeholder="Insert max ral"><br>
-	<input class="button" type="submit" value="SEARCH"> <br> <br>
+	<input type="number" id="minRal" name="minRal" placeholder="Insert min ral"><br> <br>
+	<input type="number" id="maxRal" name="maxRal" placeholder="Insert max ral"><br> <br>
+	<input class="button" type="submit" value="SEARCH"> <br>
 	
 	</form>
 	</div>

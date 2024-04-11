@@ -11,9 +11,7 @@
 	
 	<style>
  	body{
-	    margin: 5px 5px;
-	    margin-left: auto;
-	    margin-right: auto;
+	    margin: 15px;
 		background-color: #FFF8EA;
 		background-image:url(https://i.pinimg.com/originals/5d/48/05/5d4805c0b10e0c526be005bffa60a3f7.jpg);
 		background-size: cover;

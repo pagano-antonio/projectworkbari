@@ -17,11 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.dao.CompanyClientRepository;
 import com.dao.ContractTypeRepository;
 import com.dao.JobOfferRepository;
-import com.dao.SkillRepository;
-import com.model.CandidateSkill;
 import com.model.CompanyClient;
 import com.model.ContractType;
 import com.model.JobOffer;
+import com.model.JobOfferSkill;
 
 
 @Controller //questa classe gestisce request e dovrà fornire response(jsp,html).
@@ -162,7 +161,7 @@ public class JobOfferCtr {
 	@GetMapping("/findByTitle")
 	public String findByTitle(Model model, String title) {
 
-		List<JobOffer> listJobOffer = (List<JobOffer>) jobOfferRep.findByTitle(title);
+		List<JobOffer> listJobOffer = (List<JobOffer>) jobOfferRep.findByTitleContaining(title);
 
 		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("Title", title);
@@ -261,7 +260,7 @@ public class JobOfferCtr {
 	@PostMapping("/findBySkillTitle")
 	public String findByJobOfferSkills_Skill_Title(Model model, String title) {
 
-		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByJobOfferSkills_Skill_Title(title);
+		ArrayList<JobOffer> listJobOffer = (ArrayList<JobOffer>) jobOfferRep.findByJobOfferSkills_Skill_TitleContaining(title);
 		model.addAttribute("listJobOffer", listJobOffer);
 		model.addAttribute("title", title);
 		
@@ -274,9 +273,10 @@ public class JobOfferCtr {
 		JobOffer jobOffer = new JobOffer();
 		jobOffer = jobOfferRep.findById(idJobOffer).get();
 		model.addAttribute("JobOffer", jobOffer);
-		model.addAttribute("skillJobOffer", jobOffer.getJobOfferSkills());
-		System.out.println(jobOffer);
-		System.out.println(jobOffer.getJobOfferSkills());
+		
+		List <JobOfferSkill> jobOfferSkills = (List<JobOfferSkill>)jobOffer.getJobOfferSkills();
+		model.addAttribute("skillJobOffer", jobOfferSkills);
+		model.addAttribute("idJobOffer", idJobOffer);
 		return "resSkillJobOffer";
 	}
 

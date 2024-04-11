@@ -12,11 +12,11 @@ import com.model.Skill;
 @Repository
 public interface JobOfferRepository extends JpaRepository<JobOffer, Integer> {
 	
-	List<JobOffer> findByTitle(String title);
+	List<JobOffer> findByTitleContaining(String title);
 	List<JobOffer> findByStartDateAfterAndEndDateBefore(Date startDate, Date endDate);
 	List<JobOffer> findByCompanyClient_idCompanyClient(Integer idCompanyClient);
 	List<JobOffer> findByMinRalAfterAndMaxRalBefore(Integer minRal, Integer maxRal);
 	List<JobOffer> findByContractType_idContractType(Integer idContractType);
-	List<JobOffer> findByJobOfferSkills_Skill_Title(String title);
+	List<JobOffer> findByJobOfferSkills_Skill_TitleContaining(String title);
 	List<JobOffer> findByJobOfferSkills_Skill(Skill skill);
 }

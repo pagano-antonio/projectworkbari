@@ -136,10 +136,10 @@ body{
 </tr>
 </table>
 <h3>About this Job Offer:</h3>
-<td><a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill?idJobOffer=<%= j.getIdJobOffer() %>"><button class="button">ADD NEW SKILL</button></a></td>
+<a href="${pageContext.request.contextPath}/JobOfferSkillCtr/preAddJobOfferSkill?idJobOffer=<%= j.getIdJobOffer() %>"><button class="button">ADD NEW SKILL</button></a><br>
 
 <h3>Return to HOME</h3>
-<td><a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a></td> 
+<a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a>
 
 </div>
 </body>

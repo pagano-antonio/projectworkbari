@@ -132,7 +132,7 @@ public class CompanyClientCtr {
 		@GetMapping("/findByCityCompanyClient")
 		public String findByCity(Model model,String city) {
 
-			List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByCity(city);
+			List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByCityContaining(city);
 			
 			model.addAttribute("companyClientList", companyClientList);
 			model.addAttribute("city", city);
@@ -154,7 +154,7 @@ public class CompanyClientCtr {
 		@GetMapping("/findByNameCompanyClient")
 		public String findByName(Model model,String name) {
 
-			List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByName(name);
+			List<CompanyClient> companyClientList = (List<CompanyClient>) companyClientRep.findByNameContaining(name);
 			model.addAttribute("companyClientList",companyClientList);
 			model.addAttribute("name", name);
 			

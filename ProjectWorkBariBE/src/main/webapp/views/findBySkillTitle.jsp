@@ -66,12 +66,10 @@ div{
 <div>
 <h3>Insert title to find: </h3>
 <input type="text" id="title" name="title" placeholder="Insert title"><br>
-
-<input class="button" type="submit" value="SEARCH"> <br> <br>
+<br>
+<input class="button" type="submit" value="SEARCH"> <br>
 </div>
 </form>
-<br>
-<br>
 <h4> Return to HOME</h4>
 	<a href="${pageContext.request.contextPath}/JobOfferCtr/homePage"><button class="button">HOME</button></a>
 

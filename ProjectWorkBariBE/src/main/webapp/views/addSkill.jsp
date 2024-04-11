@@ -53,6 +53,8 @@ body{
         
         
         <input type="hidden" id="idJobOffer" name="idJobOffer" value="${idJobOffer}"> <br>
+       
+        <input type= "hidden" id="idSkill" name="idSkill"> <br>
         <label class="text" for="title">Title:</label><br>
         <input class="dati" type="text" id="title" name="title" placeholder="Add title"> <br>
         <label class="text" for="description">Description:</label><br>

@@ -12,9 +12,7 @@
 <style>
 
 body{
-    margin: 5px 5px;
-    margin-left: 15px;
-    margin-right: auto;
+    margin: 15px;
 	background-color: #FFF8EA;
 	background-image:url(https://i.pinimg.com/originals/5d/48/05/5d4805c0b10e0c526be005bffa60a3f7.jpg);
 	background-size: cover;
@@ -36,6 +34,8 @@ body{
           border-collapse:collapse;
           width: 100%;
           height: 100%;
+          margin-left: 2px;
+      	  margin-right: 2px;
           
           } 
 	
@@ -113,6 +113,7 @@ body{
 			<th>MIN RAL</th>
 			<th>MAX RAL</th>
 			<th>ID CONTRACT TYPE</th>
+			<th>SKILL</th>
 			<th colspan="2">OPERATION</th>
 		</tr>
 
@@ -128,6 +129,15 @@ body{
 				<td>${res.minRal}</td>
 				<td>${res.maxRal}</td>
 				<td>${res.contractType.idContractType}</td>
+				<td>
+				<c:forEach var="skillJob" items="${res.getJobOfferSkills()}">
+				<ul>
+				<li>
+				${skillJob.skill.title}
+				</li>
+				</ul>
+				</c:forEach>
+				</td>
 
 
 				<td><a
@@ -136,11 +146,12 @@ body{
 					href="${pageContext.request.contextPath}/JobOfferCtr/deleteJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">DELETE</button></a></td>
 			</tr>
 	<tr>
-	<td colspan="11">	
+	<td colspan="12">	
 	<h3> About this Job Offer:</h3>
 	<a href="${pageContext.request.contextPath}/JobOfferCtr/skillJobOffer?idJobOffer=${res.idJobOffer}"><button class="button">SKILL</button></a></td>
-	</tr>	
+	</tr>
 		</c:forEach>
+		
 	</table>
 	<br>
 	</c:when>

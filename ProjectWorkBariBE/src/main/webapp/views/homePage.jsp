@@ -2,7 +2,6 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
-<html>
 
 <head>
 <meta charset="UTF-8">
@@ -102,16 +101,17 @@
 	width: 45px;
 	margin-left: 15px;
 	}
+	
 	.notifiche-box {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #FFF8EA;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  max-width: 300px;
-}
+ 	position: fixed;
+ 	bottom: 20px;
+ 	right: 20px;
+ 	background-color: #FFF8EA;
+ 	border: 1px solid #ccc;
+ 	border-radius: 5px;
+ 	padding: 10px;
+ 	max-width: 300px;
+	}
 	
 	
 	</style>
@@ -216,11 +216,11 @@
         // Codice JavaScript per rendere il testo dinamico
         window.onload = function() {
             var welcomeText = document.getElementById('welcome-text');
-            var greetings = ['Welcome', 'Bienvenido', 'Bienvenue', 'Willkommen', 'Benvenuto', 'Namaste'];
+            var greetings = ['Welcome to', 'Bienvenid* al', 'Bienvenue dans le', 'Willkommen beim', 'Benvenut* al'];
 
             welcomeText.addEventListener('mouseover', function() {
                 var randomIndex = Math.floor(Math.random() * greetings.length);
-                welcomeText.textContent = greetings[randomIndex] + ' to Java Final Project';
+                welcomeText.textContent = greetings[randomIndex] + ' Java Final Project';
             });
 
             // Ripristina il testo originale quando il mouse esce dall'elemento
@@ -230,7 +230,7 @@
             simulazioneNotifiche();
         };
         
-     // Array di notifiche simulate
+     	// Array di notifiche simulate
         var notificheSimulate = [
             { testo: "Update available on 28/03. The site will be unavailable from 00:00 to 06:00. For info, please contact the service centre." },
             

@@ -62,7 +62,7 @@ body{
 	<form method ="post" action="${pageContext.request.contextPath}/EmployeeCtr/putEmployee">
 		<label class="text" for="idEmployee">Id Employee:</label><br>
 		<input class="" readonly id="idEmployee" name="idEmployee" value="${employee.idEmployee}" placeholder="ID"> <br> 
-		<label class="text" for="employeeType.idEmployeeType">Id Employee Type:</label><br>
+		<!--  <label class="text" for="employeeType.idEmployeeType">Id Employee Type:</label><br>-->
 		<input class="" type= "hidden" id="employeeType.idEmployeeType" name="employeeType.idEmployeeType" value="${employee.employeeType.idEmployeeType}" placeholder="ID"> <br>
 		<label class="text" for="name">Name:</label><br>
 		<input class="dati" type="text" id="name" name="name" value="${employee.name}" placeholder="Name"> <br>

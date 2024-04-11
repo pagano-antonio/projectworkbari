@@ -10,7 +10,7 @@ import com.model.CompanyClient;
 @Repository
 public interface CompanyClientRepository extends JpaRepository<CompanyClient , Integer> {
 	
-	List<CompanyClient> findByCity(String city);
-	List<CompanyClient> findByName(String name);
+	List<CompanyClient> findByCityContaining(String city);
+	List<CompanyClient> findByNameContaining(String name);
 
 }

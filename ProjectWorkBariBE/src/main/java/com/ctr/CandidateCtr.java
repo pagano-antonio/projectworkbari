@@ -11,12 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.dao.CandidateSkillRepository;
 import com.dao.CanditateRepository;
-import com.dao.SkillRepository;
 import com.model.Candidate;
-import com.model.CandidateSkill;
-import com.model.Skill;
 
 @Controller
 @RequestMapping("CandidateCtr")
@@ -159,7 +155,7 @@ public class CandidateCtr {
 	@PostMapping("/findBySurname")
 	public String findBySurname(Model model, String surname) {
 
-		List<Candidate> surnameList = (List<Candidate>) candidateRep.findBySurname(surname);
+		List<Candidate> surnameList = (List<Candidate>) candidateRep.findBySurnameContaining(surname);
 		model.addAttribute("CandidateList", surnameList);
 
 		return "resCandidate";
@@ -175,7 +171,7 @@ public class CandidateCtr {
 	@PostMapping("/findByCity")
 	public String findByCity(Model model, String city) {
 
-		List<Candidate> citiesList = (List<Candidate>) candidateRep.findByCity(city);
+		List<Candidate> citiesList = (List<Candidate>) candidateRep.findByCityContaining(city);
 		model.addAttribute("CandidateList", citiesList);
 
 		return "resCandidate";
@@ -191,7 +187,7 @@ public class CandidateCtr {
 	@PostMapping("/findBySkill")
 	public String findBySkill(Model model, String title) {
 
-		List<Candidate> skillList = (List<Candidate>) candidateRep.findByCandidateSkills_Skill_Title(title);
+		List<Candidate> skillList = (List<Candidate>) candidateRep.findByCandidateSkills_Skill_TitleContaining(title);
 		model.addAttribute("CandidateList", skillList);
 
 		return "resCandidate";
@@ -224,7 +220,7 @@ public class CandidateCtr {
 	@PostMapping("/findByCompany")
 	public String findByWorkExperiences_Company(Model model, String company) {
 
-		List<Candidate> listCompanies = (List<Candidate>) candidateRep.findByWorkExperiences_Company(company);
+		List<Candidate> listCompanies = (List<Candidate>) candidateRep.findByWorkExperiences_CompanyContaining(company);
 		model.addAttribute("CandidateList", listCompanies);
 
 		return "resCandidate";

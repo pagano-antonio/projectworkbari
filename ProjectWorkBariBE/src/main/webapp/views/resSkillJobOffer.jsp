@@ -9,9 +9,7 @@
 <style>
 
 body{
-    margin: 5px 5px;
-    margin-left: 15px;
-    margin-right: auto;
+    margin: 15px;
 	background-color: #FFF8EA;
 	background-image:url(https://i.pinimg.com/originals/5d/48/05/5d4805c0b10e0c526be005bffa60a3f7.jpg);
 	background-size: cover;
@@ -125,8 +123,8 @@ body{
 <h2>Result not found!</h2><br>
 </c:otherwise>
 </c:choose>
-<h3>About this Skill:</h3>
-		<a href="${pageContext.request.contextPath}/SkillCtr/preAddSkill?idJobOffer=${skill.jobOffer.idJobOffer}"><button class="button">ADD NEW SKILL</button></a><br>
+<br>
+		<a href="${pageContext.request.contextPath}/JobOfferSkillCtr/preAddJobOfferSkill?idJobOffer=${idJobOffer}"><button class="button">ADD NEW SKILL</button></a><br>
 <h3> Return to HOME</h3>
 		<a href="${pageContext.request.contextPath}/Home"><button class="button">HOME</button></a> <br>
 </body>

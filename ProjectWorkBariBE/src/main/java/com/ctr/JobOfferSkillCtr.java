@@ -1,5 +1,8 @@
 package com.ctr;
 
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,7 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.dao.JobOfferSkillRepository;
+import com.dao.SkillRepository;
+import com.model.JobOffer;
 import com.model.JobOfferSkill;
+import com.model.Skill;
 
 @Controller
 @RequestMapping("/JobOfferSkillCtr")
@@ -16,6 +22,9 @@ public class JobOfferSkillCtr {
 
 	@Autowired
 	private JobOfferSkillRepository jobOfferSkillRep;
+	@Autowired
+	private SkillRepository skillRep;
+
 
 //------------------------------------------------------------------------------------
 
@@ -28,19 +37,30 @@ public class JobOfferSkillCtr {
 //------------------------------------------------------------------------------------
 
 	@GetMapping("/preAddJobOfferSkill")
-	public String preAdd(Model model) {
-
-		return "addHobOfferSkill"; // aggiungi jsp
+	public String preAdd(Model model, Integer idJobOffer) {
+		
+		model.addAttribute("idJobOffer", idJobOffer);
+		List <Skill> listSkill = (List<Skill>)skillRep.findAll();
+		model.addAttribute("listSkill", listSkill);
+		
+		return "addJobOfferSkill"; 
 
 	}
 
 	@PostMapping("/addJobOfferSkill")
-	public String add(JobOfferSkill j, Model model) {
+	public String add(JobOfferSkill jobOfferSkill, Model model, Integer idJobOffer, Integer idSkill) {
+		//qui abbiamo dovuto settare skill e job offer perchè si riferisce ad altre tabelle
+		Skill s = new Skill ();
+		s.setIdSkill(idSkill);
+		jobOfferSkill.setSkill(s);
 		
-       
-		jobOfferSkillRep.save(j);
+		JobOffer job = new JobOffer();
+		job.setIdJobOffer(idJobOffer);
+		jobOfferSkill.setJobOffer(job);
+		
+       jobOfferSkillRep.save(jobOfferSkill);
 
-		return "success"; // aggiungi jsp
+		return "success"; 
 	}
 
 //------------------------------------------------------------------------------------

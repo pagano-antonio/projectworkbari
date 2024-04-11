@@ -44,15 +44,17 @@ public class SkillCtr {
 }
 	@PostMapping("/addSkill")
 	public String add(@RequestParam Integer idJobOffer, Skill s, Model model) {
-		System.out.println(idJobOffer);
+		
 		JobOfferSkill jobOfferSkill = new JobOfferSkill();
 		jobOfferSkill.setJobOffer(jobOfferRep.findById(idJobOffer).get());
 		jobOfferSkill.setSkill(s);
+		
 		List<JobOfferSkill> listJobOfferSkill = new ArrayList<>();
 		listJobOfferSkill.add(jobOfferSkill);
 		s.setJobOfferSkills(listJobOfferSkill);
 		skillRep.save(s);
 		JobOffer jobOffer = new JobOffer();
+		
 		List <JobOffer> skillJobOffer = jobOfferRep.findByJobOfferSkills_Skill(s);
 		System.out.println("la lista è" + skillJobOffer.size());
 		model.addAttribute("JobOffer", jobOffer);
